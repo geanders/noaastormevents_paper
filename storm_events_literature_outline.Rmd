@@ -1,0 +1,44 @@
+---
+title: "NOAA Storm Events in Literature"
+output:
+  pdf_document: default
+  html_document: default
+bibliography: scholar.bib
+ 
+
+---
+
+# Outline of Concerns with Database  
+
+## Episodes  
+
+- one episode in NOAA storm events correlates to mulitple events [@konisky2016extreme]
+
+- limited information on event severity or distinction between events [@luh2015vulnerability]  
+    
+## Units of Aggregation  
+
+- smallest unit of aggregation to use all parts of database are Weather Forecasting Offices and there are about 122 nationwide [@konisky2016extreme]
+    
+## Inaccurate Reporting  
+- supply of information is greater in areas closer to weather event [@konisky2016extreme] 
+
+- information not verified by National Weather Service [@luh2015vulnerability] 
+leads to underreporting, over reporting, inaccurate reporting  
+
+    + reporting affected by geographic location [@luh2015vulnerability]  
+    
+Come up with questions to check with data 
+    
+# References     
+
+
+
+
+
+
+
+
+
+
+
