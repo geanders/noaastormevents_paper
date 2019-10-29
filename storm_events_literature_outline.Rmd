@@ -8,27 +8,91 @@ bibliography: scholar.bib
 
 ---
 
-# Outline of Concerns with Database  
+# Concerns with Storm Events Database  
 
-## Episodes  
+## Hazard Bias   
 
-- one episode in NOAA storm events correlates to mulitple events [@konisky2016extreme]
+* There can be inaccurate recording of the frequency of certain hazards types within the database  
 
-- limited information on event severity or distinction between events [@luh2015vulnerability]  
+* This is influenced by the goal or audience of the database  
+
+    - For example, the US is esepcially concerned with monetary losses from floods so it may be more likely for flood events to be reported [@gall2009losses]  
     
-## Units of Aggregation  
+         *script to pull up number of floods compared to other events in noaa  
+ 
+* This also arises from the difficulty of sorting storm events that include multiple types of hazards  
 
-- smallest unit of aggregation to use all parts of database are Weather Forecasting Offices and there are about 122 nationwide [@konisky2016extreme]
+    - Definitional differences [@gall2009losses]
     
-## Inaccurate Reporting  
-- supply of information is greater in areas closer to weather event [@konisky2016extreme] 
-
-- information not verified by National Weather Service [@luh2015vulnerability] 
-leads to underreporting, over reporting, inaccurate reporting  
-
-    + reporting affected by geographic location [@luh2015vulnerability]  
+    - one episode can correlates to mulitple events [@konisky2016extreme]  
     
-Come up with questions to check with data 
+        *script for how noaa deals with this? or examples of this?  
+        
+* limited information on event severity or distinction between events [@luh2015vulnerability]  
+
+
+## Temporal Bias    
+
+* There can be changes in the number of storm events and loss estimates reported over time [@gall2009losses]  
+
+    - Advancements in monitoring and detecting  
+    
+    - Better loss accounting  
+    
+    - New process for loss estimation developed by NWS in 2007  
+    
+    - Switch between categorical estimates to whole dollar figure estimates  
+    
+         * pull up loss data for events pre and post 1995 
+
+## Threshold Bias  
+
+* Events of larger maginutude and/or damage to human health are better documented [@gall2009losses]   
+
+* Events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]   
+
+    - may even be excluded due to threshold criteria [@gall2009losses]   
+
+## Accounting Bias 
+
+* Discrepencies in type of loss information collected [@gall2009losses] 
+
+    - Direct monetary losses from damage to infrastructure, buildings, crops, etc. are easier to quanitfy than indirect losses like lost revenue, business closures, societal losses, environmental damage [@gall2009losses]  
+    
+        * how does noaa report different types of losses? 
+    
+* Can count economic losses at community, state, regional, global level [@gall2009losses]  
+
+     - what level does noaa report this at? 
+      
+* How can nonmonetary losses be quanitifed? 
+
+## Geographic Bias  
+
+* Reporting affected by geographic location [@luh2015vulnerability]  
+
+    - There can be changes at country or state level over time that lead to excluding or double counting events or loss data [@gall2009losses]  
+    
+    - NWS changed its reporting strategy from loss estimates by climate region to loss estimates in specific counties where event occurred (relevant for data in 1995 during switch) [@gall2009losses]  
+    
+        * script for checking event location pre and post 1995 
+    
+* Supply of information is greater in areas closer to weather event [@konisky2016extreme] 
+
+* Smallest unit of aggregation to use all parts of database are Weather Forecasting Offices and there are about 122 nationwide [@konisky2016extreme]  
+
+    - zone and fips script  
+        
+## Systemic Bias    
+
+* Differences in initial data collection and compilation create difficulties in comparing databases  
+
+    - Source and how losses are computed  
+    
+    - Actual dollar losses vs inflation adjusted losses    
+    
+    - Whole dollars vs loss categories   
+
     
 # References     
 
