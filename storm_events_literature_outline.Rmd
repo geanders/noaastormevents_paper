@@ -12,6 +12,8 @@ bibliography: scholar.bib
 
 ## Hazard Bias   
 
+* P(event recorded | event happened) may be different by events  
+
 * There can be inaccurate recording of the frequency of certain hazards types within the database  
 
 * This is influenced by the goal or audience of the database  
@@ -30,20 +32,41 @@ bibliography: scholar.bib
         
 * limited information on event severity or distinction between events [@luh2015vulnerability]  
 
+* interrupted time series analysis: change in flood policy since 1996  
+
+    - years of big policy changes for floods (flood insurance) 
+
 
 ## Temporal Bias    
 
 * There can be changes in the number of storm events and loss estimates reported over time [@gall2009losses]  
 
-    - Advancements in monitoring and detecting  
+    - Advancements in monitoring and detecting: sometimes descriptions include equipment used 
     
     - Better loss accounting  
     
     - New process for loss estimation developed by NWS in 2007  
     
-    - Switch between categorical estimates to whole dollar figure estimates  
+    - Switch between categorical estimates to whole dollar figure estimates: uses logarithmic at some point?    
     
-         * pull up loss data for events pre and post 1995 
+         * pull up loss data for events pre and post 1995  
+         
+    - check for changes in reporting for NOAA under Database Details  
+        
+        * from 1950 to 1954, only tornado events were recorded (NOAA-how should I cite this?)  
+        * from 1955 to 1992, only tornado, thunderstorm wind and hail events were keyed from the paper publications into digital data. From 1993 to 1995, only tornado, thunderstorm wind and hail events have been extracted from the Unformatted Text Files  
+        * From 1996 to present, 48 event types are recorded
+         
+* Seasonal Differences in number of events reported 
+
+    - Example of rip currents in summer vs winter  
+    
+        * run for our data and check literature for seasonality of the weather event  
+        
+        * create table of number reported by lifeguards or media vs month of the year  
+        
+    - other events that are more or less reported?   
+    
 
 ## Threshold Bias  
 
@@ -70,6 +93,10 @@ bibliography: scholar.bib
 ## Geographic Bias  
 
 * Reporting affected by geographic location [@luh2015vulnerability]  
+
+    - differences between rural/urban  
+    
+        * tornado example
 
     - There can be changes at country or state level over time that lead to excluding or double counting events or loss data [@gall2009losses]  
     
