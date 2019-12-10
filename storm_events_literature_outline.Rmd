@@ -18,9 +18,12 @@ bibliography: scholar.bib
 
 * This is influenced by the goal or audience of the database  
 
-    - For example, the US is esepcially concerned with monetary losses from floods so it may be more likely for flood events to be reported [@gall2009losses]  
+    - For example, the US is esepcially concerned with monetary losses from floods so it may be more likely for flood events to be reported [@gall2009losses]    
+    - The National Flood Insurance Act passed in 1968 created the National Flood Insurance Program which helps provide flood insurance   
     
          *script to pull up number of floods compared to other events in noaa  
+         
+         *is there a difference in monetary loss estimates pre and post 1968?  
  
 * This also arises from the difficulty of sorting storm events that include multiple types of hazards  
 
@@ -98,7 +101,7 @@ bibliography: scholar.bib
     
         * tornado example
 
-    - There can be changes at country or state level over time that lead to excluding or double counting events or loss data [@gall2009losses]  
+    - There can be changes at country or state level over time that lead to excluding or double counting events or loss data [@gall2009losszes]  
     
     - NWS changed its reporting strategy from loss estimates by climate region to loss estimates in specific counties where event occurred (relevant for data in 1995 during switch) [@gall2009losses]  
     
