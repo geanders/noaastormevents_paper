@@ -11,6 +11,8 @@ bibliography: scholar.bib
 # Concerns with Storm Events Database  
 
 ## Hazard Bias   
+Within the Storm Events database, there may be inaccurate recording in the number of certain hazard types. This may arise from the difficulty of sorting storm events that include multiple types of hazards. There are definitional differences between events as well as certain events correlating to multiple event categories. 
+
 
 * P(event recorded | event happened) may be different by events  
 
@@ -21,9 +23,8 @@ bibliography: scholar.bib
     - For example, the US is esepcially concerned with monetary losses from floods so it may be more likely for flood events to be reported [@gall2009losses]    
     - The National Flood Insurance Act passed in 1968 created the National Flood Insurance Program which helps provide flood insurance   
     
-         *script to pull up number of floods compared to other events in noaa  
+         *script to pull up number of floods compared to other events in noaa, no difference in monetary loss estimates pre and post 1968, so is this example not valid here? 
          
-         *is there a difference in monetary loss estimates pre and post 1968?  
  
 * This also arises from the difficulty of sorting storm events that include multiple types of hazards  
 
@@ -41,6 +42,7 @@ bibliography: scholar.bib
 
 
 ## Temporal Bias    
+Temporal bias can occur in the Storm Events database as the number of storm events and loss estimates change over time. This occurs as a result of changes in recording strageties, advancements in monitoring and detecting sotrm events, or better monetary loss accounting. For example, in the NOAA database, from 1950 to 1954, only tornado events were recorded [@stormeventsdetails]. From 1955 to 1992 only tornado, thunderstorm wind and hail events were keyed from the paper publications into digital data [@stormeventsdetails]. From 1993 to 1995, only tornado, thunderstorm wind and hail events have been extracted from the Unformatted Text Files[@stormeventsdetails]. Starting in 1996, 48 event types are recorded[@stormeventsdetails]. This poses inconsistensies in the number of certain storm events over large periods of time. More temporal bias may occur from seasonal differences in number of events reported. NOAA exhibits higher rates of rip currents in the summer versus the winter. 
 
 * There can be changes in the number of storm events and loss estimates reported over time [@gall2009losses]  
 
@@ -72,6 +74,7 @@ bibliography: scholar.bib
     
 
 ## Threshold Bias  
+The varying severity of an event creates threshold bias in the storm events database. Events of larger maginutude and/or damage to human health are better documented, while events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]. Small events may even be excluded due to threshold criteria in the database [@gall2009losses].   
 
 * Events of larger maginutude and/or damage to human health are better documented [@gall2009losses]   
 
@@ -80,6 +83,7 @@ bibliography: scholar.bib
     - may even be excluded due to threshold criteria [@gall2009losses]   
 
 ## Accounting Bias 
+There are discrepencies in the type of loss information collected in the storm events database leading to accounting bias. Direct monetary losses from damage to infrastructure, buildings, crops, etc. are easier to quanitfy than indirect losses like lost revenue, business closures, societal losses, environmental damage [@gall2009losses]. These monetary losses can also be separated into community, state, refional, and global levels [@gall2009losses]. 
 
 * Discrepencies in type of loss information collected [@gall2009losses] 
 
@@ -94,6 +98,7 @@ bibliography: scholar.bib
 * How can nonmonetary losses be quanitifed? 
 
 ## Geographic Bias  
+The reporting of events can be affected by geographic location based on whether or not people are present to record the event. The supply of information is greater in areas closer to the weather event [@konisky2016extreme]. There can also be changes at country or state level over time that lead to excluding or double counting events or loss data [@gall2009losses]. The NWS changed its reporting strategy from loss estimates by climate region to loss estimates in specific counties where event occurred around 1995 [@gall2009losses]. Currently, the smallest unit of aggregation to use all parts of database are Weather Forecasting Offices and there are about 122 nationwide [@konisky2016extreme]. There may be inconsistencies between county regions and weather forecasting offices.   
 
 * Reporting affected by geographic location [@luh2015vulnerability]  
 
@@ -101,7 +106,7 @@ bibliography: scholar.bib
     
         * tornado example
 
-    - There can be changes at country or state level over time that lead to excluding or double counting events or loss data [@gall2009losszes]  
+    - There can be changes at country or state level over time that lead to excluding or double counting events or loss data [@gall2009losses]  
     
     - NWS changed its reporting strategy from loss estimates by climate region to loss estimates in specific counties where event occurred (relevant for data in 1995 during switch) [@gall2009losses]  
     
