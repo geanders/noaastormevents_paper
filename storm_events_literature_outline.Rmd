@@ -13,6 +13,7 @@ bibliography: scholar.bib
 ## Hazard Bias   
 Within the Storm Events database, there may be inaccurate recording in the number of certain hazard types. This may arise from the difficulty of sorting storm events that include multiple types of hazards. There are definitional differences between events as well as certain events correlating to multiple event categories. 
 
+* Direct quote from NOAA Storm Data Disclaimer: Some information appearing in Storm Data may be provided by or gathered from sources outside the National Weather Service (NWS), such as the media, law enforcement and/or other government agencies, private companies, individuals, etc. An effort is made to use the best available information but because of time and resource constraints, information from these sources may be unverified by the NWS.[@stormdatafaq]
 
 * P(event recorded | event happened) may be different by events  
 
@@ -23,9 +24,8 @@ Within the Storm Events database, there may be inaccurate recording in the numbe
     - For example, the US is esepcially concerned with monetary losses from floods so it may be more likely for flood events to be reported [@gall2009losses]    
     - The National Flood Insurance Act passed in 1968 created the National Flood Insurance Program which helps provide flood insurance   
     
-         *script to pull up number of floods compared to other events in noaa, no difference in monetary loss estimates pre and post 1968, so is this example not valid here? 
-         
- 
+         *script to pull up number of floods compared to other events in noaa, no difference in monetary loss estimates pre and post 1968, so is this example not valid here?  
+
 * This also arises from the difficulty of sorting storm events that include multiple types of hazards  
 
     - Definitional differences [@gall2009losses]
@@ -33,6 +33,11 @@ Within the Storm Events database, there may be inaccurate recording in the numbe
     - one episode can correlates to mulitple events [@konisky2016extreme]  
     
         *script for how noaa deals with this? or examples of this?  
+        
+* Only certain types of events are allowed in the data set as defined in Table 1 of Section 2.1.1 of NWS Directive 10-1605 at http://www.nws.noaa.gov/directives/sym/pd01016005curr.pdf.  
+
+
+    - list event_type from database? 
         
 * limited information on event severity or distinction between events [@luh2015vulnerability]  
 
@@ -58,9 +63,13 @@ Temporal bias can occur in the Storm Events database as the number of storm even
          
     - check for changes in reporting for NOAA under Database Details  
         
-        * from 1950 to 1954, only tornado events were recorded (NOAA-how should I cite this?)  
-        * from 1955 to 1992, only tornado, thunderstorm wind and hail events were keyed from the paper publications into digital data. From 1993 to 1995, only tornado, thunderstorm wind and hail events have been extracted from the Unformatted Text Files  
-        * From 1996 to present, 48 event types are recorded
+        * from 1950 to 1954, only tornado events were recorded [@stormeventsdetails] 
+        * from 1955 to 1992, only tornado, thunderstorm wind and hail events were keyed from the paper publications into digital data. From 1993 to 1995, only tornado, thunderstorm wind and hail events have been extracted from the Unformatted Text Files [@stormeventsdetails] 
+        * From 1996 to present, 48 event types are recorded [@stormeventsdetails]  
+        
+* The NWS reports that there was reduced funding from 1976 to 1979 that led to a decrease in flood damage data collection [@downton2005reanalysis].  
+
+* The US Army Corps of Engineers contracted with the NWS to provide yearly flood damage reports as required by Congress after 1983 [@downton2005reanalysis]. This provides a more consistent report of flood damage that may not have otherwise been reported.  
          
 * Seasonal Differences in number of events reported 
 
@@ -80,7 +89,9 @@ The varying severity of an event creates threshold bias in the storm events data
 
 * Events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]   
 
-    - may even be excluded due to threshold criteria [@gall2009losses]   
+    - may even be excluded due to threshold criteria [@gall2009losses]  
+    
+* If a flood has received a presidential disaster declaration, FEMA storm survey teams go to the scene and provide extra damage assessments [@downton2005reanalysis]. This would provide more accurate data on an event of a larger scale.  
 
 ## Accounting Bias 
 There are discrepencies in the type of loss information collected in the storm events database leading to accounting bias. Direct monetary losses from damage to infrastructure, buildings, crops, etc. are easier to quanitfy than indirect losses like lost revenue, business closures, societal losses, environmental damage [@gall2009losses]. These monetary losses can also be separated into community, state, refional, and global levels [@gall2009losses]. 
@@ -95,7 +106,12 @@ There are discrepencies in the type of loss information collected in the storm e
 
      - what level does noaa report this at? 
       
-* How can nonmonetary losses be quanitifed? 
+* How can nonmonetary losses be quanitifed?  
+
+* Estimates of damage to insured property are typically obtained from local field office reports that often lack quality and accuracy control [@downton2005reanalysis].  
+
+* For some years after 1970, damage estimates were put into monetary categories [@downton2005reanalysis].  
+
 
 ## Geographic Bias  
 The reporting of events can be affected by geographic location based on whether or not people are present to record the event. The supply of information is greater in areas closer to the weather event [@konisky2016extreme]. There can also be changes at country or state level over time that lead to excluding or double counting events or loss data [@gall2009losses]. The NWS changed its reporting strategy from loss estimates by climate region to loss estimates in specific counties where event occurred around 1995 [@gall2009losses]. Currently, the smallest unit of aggregation to use all parts of database are Weather Forecasting Offices and there are about 122 nationwide [@konisky2016extreme]. There may be inconsistencies between county regions and weather forecasting offices.   
@@ -117,6 +133,8 @@ The reporting of events can be affected by geographic location based on whether 
 * Smallest unit of aggregation to use all parts of database are Weather Forecasting Offices and there are about 122 nationwide [@konisky2016extreme]  
 
     - zone and fips script  
+    
+* Direct Quote from NOAA webbsite: Storm Data has gone through many changes and versions over the years. The source data ingested into the database are widely varied and leads to many questions about the precision and accuracy of the location data [@stormdatafaq].  
         
 ## Systemic Bias    
 
