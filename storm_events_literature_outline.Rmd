@@ -11,13 +11,11 @@ bibliography: scholar.bib
 # Concerns with Storm Events Database  
 
 ## Hazard Bias   
-Within the Storm Events database, there may be inaccurate recording in the number of certain hazard types. This may arise from the difficulty of sorting storm events that include multiple types of hazards. There are definitional differences between events as well as certain events correlating to multiple event categories. 
+Within the Storm Events database, there may be inaccurate recording in the number of certain hazard types. This may arise from the difficulty of sorting storm events that include multiple types of hazards. There are  definitional differences between events as well as certain events correlating to multiple event categories. NOAA Storm Events defines the types of events that are allowed in the data set. This can be found under Table 1 of Section 2.1.1 of NWS Directive 10-1605 at http://www.nws.noaa.gov/directives/sym/pd01016005curr.pdf. NOAA Storm Events also states that "In the event it is obvious that a continuous or nearly continuous swath of thunderstorm wind or hail damage occurred, a single event should be entered into Storm Data. This single event would be described as occurring from Point A to Point B, during Time C to Time D. The related event narrative could describe the width and length of the damage swath. Scientifically, a swath is more accurate and reduces the chance of a researcher interpreting a single event as a series of events occurring across multiple points." 
 
-* Direct quote from NOAA Storm Data Disclaimer: Some information appearing in Storm Data may be provided by or gathered from sources outside the National Weather Service (NWS), such as the media, law enforcement and/or other government agencies, private companies, individuals, etc. An effort is made to use the best available information but because of time and resource constraints, information from these sources may be unverified by the NWS.[@stormdatafaq]
+There is also limited information on event severity or distinction between events within the database [@luh2015vulnerability]. The NOAA Storm Data Disclaimer states that "Some information appearing in Storm Data may be provided by or gathered from sources outside the National Weather Service (NWS), such as the media, law enforcement and/or other government agencies, private companies, individuals, etc. An effort is made to use the best available information but because of time and resource constraints, information from these sources may be unverified by the NWS" [@stormdatafaq]. 
 
 * P(event recorded | event happened) may be different by events  
-
-* There can be inaccurate recording of the frequency of certain hazards types within the database  
 
 * This is influenced by the goal or audience of the database  
 
@@ -33,13 +31,9 @@ Within the Storm Events database, there may be inaccurate recording in the numbe
     - one episode can correlates to mulitple events [@konisky2016extreme]  
     
         *script for how noaa deals with this? or examples of this?  
-        
-* Only certain types of events are allowed in the data set as defined in Table 1 of Section 2.1.1 of NWS Directive 10-1605 at http://www.nws.noaa.gov/directives/sym/pd01016005curr.pdf.  
 
 
-    - list event_type from database? 
-        
-* limited information on event severity or distinction between events [@luh2015vulnerability]  
+* we could list event_type from database? 
 
 * interrupted time series analysis: change in flood policy since 1996  
 
@@ -47,35 +41,25 @@ Within the Storm Events database, there may be inaccurate recording in the numbe
 
 
 ## Temporal Bias    
-Temporal bias can occur in the Storm Events database as the number of storm events and loss estimates change over time. This occurs as a result of changes in recording strageties, advancements in monitoring and detecting sotrm events, or better monetary loss accounting. For example, in the NOAA database, from 1950 to 1954, only tornado events were recorded [@stormeventsdetails]. From 1955 to 1992 only tornado, thunderstorm wind and hail events were keyed from the paper publications into digital data [@stormeventsdetails]. From 1993 to 1995, only tornado, thunderstorm wind and hail events have been extracted from the Unformatted Text Files[@stormeventsdetails]. Starting in 1996, 48 event types are recorded[@stormeventsdetails]. This poses inconsistensies in the number of certain storm events over large periods of time. More temporal bias may occur from seasonal differences in number of events reported. NOAA exhibits higher rates of rip currents in the summer versus the winter. 
+Temporal bias can occur in the Storm Events database as the number of storm events and loss estimates change over time. This occurs as a result of changes in recording strategies, advancements in monitoring and detecting sotrm events, or better monetary loss accounting. For example, in the NOAA database, from 1950 to 1954, only tornado events were recorded [@stormeventsdetails]. From 1955 to 1992 only tornado, thunderstorm wind and hail events were keyed from the paper publications into digital data [@stormeventsdetails]. From 1993 to 1995, only tornado, thunderstorm wind and hail events have been extracted from the Unformatted Text Files[@stormeventsdetails]. Starting in 1996, 48 event types are recorded[@stormeventsdetails]. During these changes, The NWS reports that there was reduced funding from 1976 to 1979 that led to a decrease in flood damage data collection [@downton2005reanalysis]. Additionally, after 1983, Congress began to require The US Army Corps of Engineers to provide yearly flood damage reports in contract with the NWS [@downton2005reanalysis]. This provides a more consistent report of flood damage that may not have otherwise been reported. These changes pose inconsistensies in the number of certain storm events over large periods of time.
 
-* There can be changes in the number of storm events and loss estimates reported over time [@gall2009losses]  
+More temporal bias may occur from seasonal differences in number of events reported. NOAA exhibits higher rates of rip currents in the summer versus the winter.  
 
-    - Advancements in monitoring and detecting: sometimes descriptions include equipment used 
-    
-    - Better loss accounting  
-    
-    - New process for loss estimation developed by NWS in 2007  
-    
-    - Switch between categorical estimates to whole dollar figure estimates: uses logarithmic at some point?    
-    
-         * pull up loss data for events pre and post 1995  
+* New process for loss estimation developed by NWS in 2007  
+
+* Switch between categorical estimates to whole dollar figure estimates: uses logarithmic at some point?  
+    - pull up loss data for events pre and post 1995  
          
     - check for changes in reporting for NOAA under Database Details  
         
-        * from 1950 to 1954, only tornado events were recorded [@stormeventsdetails] 
-        * from 1955 to 1992, only tornado, thunderstorm wind and hail events were keyed from the paper publications into digital data. From 1993 to 1995, only tornado, thunderstorm wind and hail events have been extracted from the Unformatted Text Files [@stormeventsdetails] 
-        * From 1996 to present, 48 event types are recorded [@stormeventsdetails]  
-        
-* The NWS reports that there was reduced funding from 1976 to 1979 that led to a decrease in flood damage data collection [@downton2005reanalysis].  
-
-* The US Army Corps of Engineers contracted with the NWS to provide yearly flood damage reports as required by Congress after 1983 [@downton2005reanalysis]. This provides a more consistent report of flood damage that may not have otherwise been reported.  
-         
 * Seasonal Differences in number of events reported 
 
     - Example of rip currents in summer vs winter  
     
-        * run for our data and check literature for seasonality of the weather event  
+        * run for our data and check literature for seasonality of the weather event 
+        * Direct quote: The strength of rip currents can be seasonal. During hurricane season (from June to November) there is a greater chance for rip currents to develop.[@natgeo]
+        * Rip currents are related to several envrionmental factors including waves (surf heights, period, direction), beach (slope, orientation, material), water levels (tidal cycle, tide ranges), winds (affect wave breaking) and wind-driven currents alongshore, others like local coastal configuration and beach and promontories by natural or human made. [@nwsripcurrent]
+        * The most likely scenario for rip hazards is not high surf but high exposure of beachgoers in the warm water of the summer-fall period. When low-energy, longer-period waves (significant wave heights of 0.5 -1.5 meters in 10-15 second sequences) lead to the highest number of rip incidents. During spring/neap tides or very low daily tidal cycles, a mass rescue event can occur, with hundreds of rescues in several locations on a beach, or at several beaches under the same conditions. [@nwsripcurrent]
         
         * create table of number reported by lifeguards or media vs month of the year  
         
@@ -83,38 +67,36 @@ Temporal bias can occur in the Storm Events database as the number of storm even
     
 
 ## Threshold Bias  
-The varying severity of an event creates threshold bias in the storm events database. Events of larger maginutude and/or damage to human health are better documented, while events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]. Small events may even be excluded due to threshold criteria in the database [@gall2009losses].   
-
-* Events of larger maginutude and/or damage to human health are better documented [@gall2009losses]   
+The varying severity of an event creates threshold bias in the storm events database. Events of larger maginutude and/or damage to human health are better documented, while events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]. Small events may even be excluded due to threshold criteria in the database [@gall2009losses]. For example, ff a flood has received a presidential disaster declaration, FEMA storm survey teams go to the scene and provide extra damage assessments [@downton2005reanalysis]. 
 
 * Events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]   
 
     - may even be excluded due to threshold criteria [@gall2009losses]  
     
-* If a flood has received a presidential disaster declaration, FEMA storm survey teams go to the scene and provide extra damage assessments [@downton2005reanalysis]. This would provide more accurate data on an event of a larger scale.  
+    - verify this under NOAA disclaimer 
+    
 
 ## Accounting Bias 
-There are discrepencies in the type of loss information collected in the storm events database leading to accounting bias. Direct monetary losses from damage to infrastructure, buildings, crops, etc. are easier to quanitfy than indirect losses like lost revenue, business closures, societal losses, environmental damage [@gall2009losses]. These monetary losses can also be separated into community, state, refional, and global levels [@gall2009losses]. 
+There are discrepencies in the type of loss information collected in the storm events database leading to accounting bias. Until 1994, damage estimates were recorded on a logarithmic scale [@downton2005reanalysis]. NOAA now records damage estimates in thousands of dollars. These estimates are comprised of direct and indirect monetary losses. Direct monetary losses from damage to infrastructure, buildings, crops, etc. are easier to quanitfy than indirect losses like lost revenue, business closures, societal losses, environmental damage [@gall2009losses]. These monetary losses can also be separated into community, state, refional, and global levels [@gall2009losses]. The estimates of damage to insured property are typically obtained from local field office reports that often lack quality and accuracy control [@downton2005reanalysis]. 
 
-* Discrepencies in type of loss information collected [@gall2009losses] 
+ 
+* how does noaa report different types of losses? 
 
-    - Direct monetary losses from damage to infrastructure, buildings, crops, etc. are easier to quanitfy than indirect losses like lost revenue, business closures, societal losses, environmental damage [@gall2009losses]  
-    
-        * how does noaa report different types of losses? 
-    
-* Can count economic losses at community, state, regional, global level [@gall2009losses]  
-
-     - what level does noaa report this at? 
+* what level does noaa report economic losses at? 
       
 * How can nonmonetary losses be quanitifed?  
 
-* Estimates of damage to insured property are typically obtained from local field office reports that often lack quality and accuracy control [@downton2005reanalysis].  
+* provide example/tabble of how NOAA records financial losses 
 
-* For some years after 1970, damage estimates were put into monetary categories [@downton2005reanalysis].  
+    - can this be found in NOAA disclaimer? 
+
 
 
 ## Geographic Bias  
-The reporting of events can be affected by geographic location based on whether or not people are present to record the event. The supply of information is greater in areas closer to the weather event [@konisky2016extreme]. There can also be changes at country or state level over time that lead to excluding or double counting events or loss data [@gall2009losses]. The NWS changed its reporting strategy from loss estimates by climate region to loss estimates in specific counties where event occurred around 1995 [@gall2009losses]. Currently, the smallest unit of aggregation to use all parts of database are Weather Forecasting Offices and there are about 122 nationwide [@konisky2016extreme]. There may be inconsistencies between county regions and weather forecasting offices.   
+The reporting of events can be affected by geographic location based on whether or not people are present to record the event. The supply of information is greater in areas closer to the weather event [@konisky2016extreme]. There can also be changes at country or state level over time that lead to excluding or double counting events or loss data [@gall2009losses]. The NWS changed its reporting strategy from loss estimates by climate region to loss estimates in specific counties where event occurred around 1995 [@gall2009losses]. Currently, the smallest unit of aggregation to use all parts of database are Weather Forecasting Offices and there are about 122 nationwide [@konisky2016extreme]. There may be inconsistencies between county regions and weather forecasting offices. NOAA Storm Events states that "a hydrometeorological event will be referenced, minimally, to the nearest
+hundredth of a mile, to the geographical center (not from the village/city boundaries or limits) of
+a particular village/city, airport, inland lake, or location providing that the reference point is
+documented in the Storm Data software location database." 
 
 * Reporting affected by geographic location [@luh2015vulnerability]  
 
@@ -135,6 +117,13 @@ The reporting of events can be affected by geographic location based on whether 
     - zone and fips script  
     
 * Direct Quote from NOAA webbsite: Storm Data has gone through many changes and versions over the years. The source data ingested into the database are widely varied and leads to many questions about the precision and accuracy of the location data [@stormdatafaq].  
+
+* Direct Quote: 2.4 Location. A hydrometeorological event will be referenced, minimally, to the nearest
+hundredth of a mile, to the geographical center (not from the village/city boundaries or limits) of
+a particular village/city, airport, inland lake, or location providing that the reference point is
+documented in the Storm Data software location database. 
+
+* this concept and hazard bias can be grouped together
         
 ## Systemic Bias    
 
