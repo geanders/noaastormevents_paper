@@ -8,6 +8,18 @@ bibliography: scholar.bib
 
 ---
 
+# What is the Storm Events Database
+
+[Add a brief description of this database, including: who collects it; what data is collected;
+how it's collected; where the database is available; any major changes over time to what data
+have been collected and how they've been collected; information about what's included in each
+"entry" in the database.]
+
+# Use of Storm Events Database in research on societal impacts
+
+[Add some examples of papers in which this database was used to identify
+storm exposures, and then the paper was looking at how they impacted humans.]
+
 # Concerns with Storm Events Database  
 
 ## Hazard Bias   
