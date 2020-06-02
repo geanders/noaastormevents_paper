@@ -8,14 +8,66 @@ bibliography: scholar.bib
 
 ---
 
+# What is the Storm Events Database
+
+[Add a brief description of this database, including: who collects it; what data is collected;
+how it's collected; where the database is available; any major changes over time to what data
+have been collected and how they've been collected; information about what's included in each
+"entry" in the database.]
+
+[BA: I think that one of the things it's important to understand about this database is how
+they record with a hierarchy, so there will be different listings for one storm both 
+across several types of hazards and several geographic locations. For example, a big
+hurricane is one storm system but would result in listings for lots of counties and
+for multiple hazards (storm surge, wind, extreme rain, etc.) within some of those counties.
+They've got ID numbers that help in joining together different listings for the same storm. 
+It might be helpful for us to add a figure somewhere early in the draft to explain this 
+aspect of how listings are included in the database. You could take a look through the 
+noaastormevents to see if there's a figure or illustration there that might make a good
+starting point for helping to illustrate that.]
+
+# Use of Storm Events Database in research on societal impacts
+
+[BA: Let's add some examples of papers in which this database was used to identify
+storm exposures, and then the paper was looking at how they impacted humans.]
+
 # Concerns with Storm Events Database  
 
+[BA: Could we start on a paragraph here that gives an introduction to this section
+about potential biases? One thing here would be to talk about the idea of the probability
+of an event being recorded given that it happens.]
+
+[BA: Maybe it would be helpful for us to start a small table here that lists each 
+type of bias that we cover and a short description of each? We can start that as 
+an itemized list, because that will be easier to format right now, and then convert it
+to a table later.]
+
+- **hazard bias:** [Add a short definition / description]
+- **temporal bias:** [Add a short definition / description]
+- **threshold bias:** [Add a short definition / description]
+- **accounting bias:** [Add a short definition / description]
+- **geographic bias:** [Add a short definition / description]
+
+
 ## Hazard Bias   
-Within the Storm Events database, there may be inaccurate recording in the number of certain hazard types. This may arise from the difficulty of sorting storm events that include multiple types of hazards. There are  definitional differences between events as well as certain events correlating to multiple event categories. NOAA Storm Events defines the types of events that are allowed in the data set. This can be found under Table 1 of Section 2.1.1 of NWS Directive 10-1605 at http://www.nws.noaa.gov/directives/sym/pd01016005curr.pdf. NOAA Storm Events also states that "In the event it is obvious that a continuous or nearly continuous swath of thunderstorm wind or hail damage occurred, a single event should be entered into Storm Data. This single event would be described as occurring from Point A to Point B, during Time C to Time D. The related event narrative could describe the width and length of the damage swath. Scientifically, a swath is more accurate and reduces the chance of a researcher interpreting a single event as a series of events occurring across multiple points." 
+
+[BA: I think there might be a few different things going on with this one. Let's talk about
+how we can make sure we bring these different elements together in describing this type of
+bias. Here are some of the elements that seemed to me to be coming up here: (1) some types of
+events might be more likely to be recorded than others; (2) some
+types of hazards within an event might be more likely to be recorded than others; (3) for some
+types of events, maybe there's some encouragement to list it as a single event; (4) for the
+events that are listed, they can differ a lot in severity, and there's not much information 
+in the database to help figure out how severe they are; (5) some of the listings are coming 
+from different sources (e.g., media rather than the NWS)]
+
+Within the Storm Events database, there may be inaccurate recording in the number of certain hazard types [BA: Could we be more precise with this statement? For example, is this likely to always (or almost always) be an underreporting rather than an overreporting? Also, for this type of bias, maybe we want to clarify that, even when storms are entered into the database, all of their associated hazards might not be entered. That's what's going on with this type of bias, right? If I've understood this correctly, maybe move towards something like, "The Storm Events database aims to record listings for all hazards brought by a particular storm event. However, in some cases, when a storm event is recorded certain types of hazards within the storm can tend to go unreported." Have I gotten the idea right here?]. This may arise from the difficulty of sorting storm events that include multiple types of hazards. There are  definitional differences between events as well as certain events correlating to multiple event categories. NOAA Storm Events defines the types of events that are allowed in the data set. This can be found under Table 1 of Section 2.1.1 of NWS Directive 10-1605 at http://www.nws.noaa.gov/directives/sym/pd01016005curr.pdf. NOAA Storm Events also states that "In the event it is obvious that a continuous or nearly continuous swath of thunderstorm wind or hail damage occurred, a single event should be entered into Storm Data. This single event would be described as occurring from Point A to Point B, during Time C to Time D. The related event narrative could describe the width and length of the damage swath. Scientifically, a swath is more accurate and reduces the chance of a researcher interpreting a single event as a series of events occurring across multiple points." 
 
 There is also limited information on event severity or distinction between events within the database [@luh2015vulnerability]. The NOAA Storm Data Disclaimer states that "Some information appearing in Storm Data may be provided by or gathered from sources outside the National Weather Service (NWS), such as the media, law enforcement and/or other government agencies, private companies, individuals, etc. An effort is made to use the best available information but because of time and resource constraints, information from these sources may be unverified by the NWS" [@stormdatafaq]. 
+[BA: The last sentence in this paragraph I think we could move earlier, to where we're 
+first describing the database and how data is collected and aggregated for it.]
 
-* P(event recorded | event happened) may be different by events  
+* P(event recorded | event happened) may be different by events [BA: Here, do we mean that it might be different for tornado events versus avalanche events, for example? Or do we mean that, for any type of event, it might be different depending on some characteristics of the event (for example, how severe a specific event was)? Or maybe both?]  
 
 * This is influenced by the goal or audience of the database  
 
@@ -26,22 +78,67 @@ There is also limited information on event severity or distinction between event
 
 * This also arises from the difficulty of sorting storm events that include multiple types of hazards  
 
-    - Definitional differences [@gall2009losses]
+    - Definitional differences [@gall2009losses] [BA: Could you add some more details or explanation on this point? I'm not sure I get it yet.]
     
     - one episode can correlates to mulitple events [@konisky2016extreme]  
     
         *script for how noaa deals with this? or examples of this?  
 
 
-* we could list event_type from database? 
+* we could list event_type from database? [BA: I think this is a great idea, either
+here or earlier when we talk about the database. I think there may already be some
+code in one of the vignettes for doing that. Take a look and see if you see that---if not,
+I can help find it if it's there or give some suggestions for writing some code for this
+if we don't already have an example.]
 
 * interrupted time series analysis: change in flood policy since 1996  
 
     - years of big policy changes for floods (flood insurance) 
+<<<<<<< HEAD
 
 
 ## Temporal Bias    
 Temporal bias can occur in the Storm Events database as the number of storm events and loss estimates change over time. This occurs as a result of changes in recording strategies, advancements in monitoring and detecting storm events, or better monetary loss accounting. For example, in the NOAA database, from 1950 to 1954, only tornado events were recorded [@stormeventsdetails]. From 1955 to 1992 only tornado, thunderstorm wind and hail events were keyed from the paper publications into digital data [@stormeventsdetails]. From 1993 to 1995, only tornado, thunderstorm wind and hail events have been extracted from the Unformatted Text Files[@stormeventsdetails]. Starting in 1996, 48 event types are recorded[@stormeventsdetails]. During these changes, The NWS reports that there was reduced funding from 1976 to 1979 that led to a decrease in flood damage data collection [@downton2005reanalysis]. Additionally, after 1983, Congress began to require The US Army Corps of Engineers to provide yearly flood damage reports in contract with the NWS [@downton2005reanalysis]. This provides a more consistent report of flood damage that may not have otherwise been reported. These changes pose inconsistensies in the number of certain storm events over large periods of time.
+=======
+    
+[BA: I love this last idea, but I think that this date (1996) might coincide with 
+the date that they added a lot of new types of events to the database, so we might not
+be able to separate the influence of the flood policy change from the influence of the
+changes to the database.]
+
+
+## Temporal Bias   
+
+[BA: We might want to start with this type of bias, and then geographic bias. I think those
+two are very easy for people to grasp. Then, when we talk about other types of biases, we might
+want to talk about them just in terms of things that might cause differences within a certain
+period of time and location, so we can separate them from geographic and temporal issues. 
+There are a few examples that could really fall into several categories (for example, the 
+flood insurance question, which has a time component to it since policies changed over
+time), so we might want to discuss any time-related things in this section and start with it.]
+
+[BA: Potential reasons for temporal bias: (1) We've gotten better at "seeing" extreme weather
+as it happens---radar, larger networks of monitors, etc. There may be some good examples from 
+measuring tornadoes of this idea, where the improvement in weather monitoring 
+has helped increase the number of reported events; (2) Some changes have increased the
+chance that we notice / report events when they happen. For example, population growth over 
+time in some areas might mean there's a higher chance that an event that happens in that
+area gets reported. (3) Some temporal changes are structural, in terms of the database
+changing it's "rules" for what it recorded. The expansion from just tornadoes to other 
+types of events is an example here. This is one where we can help control for any bias, 
+since there's clear documentation on some of those changes. However, I wonder if there's still
+some kind of lead in period, where it takes them a little while once they start adding an
+event to succeed in recording most or all of them? We could maybe check how the rate
+of recording changes with time for tornadoes versus some of the "new" events in the 
+database in the late 1990s.]
+
+[BA: I like that we distinguish between the idea of long-term trends in the probability 
+of an event being recorded in the database (e.g., from one decade to the next) versus seasonal
+time trends (e.g., winter versus summer). We probably want to explicitly write a few sentences
+introducing that idea that temporal bias can operate at different time scales.]
+
+Temporal bias can occur in the Storm Events database as the number of storm events and loss estimates change over time. This occurs as a result of changes in recording strategies, advancements in monitoring and detecting storm events, or better monetary loss accounting. [BA: We probably want to clarify somewhere here that there's also, for damages / money, the fact that the value of a dollar has changed over time. This can be addressed by normalizing any dollar measurements to a certain year to prevent bias. That's a separate idea, though, from this idea that we might be *better* at counting all the damage from a storm with time.] For example, in the NOAA database, from 1950 to 1954, only tornado events were recorded [@stormeventsdetails]. From 1955 to 1992 only tornado, thunderstorm wind and hail events were keyed from the paper publications into digital data [@stormeventsdetails]. From 1993 to 1995, only tornado, thunderstorm wind and hail events have been extracted from the Unformatted Text Files[@stormeventsdetails]. Starting in 1996, 48 event types are recorded[@stormeventsdetails]. During these changes, The NWS reports that there was reduced funding from 1976 to 1979 that led to a decrease in flood damage data collection [@downton2005reanalysis]. Additionally, after 1983, Congress began to require The US Army Corps of Engineers to provide yearly flood damage reports in contract with the NWS [@downton2005reanalysis]. This provides a more consistent report of flood damage that may not have otherwise been reported. These changes pose inconsistensies in the number of certain storm events over large periods of time.
+>>>>>>> 187598fbe445e96bddffafcda434c68d8ce38457
 
 More temporal bias may occur from seasonal differences in number of events reported. NOAA exhibits higher rates of rip currents in the summer versus the winter.  
 
@@ -63,11 +160,16 @@ More temporal bias may occur from seasonal differences in number of events repor
         
         * create table of number reported by lifeguards or media vs month of the year  
         
-    - other events that are more or less reported?   
+    - other events that are more or less reported? [BA: We might want to talk about the idea of some events that truly are seasonal in their occurrence, like avalanches and hurricanes, versus some that happen year-round but have varying chance of being reported. Also, you can look through the package vignette and see if you see any other examples of things that might not be reported evenly throughout the year.]   
     
 
 ## Threshold Bias  
+<<<<<<< HEAD
 The varying severity of an event creates threshold bias in the storm events database. Events of larger maginutude and/or damage to human health are better documented, while events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]. Small events may even be excluded due to threshold criteria in the database [@gall2009losses]. For example, if a flood has received a presidential disaster declaration, FEMA storm survey teams go to the scene and provide extra damage assessments [@downton2005reanalysis]. 
+=======
+
+The varying severity of an event creates threshold bias in the storm events database. Events of larger maginutude and/or damage to human health are better documented, while events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]. Small events may even be excluded due to threshold criteria in the database [@gall2009losses]. For example, ff a flood has received a presidential disaster declaration, FEMA storm survey teams go to the scene and provide extra damage assessments [@downton2005reanalysis]. 
+>>>>>>> 187598fbe445e96bddffafcda434c68d8ce38457
 
 * Events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]   
 
@@ -76,7 +178,8 @@ The varying severity of an event creates threshold bias in the storm events data
     - verify this under NOAA disclaimer 
     
 
-## Accounting Bias 
+## Accounting Bias
+
 There are discrepencies in the type of loss information collected in the storm events database leading to accounting bias. Until 1994, damage estimates were recorded on a logarithmic scale [@downton2005reanalysis]. NOAA now records damage estimates in thousands of dollars. These estimates are comprised of direct and indirect monetary losses. Direct monetary losses from damage to infrastructure, buildings, crops, etc. are easier to quanitfy than indirect losses like lost revenue, business closures, societal losses, environmental damage [@gall2009losses]. These monetary losses can also be separated into community, state, refional, and global levels [@gall2009losses]. The estimates of damage to insured property are typically obtained from local field office reports that often lack quality and accuracy control [@downton2005reanalysis]. 
 
  
@@ -93,6 +196,7 @@ There are discrepencies in the type of loss information collected in the storm e
 
 
 ## Geographic Bias  
+
 The reporting of events can be affected by geographic location based on whether or not people are present to record the event. The supply of information is greater in areas closer to the weather event [@konisky2016extreme]. There can also be changes at country or state level over time that lead to excluding or double counting events or loss data [@gall2009losses]. The NWS changed its reporting strategy from loss estimates by climate region to loss estimates in specific counties where event occurred around 1995 [@gall2009losses]. Currently, the smallest unit of aggregation to use all parts of database are Weather Forecasting Offices and there are about 122 nationwide [@konisky2016extreme]. There may be inconsistencies between county regions and weather forecasting offices. NOAA Storm Events states that "a hydrometeorological event will be referenced, minimally, to the nearest
 hundredth of a mile, to the geographical center (not from the village/city boundaries or limits) of
 a particular village/city, airport, inland lake, or location providing that the reference point is
