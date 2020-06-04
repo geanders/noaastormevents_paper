@@ -15,6 +15,16 @@ how it's collected; where the database is available; any major changes over time
 have been collected and how they've been collected; information about what's included in each
 "entry" in the database.]
 
+From NOAA Storm Events Website: "The Storm Events Database contains the records used to create the official NOAA Storm Data publication, documenting:
+
+The occurrence of storms and other significant weather phenomena having sufficient intensity to cause loss of life, injuries, significant property damage, and/or disruption to commerce;
+Rare, unusual, weather phenomena that generate media attention, such as snow flurries in South Florida or the San Diego coastal area; and
+Other significant meteorological events, such as record maximum or minimum temperatures or precipitation that occur in connection with another event.
+
+The database currently contains data from January 1950 to February 2020, as entered by NOAA's National Weather Service (NWS). Due to changes in the data collection and processing procedures over time, there are unique periods of record available depending on the event type. NCEI has performed data reformatting and standardization of event types but has not changed any data values for locations, fatalities, injuries, damage, narratives and any other event specific information."
+
+
+
 [BA: I think that one of the things it's important to understand about this database is how
 they record with a hierarchy, so there will be different listings for one storm both 
 across several types of hazards and several geographic locations. For example, a big
@@ -94,12 +104,6 @@ if we don't already have an example.]
 * interrupted time series analysis: change in flood policy since 1996  
 
     - years of big policy changes for floods (flood insurance) 
-<<<<<<< HEAD
-
-
-## Temporal Bias    
-Temporal bias can occur in the Storm Events database as the number of storm events and loss estimates change over time. This occurs as a result of changes in recording strategies, advancements in monitoring and detecting storm events, or better monetary loss accounting. For example, in the NOAA database, from 1950 to 1954, only tornado events were recorded [@stormeventsdetails]. From 1955 to 1992 only tornado, thunderstorm wind and hail events were keyed from the paper publications into digital data [@stormeventsdetails]. From 1993 to 1995, only tornado, thunderstorm wind and hail events have been extracted from the Unformatted Text Files[@stormeventsdetails]. Starting in 1996, 48 event types are recorded[@stormeventsdetails]. During these changes, The NWS reports that there was reduced funding from 1976 to 1979 that led to a decrease in flood damage data collection [@downton2005reanalysis]. Additionally, after 1983, Congress began to require The US Army Corps of Engineers to provide yearly flood damage reports in contract with the NWS [@downton2005reanalysis]. This provides a more consistent report of flood damage that may not have otherwise been reported. These changes pose inconsistensies in the number of certain storm events over large periods of time.
-=======
     
 [BA: I love this last idea, but I think that this date (1996) might coincide with 
 the date that they added a lot of new types of events to the database, so we might not
@@ -137,10 +141,19 @@ of an event being recorded in the database (e.g., from one decade to the next) v
 time trends (e.g., winter versus summer). We probably want to explicitly write a few sentences
 introducing that idea that temporal bias can operate at different time scales.]
 
-Temporal bias can occur in the Storm Events database as the number of storm events and loss estimates change over time. This occurs as a result of changes in recording strategies, advancements in monitoring and detecting storm events, or better monetary loss accounting. [BA: We probably want to clarify somewhere here that there's also, for damages / money, the fact that the value of a dollar has changed over time. This can be addressed by normalizing any dollar measurements to a certain year to prevent bias. That's a separate idea, though, from this idea that we might be *better* at counting all the damage from a storm with time.] For example, in the NOAA database, from 1950 to 1954, only tornado events were recorded [@stormeventsdetails]. From 1955 to 1992 only tornado, thunderstorm wind and hail events were keyed from the paper publications into digital data [@stormeventsdetails]. From 1993 to 1995, only tornado, thunderstorm wind and hail events have been extracted from the Unformatted Text Files[@stormeventsdetails]. Starting in 1996, 48 event types are recorded[@stormeventsdetails]. During these changes, The NWS reports that there was reduced funding from 1976 to 1979 that led to a decrease in flood damage data collection [@downton2005reanalysis]. Additionally, after 1983, Congress began to require The US Army Corps of Engineers to provide yearly flood damage reports in contract with the NWS [@downton2005reanalysis]. This provides a more consistent report of flood damage that may not have otherwise been reported. These changes pose inconsistensies in the number of certain storm events over large periods of time.
->>>>>>> 187598fbe445e96bddffafcda434c68d8ce38457
+### Introduction to Temporal Bias: 
+Within the NOAA Storm Events database, there are comparable differences in event and loss recording over time. Temporal bias is helpful in describing and understanding these changes within the database. There are long term patterns of temporal bias that may be caused by changes in measuring and recording events and losses. There are also seasonal patterns within the database that relate to unique attributes and temporality of certain weather events.  
 
-More temporal bias may occur from seasonal differences in number of events reported. NOAA exhibits higher rates of rip currents in the summer versus the winter.  
+### Long Term Trends: 
+The long term patterns of temporal bias are related to advancements in monitoring and detecting storm events, changes in population size and locations, and structural changes in recording strategies and monetary loss accounting.
+
+Technological advancements within storm recording such as the development of radar and larger networks of monitors have increased our ability to detect extreme weather events as they happen. For example, over time, forecastors and storm spotters have learned how to recognize key weather patterns and structures that make it more likely for a tornado to form. The development and advancement of doppler radar and dual-polarization radar technology has also increased our ability to collect and use data to detect tornado events [@tornadodetection]. One study states that "the number of tornadoes reported in the United States has doubled from about 600 per year in the 1950s to around 1200 in the 2000s"[@verbout2006evolution]. This may be influenced by factors other than meteorological changes. 
+
+Increases in population size throughout the US and further land development may also contribute to increased event reporting. For example, population growth over time in some areas might mean there's a higher chance that an event that happens in that area gets reported.
+
+Some temporal changes are structural, in terms of the database changing what types of events are recorded. In the NOAA database, from 1950 to 1954, only tornado events were recorded [@stormeventsdetails]. Then, from 1955 to 1996, only tornado, thunderstorm wind and hail events were recorded as digital data [@stormeventsdetails]. Starting in 1996, the database began including all 48 event types that are recorded today [@stormeventsdetails]. Additionally, the NWS reports that there was reduced funding from 1976 to 1979 that led to a decrease in flood damage data collection [@downton2005reanalysis]. Then, after 1983, Congress began to require The US Army Corps of Engineers to provide yearly flood damage reports in contract with the NWS [@downton2005reanalysis]. This provides a more consistent report of flood damage that may not have otherwise been reported. These changes pose inconsistensies in the number of certain storm events over large periods of time.
+
+[BA: We probably want to clarify somewhere here that there's also, for damages / money, the fact that the value of a dollar has changed over time. This can be addressed by normalizing any dollar measurements to a certain year to prevent bias. That's a separate idea, though, from this idea that we might be *better* at counting all the damage from a storm with time.] 
 
 * New process for loss estimation developed by NWS in 2007  
 
@@ -148,7 +161,15 @@ More temporal bias may occur from seasonal differences in number of events repor
     - pull up loss data for events pre and post 1995  
          
     - check for changes in reporting for NOAA under Database Details  
-        
+    
+* Should we move the whole idea of advancements in monetary loss accouting to accounting bias?
+
+
+
+### Seasonal Trends:
+
+More temporal bias may be showcased on a short term scale by seasonal differences in number of events reported for certain storm types. For example, NOAA exhibits higher rates of rip currents in the summer versus the winter although the probablity of a rip current occuring during summer may not be inherently higher. It may be that more people attend the beach and swim in the ocean during the summer and are thus more likely to experience and/or report a rip current. 
+
 * Seasonal Differences in number of events reported 
 
     - Example of rip currents in summer vs winter  
@@ -161,15 +182,12 @@ More temporal bias may occur from seasonal differences in number of events repor
         * create table of number reported by lifeguards or media vs month of the year  
         
     - other events that are more or less reported? [BA: We might want to talk about the idea of some events that truly are seasonal in their occurrence, like avalanches and hurricanes, versus some that happen year-round but have varying chance of being reported. Also, you can look through the package vignette and see if you see any other examples of things that might not be reported evenly throughout the year.]   
+    - coastal flood? high surf? 
     
 
 ## Threshold Bias  
-<<<<<<< HEAD
-The varying severity of an event creates threshold bias in the storm events database. Events of larger maginutude and/or damage to human health are better documented, while events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]. Small events may even be excluded due to threshold criteria in the database [@gall2009losses]. For example, if a flood has received a presidential disaster declaration, FEMA storm survey teams go to the scene and provide extra damage assessments [@downton2005reanalysis]. 
-=======
 
 The varying severity of an event creates threshold bias in the storm events database. Events of larger maginutude and/or damage to human health are better documented, while events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]. Small events may even be excluded due to threshold criteria in the database [@gall2009losses]. For example, ff a flood has received a presidential disaster declaration, FEMA storm survey teams go to the scene and provide extra damage assessments [@downton2005reanalysis]. 
->>>>>>> 187598fbe445e96bddffafcda434c68d8ce38457
 
 * Events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]   
 
