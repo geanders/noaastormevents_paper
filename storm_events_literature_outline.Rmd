@@ -148,8 +148,15 @@ Within the NOAA Storm Events database, there are comparable differences in event
 The long term patterns of temporal bias are related to advancements in monitoring and detecting storm events, changes in population size and locations, and structural changes in recording strategies and monetary loss accounting.
 
 Technological advancements within storm recording such as the development of radar and larger networks of monitors have increased our ability to detect extreme weather events as they happen. For example, over time, forecastors and storm spotters have learned how to recognize key weather patterns and structures that make it more likely for a tornado to form. The development and advancement of doppler radar and dual-polarization radar technology has also increased our ability to collect and use data to detect tornado events [@tornadodetection]. One study states that "the number of tornadoes reported in the United States has doubled from about 600 per year in the 1950s to around 1200 in the 2000s"[@verbout2006evolution]. This may be influenced by factors other than meteorological changes. 
+[BA: Great! This is a great explanation of this idea that we may be able to "see" more events
+as we go along. There may be some papers in the climate change field on this topic, too. It 
+turns out that this change in technology makes it hard to determine if there has been 
+clear evidence of a trend in frequency of some types of extreme events. This comes up a lot
+with hurricane research, because we missed a lot of storms that didn't make landfall early in 
+the twentieth century and we don't miss them now. I can see if I can find a couple of papers
+along those lines that we could add in here.]
 
-Increases in population size throughout the US and further land development may also contribute to increased event reporting. For example, population growth over time in some areas might mean there's a higher chance that an event that happens in that area gets reported.
+Increases in population size throughout the US and further land development may also contribute to increased event reporting. For example, population growth over time in some areas might mean there's a higher chance that an event that happens in that area gets reported. [BA: We may want to remind the readers here of the role that storm trackers / reporters play in reporting some of these events. I think that for some types of events, people can volunteer as "spotters" and get some training and then be able to report events they see. I think in one vignette, there's some code that helps in seeing how many of the event reports come from those types of inputs. The population size question could be really important there. Also, I wonder if there's any link between how close National Weather Service offices are and the population density? If so, maybe that is another link with population size / density?]
 
 Some temporal changes are structural, in terms of the database changing what types of events are recorded. In the NOAA database, from 1950 to 1954, only tornado events were recorded [@stormeventsdetails]. Then, from 1955 to 1996, only tornado, thunderstorm wind and hail events were recorded as digital data [@stormeventsdetails]. Starting in 1996, the database began including all 48 event types that are recorded today [@stormeventsdetails]. Additionally, the NWS reports that there was reduced funding from 1976 to 1979 that led to a decrease in flood damage data collection [@downton2005reanalysis]. Then, after 1983, Congress began to require The US Army Corps of Engineers to provide yearly flood damage reports in contract with the NWS [@downton2005reanalysis]. This provides a more consistent report of flood damage that may not have otherwise been reported. These changes pose inconsistensies in the number of certain storm events over large periods of time.
 
@@ -163,8 +170,9 @@ Some temporal changes are structural, in terms of the database changing what typ
     - check for changes in reporting for NOAA under Database Details  
     
 * Should we move the whole idea of advancements in monetary loss accouting to accounting bias?
+[BA: That might make sense]
 
-
+[BA: We might want to add some examples, here or in one of the more general sections, about how these issues are common across a lot of disaster databases. I've added a few papers that talk about common problems for disaster database, rather than just NOAA Storm Events, and those might help in rounding out our discussion.]
 
 ### Seasonal Trends:
 
@@ -184,6 +192,8 @@ More temporal bias may be showcased on a short term scale by seasonal difference
     - other events that are more or less reported? [BA: We might want to talk about the idea of some events that truly are seasonal in their occurrence, like avalanches and hurricanes, versus some that happen year-round but have varying chance of being reported. Also, you can look through the package vignette and see if you see any other examples of things that might not be reported evenly throughout the year.]   
     - coastal flood? high surf? 
     
+[BA: I'm not sure if you saw it yet, but I added in another paper on rip currents that to the
+"literature" folder that might be another helpful reference for this section.]
 
 ## Threshold Bias  
 
