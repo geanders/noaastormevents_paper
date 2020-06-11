@@ -249,7 +249,8 @@ Another area of concern in the NOAA storm events database arises with geographic
 ### Location / Density of people
 
 The reporting of events can be affected by the geographic location of the event itself [@luh2015vulnerability]. In an urban area, more people may be present to witness/experience a storm event than in a rural area. 
-* probably a tornado example we can include here 
+
+* probably a tornado example we can include here [Somewhere we think there's a paper on that]
 
 The reporting of events can be affected by geographic location based on whether or not people are present to record the event. The supply of information is greater in areas closer to the weather event [@konisky2016extreme]. [BA: You could go more into the rural / urban question here. Would the luh2015vulnerability reference be a good example to include for this idea? The tornado example could also go here probably.] 
 
@@ -257,12 +258,9 @@ Additionally, the supply of information is greater in areas closer to the weathe
 
 * this idea is stated in the context of a study about correlations between weather events and public attitudes about climate change. This idea might be helpful in describing geographic bias as more concern is shown towards extreme weather in areas that are more strongly affected? 
 
-Currently, the smallest unit of aggregation to use all parts of the database are Weather Forecasting Offices. There are currently about 122 nationwide [@konisky2016extreme]. There may be inconsistencies between where county regions are defined and where weather forecasting offices are located. NOAA Storm Events states that "a hydrometeorological event will be referenced, minimally, to the nearest hundredth of a mile, to the geographical center (not from the village/city boundaries or limits) of a particular village/city, airport, inland lake, or location providing that the reference point is documented in the Storm Data software location database" [@nwsinstruction]. Problems may arise here if the exact location of an event is not already documented in the Storm Data software location database. 
+[More things get reported where there are more people?]
 
-* the above quote is from the NWS documentation pdf that I used a misc. bibtex to cite 
-
-* include zone and fips script here?    
-
+[Any papers on changes in numbers of media reports of disasters?]
 
 ### Structural  
 
@@ -277,7 +275,13 @@ There can also be changes at country or state level over time that lead to exclu
 Currently, the smallest unit of aggregation to use all parts of database are Weather Forecasting Offices and there are about 122 nationwide [@konisky2016extreme]. There may be inconsistencies between county regions and weather forecasting offices. NOAA Storm Events states that "a hydrometeorological event will be referenced, minimally, to the nearest
 hundredth of a mile, to the geographical center (not from the village/city boundaries or limits) of
 a particular village/city, airport, inland lake, or location providing that the reference point is
-documented in the Storm Data software location database." [BA: In this section, we may also want to talk about how some events might be very localized (for example, a flash flood, or even storm surge that's only near the coast of the county), but the county-level reporting of the event means that all the county gets classified as experiencing or not experiencing the event. I think that sometimes the "Narratives" of the events give details that you could use to find out exactly what parts of the county were affected, and some events like tornadoes give the starting and ending latitude and longitude, so you can figure out the path and where that was in the county. However, overall, it's much easier from the database to get an idea of an event occurrance for the county as a whole rather than for locations within the county.] [We may want to talk a bit about the idea of ecological bias here.]
+documented in the Storm Data software location database." 
+
+Currently, the smallest unit of aggregation to use all parts of the database are Weather Forecasting Offices. There are currently about 122 nationwide [@konisky2016extreme]. There may be inconsistencies between where county regions are defined and where weather forecasting offices are located. NOAA Storm Events states that "a hydrometeorological event will be referenced, minimally, to the nearest hundredth of a mile, to the geographical center (not from the village/city boundaries or limits) of a particular village/city, airport, inland lake, or location providing that the reference point is documented in the Storm Data software location database" [@nwsinstruction]. Problems may arise here if the exact location of an event is not already documented in the Storm Data software location database. [BA: In this section, we may also want to talk about how some events might be very localized (for example, a flash flood, or even storm surge that's only near the coast of the county), but the county-level reporting of the event means that all the county gets classified as experiencing or not experiencing the event. I think that sometimes the "Narratives" of the events give details that you could use to find out exactly what parts of the county were affected, and some events like tornadoes give the starting and ending latitude and longitude, so you can figure out the path and where that was in the county. However, overall, it's much easier from the database to get an idea of an event occurrance for the county as a whole rather than for locations within the county.] [We may want to talk a bit about the idea of ecological bias here.] [Maybe want to talk about spatial alignment.]
+
+* the above quote is from the NWS documentation pdf that I used a misc. bibtex to cite 
+
+* include zone and fips script here?    
 
 
 ## Systemic Bias    
