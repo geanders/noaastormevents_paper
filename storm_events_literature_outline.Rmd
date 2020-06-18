@@ -126,7 +126,7 @@ if we don't already have an example.]
 
 * maybe something like this where we group by event_type (this is from overview vignette sonwe would have to modify to make it work here): 
 
-{r message = FALSE, warning = FALSE}
+```{r message = FALSE, warning = FALSE, eval = FALSE}
 library(dplyr)
 floyd_events %>%
   group_by(event_type) %>%
@@ -134,7 +134,7 @@ floyd_events %>%
   arrange(desc(n)) %>%
   knitr::kable(col.names = c("Event type", "Number of events"),
                caption = "NOAA Storm Events within 200 km and within a 5-day window of Hurricane Floyd.")
-  
+```
 
 
 
