@@ -78,42 +78,43 @@ Within the Storm Events database, there may be inaccurate recording in the numbe
 ### Introduction
 
 Something like: The Storm Events database aims to record listings for all hazards brought by a particular storm event. However, in some cases, when a storm event is recorded certain types of hazards within the storm can tend to go unreported.
+[BA: We may want to add something like, "and, in general, the probability that an event is recorded here might differ by type of event." I'm thinking that this type of hazard would especially come into play for a study where you're trying to *compare* the frequency of two or more hazards with each other, or even trying to see how each is related with an outcome. We might want to see if we can find some examples of studies that have used this database while looking at two or more types of hazards, to help us in thinking through how a reporting bias that's different by type of hazard might bias the results. Many of our example studies focus on one type of hazard (e.g., tornadoes, rip tides), but maybe we can find some that consider two or more in the same study?]
 
 
 ### Major Points: 
 
 1. some types of events might be more likely to be recorded than others
   
-    - overrepresentation of flood events in Storm Data beause of how they get information 
+    - overrepresentation of flood events in Storm Data beause of how they get information [BA: Is this because the flood insurance program (or at least some part of it) is through the federal government? If so, we might need to add that information to clarify this statement.]
     
     -"NWS is obliged to provide moentary loss estimates for any flood event even if the damage assessment is a 'guesstimate'" [@gall2009losses]
     
-    - drought hazards are apparently notoriously underreported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses [@gall2009losses]
-    - P(event recorded | event happened) may be different by events [BA: Here, do we mean that it might be different for tornado events versus avalanche events, for example? Or do we mean that, for any type of event, it might be different depending on some characteristics of the event (for example, how severe a specific event was)? Or maybe both?]  
+    - drought hazards are apparently notoriously underreported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses [@gall2009losses] [BA: This a *great* example of this point]
+    - P(event recorded | event happened) may be different by events [BA: Here, do we mean that it might be different for tornado events versus avalanche events, for example? Or do we mean that, for any type of event, it might be different depending on some characteristics of the event (for example, how severe a specific event was)? Or maybe both?]  [BA: I've added a bit on this point through my comment in the Introduction. This seems to be the heart of this type of bias, right?]
     
-        * I think maybe both. As we have been starting to discuss, events that happen closer to larger populations of people may have a higher likelihood of being reported than an event that is in a more seculded area. (So this could apply to tornadoes vs avalanches) Additionally, events that are more severe may get more attention than events of lower severity. But, I'm not sure if it is worth it to explain this here or just explain it in a different section where it is more clear. 
+        * I think maybe both. As we have been starting to discuss, events that happen closer to larger populations of people may have a higher likelihood of being reported than an event that is in a more seculded area. (So this could apply to tornadoes vs avalanches) Additionally, events that are more severe may get more attention than events of lower severity. But, I'm not sure if it is worth it to explain this here or just explain it in a different section where it is more clear. [BA: I see. I think we've got the geographic one well-covered in that section, although we could mention here that it comes in to play if a certain *type* of event tends to happen in well-populated versus less-populated areas (or even if it's large enough that its coverage includes at least some well-populated areas, like a hurricane often does). The idea that more severe events are more likely to be included is a very interesting point here, and one that I think we could distinguish from the idea of different *types* of hazards having different probabilities of being reported. Any thoughts on any examples from the vignettes that we could use as a starting point for illustrating and exploring these points?]
         
-        * "fatal weather events are more likely to be reported due to enhanced media attention" [@gensini2010examination]  
+        * "fatal weather events are more likely to be reported due to enhanced media attention" [@gensini2010examination]  [BA: This would play in with both the event severity question (more severe events are more likely to be deadly) and where the event occurs (so somewhat in the geographic), as higher population density would contribute to risk of deaths. I think that one of the tornado papers might cover this idea somewhat?]
 
 2. even when storms are entered into the database, all of their associated hazards might not be entered or vice versa (if there is a large event that causes other events, it is as if the events are getting double counted) 
 
     - example from Gall losses: hurricane wind, storm surge, and a tornado that were all caused by a hurricane get counted as three separate events even though they all stemmed from one hurricane
     - one episode can correlates to mulitple events [@konisky2016extreme]  
     
-        * script for how noaa deals with this? or examples of this? Probably explained in narrative sections of events 
+        * script for how noaa deals with this? or examples of this? Probably explained in narrative sections of events [BA: This comes in with the epidsode ID and the event ID. I think there's an example in the vignette where we check this out. One is used to help collect all the types of hazards from one overall event using a common ID. We might want to bring that analysis in here.]
       
     - it appears that NOAA does try to account for this: "In the event it is obvious that a continuous or nearly continuous swath of thunderstorm wind or hail damage occurred, a single event should be entered into Storm Data. This single event would be described as occurring from Point A to Point B, during Time C to Time D. The related event narrative could describe the width and length of the damage swath. Scientifically, a swath is more accurate and reduces the chance of a researcher interpreting a single event as a series of events occurring across multiple points." 
  
   
 3. difficulty of sorting events
   
-    - this could include the ideas of severity and source 
+    - this could include the ideas of severity and source [BA: For the source part, we could look at how different types of events vary in their probability of being reported by different sources (I think we'd talked about that idea for another section, too). There's some code in the Details vignette we can start from for that.]
     
     - there is also limited information on event severity or distinction between events within the database [@luh2015vulnerability]. The NOAA Storm Data Disclaimer states that "Some information appearing in Storm Data may be provided by or gathered from sources outside the National Weather Service (NWS), such as the media, law enforcement and/or other government agencies, private companies, individuals, etc.  [@stormdatafaq]
     
     - Definitional differences [@gall2009losses] [BA: Could you add some more details or explanation on this point? I'm not sure I get it yet.]
     
-        * this seems to be more of problem when comparing events across databases. The Gall Losses article gives the example of hurricane-induced storm surges. In SHELDUS, a storm surge gets categorized under "coastal hazards"" and Storm Events categorizes them under "ocean and lake surf". So if someone was trying to detail a large events like a massive hurricane using multiple databases this could create a problem. 
+        * this seems to be more of problem when comparing events across databases. The Gall Losses article gives the example of hurricane-induced storm surges. In SHELDUS, a storm surge gets categorized under "coastal hazards"" and Storm Events categorizes them under "ocean and lake surf". So if someone was trying to detail a large events like a massive hurricane using multiple databases this could create a problem. [BA: Maybe this also comes into play for the different source? Would the media use the same criteria for identifying a disaster as a National Weather Service office? If not, and if the media tend to report certain types of disasters more often than others, than this could maybe create some bias.]
         
     - we could list event_type from database? [BA: I think this is a great idea, either here or earlier when we talk about the database. I think there may already be some code in one of the vignettes for doing that. Take a look and see if you see that---if not, I can help find it if it's there or give some suggestions for writing some code for this if we don't already have an example.]
 
@@ -121,7 +122,11 @@ Something like: The Storm Events database aims to record listings for all hazard
 
 * maybe something like this where we group by event_type (this is from overview vignette sonwe would have to modify to make it work here): 
 
+<<<<<<< HEAD
 ```{r message = FALSE, warning = FALSE}
+=======
+```{r message = FALSE, warning = FALSE, eval = FALSE}
+>>>>>>> 0e8d3ffd0bf3bc5caecaf8c6a41360ceca94ee4e
 library(dplyr)
 floyd_events %>%
   group_by(event_type) %>%
@@ -130,7 +135,10 @@ floyd_events %>%
   knitr::kable(col.names = c("Event type", "Number of events"),
                caption = "NOAA Storm Events within 200 km and within a 5-day window of Hurricane Floyd.")
 ```
+<<<<<<< HEAD
   
+=======
+>>>>>>> 0e8d3ffd0bf3bc5caecaf8c6a41360ceca94ee4e
 
 
 
