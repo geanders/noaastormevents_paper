@@ -78,6 +78,7 @@ Within the Storm Events database, there may be inaccurate recording in the numbe
 ### Introduction
 
 Something like: The Storm Events database aims to record listings for all hazards brought by a particular storm event. However, in some cases, when a storm event is recorded certain types of hazards within the storm can tend to go unreported.
+[BA: We may want to add something like, "and, in general, the probability that an event is recorded here might differ by type of event." I'm thinking that this type of hazard would especially come into play for a study where you're trying to *compare* the frequency of two or more hazards with each other, or even trying to see how each is related with an outcome. We might want to see if we can find some examples of studies that have used this database while looking at two or more types of hazards, to help us in thinking through how a reporting bias that's different by type of hazard might bias the results. Many of our example studies focus on one type of hazard (e.g., tornadoes, rip tides), but maybe we can find some that consider two or more in the same study?]
 
 
 ### Major Points: 
