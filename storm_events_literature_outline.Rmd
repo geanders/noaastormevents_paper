@@ -10,6 +10,9 @@ bibliography: scholar.bib
 ```{r warning = FALSE, message = FALSE}
 library(noaastormevents)
 library(tidyverse)
+library(viridis)
+library(lubridate)
+events_2019 <- create_storm_data(date_range = c("2019-01-01", "2019-12-31"))
 ```
 
 # What is the Storm Events Database
@@ -102,7 +105,97 @@ Something like: The Storm Events database aims to record listings for all hazard
     - one episode can correlates to mulitple events [@konisky2016extreme]  
     
         * script for how noaa deals with this? or examples of this? Probably explained in narrative sections of events [BA: This comes in with the epidsode ID and the event ID. I think there's an example in the vignette where we check this out. One is used to help collect all the types of hazards from one overall event using a common ID. We might want to bring that analysis in here.]
-      
+
+#### Number of events reported per episode ID:         
+
+```{r echo = FALSE, fig.align = "center", fig.width = 6, fig.height = 4}
+top_episodes <- events_2019 %>%
+  group_by(EPISODE_ID) %>%
+  summarize(n = n()) %>%
+  arrange(desc(n)) %>%
+  slice(1:10)
+
+a <- events_2019 %>%
+  filter(EPISODE_ID %in% top_episodes$EPISODE_ID) %>%
+  group_by(EPISODE_ID, EVENT_TYPE) %>%
+  summarize(n = n()) %>%
+  ungroup() %>%
+  spread(key = EPISODE_ID, value = n, fill = 0) %>%
+  tibble::remove_rownames() %>%
+  as.data.frame() %>%
+  tibble::column_to_rownames(var = "EVENT_TYPE") %>%
+  dist("canberra") %>%
+  hclust() 
+```
+
+```{r echo = FALSE, fig.align = "center", fig.width = 6, fig.height = 3.5}
+events_2019 %>%
+  filter(EPISODE_ID %in% top_episodes$EPISODE_ID) %>%
+  group_by(EPISODE_ID, EVENT_TYPE) %>%
+  summarize(n = n()) %>%
+  ungroup() %>%
+  mutate(EPISODE_ID = factor(EPISODE_ID, levels = unique(top_episodes$EPISODE_ID)),
+         EVENT_TYPE = factor(EVENT_TYPE, levels = unique(a$labels[a$order]))) %>%
+  ggplot(aes(x = EPISODE_ID, y = EVENT_TYPE)) + 
+  geom_tile(aes(fill = n)) + 
+  theme_classic() + 
+  labs(x = "", y = "", fill = "Number of events reported") + 
+  theme(axis.text.x  = element_text(angle=45, vjust = 1, hjust = 0),
+        legend.position = "top",
+        plot.margin = unit(c(0, 1, 0, 0), "cm")) +
+  scale_x_discrete(position = "top") +
+  scale_fill_viridis(option = "A", direction = -1)
+```      
+
+or 
+
+Number of reported events in the episode 
+
+
+[it appears I need to include this code chunk for the other figures to run. I have hidden this output because I think the other figures are more relevant]
+
+```{r echo = FALSE, fig.align = "center", fig.width = 6, fig.height = 10, fig.show = 'hide'}
+b <- events_2019 %>%
+  group_by(EVENT_TYPE) %>%
+  mutate(n_events = n()) %>%
+  ungroup() %>%
+  filter(n_events >= 50) %>%
+  group_by(EPISODE_ID, EVENT_TYPE) %>%
+  summarize(n = n()) %>%
+  ungroup() %>%
+  spread(key = EPISODE_ID, value = n, fill = 0) %>%
+  tibble::remove_rownames() %>%
+  as.data.frame() %>%
+  tibble::column_to_rownames(var = "EVENT_TYPE") %>%
+  dist("canberra") %>%
+  hclust() 
+plot(as.dendrogram(b, hang = 0.25), horiz = TRUE, axes = FALSE)
+```
+
+```{r echo = FALSE, fig.height = 6, fig.width = 8, fig.align = "center"}
+events_2019 %>%
+  group_by(EVENT_TYPE) %>%
+  mutate(n_events = n()) %>%
+  ungroup() %>%
+  filter(n_events >= 100) %>%
+  group_by(EPISODE_ID, EVENT_TYPE) %>%
+  summarize(n = n()) %>%
+  ungroup() %>%
+  mutate(EPISODE_ID = factor(EPISODE_ID),
+         EVENT_TYPE = factor(EVENT_TYPE, levels = unique(b$labels[b$order]))) %>%
+  ggplot(aes(x = EVENT_TYPE, y = EPISODE_ID)) + 
+  geom_tile(aes(fill = n)) + 
+  theme_classic() + 
+  theme(axis.text.x  = element_text(angle = 45, vjust = 1, hjust = 0),
+        legend.position = "top",
+        plot.margin = unit(c(0, 1, 0, 0), "cm"),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  scale_x_discrete(position = "top") +
+  scale_fill_viridis(option = "A", direction = -1, begin = 0.1, end = 0.9) + 
+  labs(x = "", y = "", fill = "Number of reported events in the episode")
+```
+
     - it appears that NOAA does try to account for this: "In the event it is obvious that a continuous or nearly continuous swath of thunderstorm wind or hail damage occurred, a single event should be entered into Storm Data. This single event would be described as occurring from Point A to Point B, during Time C to Time D. The related event narrative could describe the width and length of the damage swath. Scientifically, a swath is more accurate and reduces the chance of a researcher interpreting a single event as a series of events occurring across multiple points." 
  
   
@@ -116,30 +209,20 @@ Something like: The Storm Events database aims to record listings for all hazard
     
         * this seems to be more of problem when comparing events across databases. The Gall Losses article gives the example of hurricane-induced storm surges. In SHELDUS, a storm surge gets categorized under "coastal hazards"" and Storm Events categorizes them under "ocean and lake surf". So if someone was trying to detail a large events like a massive hurricane using multiple databases this could create a problem. [BA: Maybe this also comes into play for the different source? Would the media use the same criteria for identifying a disaster as a National Weather Service office? If not, and if the media tend to report certain types of disasters more often than others, than this could maybe create some bias.]
         
-    - we could list event_type from database? [BA: I think this is a great idea, either here or earlier when we talk about the database. I think there may already be some code in one of the vignettes for doing that. Take a look and see if you see that---if not, I can help find it if it's there or give some suggestions for writing some code for this if we don't already have an example.]
 
     -  NOAA Storm Events defines the types of events that are allowed in the data set. This can be found under Table 1 of Section 2.1.1 of NWS Directive 10-1605 at http://www.nws.noaa.gov/directives/sym/pd01016005curr.pdf. 
 
-* maybe something like this where we group by event_type (this is from overview vignette sonwe would have to modify to make it work here): 
 
-<<<<<<< HEAD
-```{r message = FALSE, warning = FALSE}
-=======
-```{r message = FALSE, warning = FALSE, eval = FALSE}
->>>>>>> 0e8d3ffd0bf3bc5caecaf8c6a41360ceca94ee4e
-library(dplyr)
-floyd_events %>%
-  group_by(event_type) %>%
-  summarize(n = n()) %>%
-  arrange(desc(n)) %>%
-  knitr::kable(col.names = c("Event type", "Number of events"),
-               caption = "NOAA Storm Events within 200 km and within a 5-day window of Hurricane Floyd.")
+#### Event Type: 
+
+```{r echo = FALSE}
+events_2019 %>%
+  group_by(EVENT_TYPE) %>%
+  summarize(N = n()) %>%
+  arrange(desc(N)) %>%
+  mutate(N = prettyNum(N, big.mark = ",")) %>%
+  knitr::kable(col.names = c("Event type", "Number of events in 2019"))
 ```
-<<<<<<< HEAD
-  
-=======
->>>>>>> 0e8d3ffd0bf3bc5caecaf8c6a41360ceca94ee4e
-
 
 
 
@@ -192,7 +275,18 @@ along those lines that we could add in here.]
 
 Increases in population size throughout the US and further land development may also contribute to increased event reporting. For example, population growth over time in some areas might mean there's a higher chance that an event that happens in that area gets reported. This is because events are reported to the NWS by a numbber of sources including trained spotters, the public, law enforcement, broadcast media, social media, local and county officials, etc. 
 
-* include graph from details vignette listing who reported events [Dr. Anderson do you have the code for this graph?]
+* How events are reported
+
+
+```{r echo = FALSE}
+events_2019 %>%
+  group_by(SOURCE) %>%
+  summarize(N = n()) %>%
+  arrange(desc(N)) %>%
+  mutate(N = prettyNum(N, big.mark = ",")) %>%
+  knitr::kable(col.names = c("Source of event report", "Number of events reported in 2019"))
+```
+
 
 * include information from the US census  
 
@@ -202,7 +296,38 @@ Increases in population size throughout the US and further land development may 
 
 [BA: We may want to remind the readers here of the role that storm trackers / reporters play in reporting some of these events. I think that for some types of events, people can volunteer as "spotters" and get some training and then be able to report events they see. I think in one vignette, there's some code that helps in seeing how many of the event reports come from those types of inputs. The population size question could be really important there. Also, I wonder if there's any link between how close National Weather Service offices are and the population density? If so, maybe that is another link with population size / density?]  
 
+#### Breakdown of percentage of events reported by a given source: 
 
+* Notice sleet only reported by newspaper, high surf most heavily reported by trained spotter, importance of public in reporting events such as hail (may be because the public is usually highly affected)
+
+```{r fig.height = 7, fig.width = 10, echo = FALSE, message = FALSE, warning = FALSE, fig.align = "center"}
+tot_events <- events_2019 %>%
+  group_by(EVENT_TYPE) %>%
+  summarize(tot_events = n()) %>%
+  arrange(desc(tot_events))
+tot_source <- events_2019 %>%
+  group_by(SOURCE) %>%
+  summarize(tot_source = n()) %>%
+  arrange(tot_source)
+
+events_2019 %>%
+  group_by(EVENT_TYPE, SOURCE) %>%
+  summarize(N = n()) %>%
+  ungroup() %>%
+  right_join(tot_events, by = "EVENT_TYPE") %>%
+  mutate(perc_events = 100 * N / tot_events) %>%
+  mutate(EVENT_TYPE = factor(EVENT_TYPE, levels = unique(EVENT_TYPE)),
+         SOURCE = factor(SOURCE, levels = unique(tot_source$SOURCE))) %>%
+  ggplot(aes(y = SOURCE, x = EVENT_TYPE)) + 
+  geom_tile(aes(fill = perc_events)) + 
+  theme_classic() + 
+  labs(x = "", y = "", fill = "% events reported by a given source") + 
+  theme(axis.text.x  = element_text(angle=45, vjust = 1, hjust = 0),
+        legend.position = "top",
+        plot.margin = unit(c(0, 1, 0, 0), "cm")) +
+  scale_x_discrete(position = "top") +
+  scale_fill_viridis(option = "C", direction = -1)
+```
 
 Some temporal changes are structural, in terms of the database changing what types of events are recorded. In the NOAA database, from 1950 to 1954, only tornado events were recorded [@stormeventsdetails]. Then, from 1955 to 1996, only tornado, thunderstorm wind and hail events were recorded as digital data [@stormeventsdetails]. Starting in 1996, the database began including all 48 event types that are recorded today [@stormeventsdetails]. Additionally, the NWS reports that there was reduced funding from 1976 to 1979 that led to a decrease in flood damage data collection [@downton2005reanalysis]. Then, after 1983, Congress began to require The US Army Corps of Engineers to provide yearly flood damage reports in contract with the NWS [@downton2005reanalysis]. This provides a more consistent report of flood damage that may not have otherwise been reported. These changes pose inconsistensies in the number of certain storm events over large periods of time.
 
@@ -210,6 +335,8 @@ Some temporal changes are structural, in terms of the database changing what typ
 
 
 [BA: We might want to add some examples, here or in one of the more general sections, about how these issues are common across a lot of disaster databases. I've added a few papers that talk about common problems for disaster database, rather than just NOAA Storm Events, and those might help in rounding out our discussion.]
+
+
 
 ### Seasonal Trends:
 
@@ -228,10 +355,39 @@ More temporal bias may be showcased on a short term scale by seasonal difference
 * create table of number reported by lifeguards or media vs month of the year  
         
     - other events that are more or less reported? [BA: We might want to talk about the idea of some events that truly are seasonal in their occurrence, like avalanches and hurricanes, versus some that happen year-round but have varying chance of being reported. Also, you can look through the package vignette and see if you see any other examples of things that might not be reported evenly throughout the year.]   
-    - coastal flood? high surf? 
     
-[BA: I'm not sure if you saw it yet, but I added in another paper on rip currents that to the
-"literature" folder that might be another helpful reference for this section.]
+    - coastal flood? high surf? waterspout?
+    
+[BA: I'm not sure if you saw it yet, but I added in another paper on rip currents that to the "literature" folder that might be another helpful reference for this section.]
+
+#### How start dates for events are distributed over the year 
+
+from details vignette: (event types are ordered by decreasing total count during the year; note that the y-axes vary depending on the range of events by date for each event type): 
+
+```{r fig.width = 8, fig.height = 8, echo = FALSE, fig.align = "center"}
+events_2019 %>%
+  select(BEGIN_DATE_TIME, EVENT_TYPE) %>%
+  mutate(date = str_extract(BEGIN_DATE_TIME, ".+\\ "),
+         date = dmy(date)) %>%
+  group_by(date, EVENT_TYPE) %>%
+  summarize(n = n()) %>%
+  ungroup() %>%
+  group_by(EVENT_TYPE) %>%
+  mutate(tot_n = sum(n)) %>%
+  ungroup() %>%
+  arrange(desc(tot_n)) %>%
+  mutate(EVENT_TYPE = factor(EVENT_TYPE, levels = unique(EVENT_TYPE))) %>%
+  ggplot(aes(x = date, y = n)) + 
+  geom_point(alpha = 0.3, size = 1) + 
+  facet_wrap(~ EVENT_TYPE, scales = "free_y", ncol = 5) + 
+  scale_x_date(date_labels = "%m/%d", date_breaks = "4 months") + 
+  theme_classic()
+```
+Copied directly from details vignette: 
+
+"Many event types are clearly seasonal (e.g., winter weather, winter storms, heavy snow, cold, extreme cold, blizzards, ice storms, lake-effect snow, and avalanches are all much more common during winter months, while tropical depressions and tropical storms are all limited to the hurricane season). However, for some events, reporting seasonal patterns might be based not just on the true pattern of events but also on the timing of important exposures and impacts of the events. For example, rip currents have many more listings during the spring and summer, which may be related to events being more likely to be listed when more people are swimming. Frost event listings are particularly high at the start and end of the frost season, rather than in the middle of winter, which may be related to the impacts of frost on crops being higher in spring and fall than during the winter. If working with this data, it important to keep in mind that the data are based on reporting, and there may be related influences on the probability of an event being reported and included in the data that differ from using data from something like a weather station."
+
+
 
 ## Threshold Bias  
 
@@ -246,28 +402,58 @@ The varying severity of an event creates threshold bias in the storm events data
 
 ## Accounting Bias
 
-There are discrepencies in the type of loss information collected in the storm events database leading to accounting bias. Until 1994, damage estimates were recorded on a logarithmic scale [@downton2005reanalysis]. NOAA now records damage estimates in thousands of dollars. These estimates are comprised of direct and indirect monetary losses. Direct monetary losses from damage to infrastructure, buildings, crops, etc. are easier to quanitfy than indirect losses like lost revenue, business closures, societal losses, environmental damage [@gall2009losses]. These monetary losses can also be separated into community, state, refional, and global levels [@gall2009losses]. The estimates of damage to insured property are typically obtained from local field office reports that often lack quality and accuracy control [@downton2005reanalysis]. 
+### Introduction/How damages are reported
 
- 
-* how does noaa report different types of losses? 
+There are discrepencies in how monetary losses and damage information are collected in the NWS storm events database that lead to accounting bias.  
 
-* what level does noaa report economic losses at? 
-      
-* How can nonmonetary losses be quanitifed?  
+
+This is a quote from the NWS documentation on how estimates are recorded. Not sure if we should include it here or abbove when we describe the database:
+
+"Estimates should be in the form of US Dollar values and rounded to three significant digits,
+followed by the magnitude of the value (i.e., 1.55 Billion $USD for $1,550,000,000). Values
+used to signify magnitude include: Thousand $USD, Million $USD, and Billion $USD. If
+additional precision is available, it may be provided in the narrative part of the entry. When
+damage is due to more than one element of the storm, indicate, when possible, the amount of
+damage caused by each element. If the dollar amount of damage is unknown, or not available,
+check the “no information available” box."
+
+
+
+### Inaccuracies in reporting 
+
+The National Weather Service Documentation states that "property damage estimates should be entered as actual dollar amounts, if a reasonably accurate estimate from an insurance company or other qualified individual is available" [@nwsinstruction]. It also states that "if this estimate is not available, then the preparer has two choices: either check the“no information available” box, or make an estimate" [@nwsinstruction].
+
+The only exception to this rule is that the NWS is required to provide monetary damage amounts for flood events by the U.S. Army Corps of Engineers [@nwsinstruction]. Otherwise, the Storm Data preparer is only encouraged to report monetary damage estimates. These estimates can be obtained from emergency managers, U.S. Geological Survey, U.S. Army Corps of Engineers, utility companies, and newspaper articles. 
+
+The estimates of damage to insured property are typically obtained from local field office reports that often lack quality and accuracy control [@downton2005reanalysis]. 
+
+
+### Difficulty of quanitfying damages 
+
+The estimates are comprised of direct and indirect monetary losses. Direct monetary losses from damage to infrastructure, buildings, crops, etc. are easier to quanitfy than indirect losses like lost revenue, business closures, societal losses, environmental damage [@gall2009losses].
+
+"Insurance company records include only insured property, and records of the Federal Emergency Management Agency (FEMA) include only property that qualifies for federal assistance in presi- dentially declared disasters. Few state and local governments maintain damage records beyond those required by FEMA; only in newspaper archives from cities and towns across the nation might one find more complete historical reporting of local flood damage." [@downton2005reanalysis]
+
+Monetary losses can also be categorized into community, state, regional, and global levels which can further complicate the precision of the recording [@gall2009losses]. 
+
+
+
+### Structural changes in how NOAA reports damages 
+
+Until 1994, damage estimates were recorded on a logarithmic scale [@downton2005reanalysis]. NOAA now records damage estimates in thousands of dollars.
+
+* pull up loss data for events pre and post 1995?  
+         
+"From 1976 through 1979, NWS reports indicate that reduction of funding led to cutbacks in the compilation of flood damage data. Data collection continued as in prior years, but there appears to have been less checking and updating of initial damage infor- mation. Further, publication of annual summaries ceased. In 1980, compilation of flood damage estimates was discontinued entirely." [@downton2005reanalysis]
+
+"NWS policies on what losses to include have changed some- what over the years. Damage estimates published through 1975 focused primarily on damage to property and crops, but included some indirect losses. Present policy is to focus exclusively on physical damage to property and crops. Until 1992, separate estimates were given for property and agricultural damage, but in 1993 that distinction was eliminated." [@downton2005reanalysis]
 
 * provide example/tabble of how NOAA records financial losses 
 
-    - can this be found in NOAA disclaimer? 
+### Change in value of the US dollar over time
 
-[BA: We probably want to clarify somewhere here that there's also, for damages / money, the fact that the value of a dollar has changed over time. This can be addressed by normalizing any dollar measurements to a certain year to prevent bias. That's a separate idea, though, from this idea that we might be *better* at counting all the damage from a storm with time.] 
+The value of a dollar has changed over time. This can be addressed by normalizing any dollar measurements to a certain year to prevent bias. 
 
-* New process for loss estimation developed by NWS in 2007  
-
-* Switch between categorical estimates to whole dollar figure estimates: uses logarithmic at some point?  
-    - pull up loss data for events pre and post 1995  
-         
-    - check for changes in reporting for NOAA under Database Details  
-    
 
 
 ## Geographic Bias  
@@ -313,10 +499,27 @@ Currently, the smallest unit of aggregation to use all parts of the database are
 
 * include zone and fips script here?   
 
-```{r}
 
+Copied directly from details vignette: 
+
+"Some events are reported by forecast zone (`CZTYPE` of "Z") rather than county (`CZTYPE` of "C"). Specific types of events are typically either always reported for a county or always reported for a forecast zone (see table below). Events typically reported by county include floods ("Flash Flood", "Flood", "Debris Flow"), tornado-like events ("Tornado", "Funnel Cloud", "Dust Devil"), and a few other events often related to thunderstorms ("Thunderstorm Wind", "Hail", "Heavy Rain", "Lightning"). Events typically reported by forecast zone include severe winter weather ("Winter Weather", "Winter Storm", "Heavy Snow", "Cold/Wind Chill", "Extreme Cold/Wind Chill", "Blizzard", "Frost/Freeze", "Ice Storm", "Sleet", "Lake-Effect Snow", "Avalanche", "Freezing Fog"), extreme heat ("Heat", "Excessive Heat", "Drought"), events related to the water or coast ("Marine Thunderstorm Wind", "High Surf", "Coastal Flood", "Waterspout", "Astronomical Low Tide", "Rip Current", "Tropical Storm", "Marine High Wind", "Marine Hail", "Marine Strong Wind", "Hurricane", "Seiche", "Storm Surge/Tide", "Tropical Depression", "Marine Dense Fog", "Sneakerwave", "Tsunami"), and a few others ("High Wind", "Dense Fog", "Strong Wind", "Wildfire", "Dust Storm", "Dense Smoke")."
+
+```{r echo = FALSE}
+events_2019 %>%
+  group_by(CZ_TYPE, EVENT_TYPE) %>%
+  summarize(n_events = n()) %>%
+  ungroup() %>%
+  spread(key = CZ_TYPE, value = n_events, fill = 0) %>%
+  mutate(total = C + Z,
+         perc_county = 100 * C / total) %>%
+  arrange(desc(perc_county), desc(total)) %>%
+  mutate(C = prettyNum(C, big.mark = ","),
+         Z = prettyNum(Z, big.mark = ","),
+         total = prettyNum(total, big.mark = ","),
+         perc_county = paste0(round(perc_county), "%")) %>%
+  knitr::kable(col.names = c("Event type", "County", "Forecast Zone", "Total", "% county"),
+               align = "lcccc")
 ```
-
 
 
 
