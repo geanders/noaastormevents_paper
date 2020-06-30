@@ -417,6 +417,7 @@ damage is due to more than one element of the storm, indicate, when possible, th
 damage caused by each element. If the dollar amount of damage is unknown, or not available,
 check the “no information available” box."
 
+[BA: Overall for this section, I know that there seemed to be some odd things occasionally cropping up in the data from the `noaastormevents` package when you look at damages. You might want to look through the "Details" vignette for anything that specifically talks about damages. I think there were occasionally cases, like Hurricane Floyd in 1999 in North Carolina, where it looked like a lot of the damage was maybe reported for the capital county (the county with Raleigh in it) rather than coastal counties (coastal counties were reported, too, but the numbers were lower, I think). That raised some questions for me about whether sometimes general damages were reported for the state, and just recorded in the capital location, versus in the county where the damage occurred. Also, it may be interesting to see, both from the data and the documentation, (1) whether they split up the total costs across different events in an episode (for example, if there are reports of multiple events during a hurricane for a county, where do they record the damage?) and (2) how different costs are from county to county for the same episode (and particularly for counties that are close to each other but across state lines---do the damages tend to be more similar within a state than between two states?).]
 
 
 ### Inaccuracies in reporting 
@@ -427,6 +428,9 @@ The only exception to this rule is that the NWS is required to provide monetary 
 
 The estimates of damage to insured property are typically obtained from local field office reports that often lack quality and accuracy control [@downton2005reanalysis]. 
 
+[BA: It would be interesting to see if damages are more likely to be reported based on 
+(1) who reports the event and (2) what type of event it is. We could write some code
+to check this in our data.]
 
 ### Difficulty of quanitfying damages 
 
@@ -440,7 +444,7 @@ Monetary losses can also be categorized into community, state, regional, and glo
 
 ### Structural changes in how NOAA reports damages 
 
-Until 1994, damage estimates were recorded on a logarithmic scale [@downton2005reanalysis]. NOAA now records damage estimates in thousands of dollars.
+Until 1994, damage estimates were recorded on a logarithmic scale [@downton2005reanalysis]. NOAA now records damage estimates in thousands of dollars. [BA: Could you clarify this a bit? I'm not sure what is meant here by the use of a logarithmic scale. Is this in terms of how they rounded the estimates?]
 
 * pull up loss data for events pre and post 1995?  
          
@@ -452,7 +456,7 @@ Until 1994, damage estimates were recorded on a logarithmic scale [@downton2005r
 
 ### Change in value of the US dollar over time
 
-The value of a dollar has changed over time. This can be addressed by normalizing any dollar measurements to a certain year to prevent bias. 
+The value of a dollar has changed over time. This can be addressed by normalizing any dollar measurements to a certain year to prevent bias. [It might be helpful to add some examples of studies that do this. I think there are some from Roger Pielke that look at hurricane damages over time in the US that normalize the damages. We could (briefly) include an explanation of how they do that.]
 
 
 
