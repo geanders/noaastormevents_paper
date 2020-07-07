@@ -106,7 +106,11 @@ Something like: The Storm Events database aims to record listings for all hazard
     
         * script for how noaa deals with this? or examples of this? Probably explained in narrative sections of events [BA: This comes in with the epidsode ID and the event ID. I think there's an example in the vignette where we check this out. One is used to help collect all the types of hazards from one overall event using a common ID. We might want to bring that analysis in here.]
 
-#### Number of events reported per episode ID:         
+#### Number of events reported per episode ID:  
+For these episodes with the most events in 2019, the following graph shows the number of events reported for the episode. This figure demonstrates how one large weather 'episode' can 
+include several other events types. Episode 133801, the second episode in this figure, indicates several reports of flood, debris flow, strong winds, high wind, and hail. All of these different event types occured as a result of one large storm. NOAA categorizes these large storms by assigning them an episode ID which contains all of the different event types reported for that storm. This helps to avoid events that were all from one storm getting double counted as separate entities. 
+
+
 
 ```{r echo = FALSE, fig.align = "center", fig.width = 6, fig.height = 4}
 top_episodes <- events_2019 %>%
@@ -147,14 +151,13 @@ events_2019 %>%
   scale_fill_viridis(option = "A", direction = -1)
 ```      
 
-or 
 
-Number of reported events in the episode 
+#### Cluster Analysis 
+
+Once we removed event types with less that 50 listings in 2019, we did a cluster analysis of event types, to group events that are more likely to occur together within an episode. The following plot shows the resulting cluster structure of these event types. The figure shows that there are certain event types which are very commonly reported together such as high wind and strong wind or heat and excessive heat. It is important to keep these trends in mind as there may be overlap or uncertainty in how to categorize what happened during an episode. 
 
 
-[it appears I need to include this code chunk for the other figures to run. I have hidden this output because I think the other figures are more relevant]
-
-```{r echo = FALSE, fig.align = "center", fig.width = 6, fig.height = 10, fig.show = 'hide'}
+```{r echo = FALSE, fig.align = "center", fig.width = 6, fig.height = 10}
 b <- events_2019 %>%
   group_by(EVENT_TYPE) %>%
   mutate(n_events = n()) %>%
@@ -172,29 +175,7 @@ b <- events_2019 %>%
 plot(as.dendrogram(b, hang = 0.25), horiz = TRUE, axes = FALSE)
 ```
 
-```{r echo = FALSE, fig.height = 6, fig.width = 8, fig.align = "center"}
-events_2019 %>%
-  group_by(EVENT_TYPE) %>%
-  mutate(n_events = n()) %>%
-  ungroup() %>%
-  filter(n_events >= 100) %>%
-  group_by(EPISODE_ID, EVENT_TYPE) %>%
-  summarize(n = n()) %>%
-  ungroup() %>%
-  mutate(EPISODE_ID = factor(EPISODE_ID),
-         EVENT_TYPE = factor(EVENT_TYPE, levels = unique(b$labels[b$order]))) %>%
-  ggplot(aes(x = EVENT_TYPE, y = EPISODE_ID)) + 
-  geom_tile(aes(fill = n)) + 
-  theme_classic() + 
-  theme(axis.text.x  = element_text(angle = 45, vjust = 1, hjust = 0),
-        legend.position = "top",
-        plot.margin = unit(c(0, 1, 0, 0), "cm"),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()) +
-  scale_x_discrete(position = "top") +
-  scale_fill_viridis(option = "A", direction = -1, begin = 0.1, end = 0.9) + 
-  labs(x = "", y = "", fill = "Number of reported events in the episode")
-```
+
 
     - it appears that NOAA does try to account for this: "In the event it is obvious that a continuous or nearly continuous swath of thunderstorm wind or hail damage occurred, a single event should be entered into Storm Data. This single event would be described as occurring from Point A to Point B, during Time C to Time D. The related event narrative could describe the width and length of the damage swath. Scientifically, a swath is more accurate and reduces the chance of a researcher interpreting a single event as a series of events occurring across multiple points." 
  
@@ -275,7 +256,35 @@ along those lines that we could add in here.]
 
 Increases in population size throughout the US and further land development may also contribute to increased event reporting. For example, population growth over time in some areas might mean there's a higher chance that an event that happens in that area gets reported. This is because events are reported to the NWS by a numbber of sources including trained spotters, the public, law enforcement, broadcast media, social media, local and county officials, etc. 
 
-* How events are reported
+#### How events are reported
+
+Here is a link to the National Weather Service's information on how to become a storm spotter:
+[Storm Spotter](https://www.weather.gov/oun/skywarn-spotter)
+
+Acronyms: 
+ASOS= "Automated Surface Observing System (ASOS) units are automated sensor suites that are designed to serve meteorological and aviation observing needs" 
+
+Mesonet= "portmanteau of mesoscale network, a network of (typically) automated weather and environmental monitoring stations designed to observe mesoscale meteorological phenomena"
+
+COOP Obbserver= The National Weather Service (NWS) Cooperative Observer Program (Coop) is truly the Nation's weather and climate observing network of, by and for the people. More than 8,700 volunteers take observations on farms, in urban and suburban areas, National Parks, seashores, and mountaintops. The data are truly representative of where people live, work and play.
+
+AWOS= Automated Weather Observing System (AWOS) is a fully configurable airport weather system that provides continuous, real time information and reports on airport weather conditions. AWOS stations are mostly operated, maintained and controlled by aviation service providers.
+
+CoCoRaHS= The Community Collaborative Rain, Hail and Snow Network, or CoCoRaHS, is a network of volunteer weather observers in the United States, Canada, and the Bahamas that take daily readings of precipitation and report them to a central data store over the internet.
+
+SNOTEL= snow telemetry 
+
+RAWS= The Remote Automatic Weather Stations system is a network of automated weather stations run by the U.S. Forest Service and Bureau of Land Management and monitored by the National Interagency Fire Center, mainly to observe potential wildfire conditions.
+
+CMAN Station= The Coastal-Marine Automated Network (C-MAN) is a meteorological observation network along the coastal United States.
+
+AWSS= automated weather sensor system
+
+WLON= a radio station 
+
+SHAVE project= Severe Hazards Analysis & Verification Experiment 
+
+I did not find much information about these sources in the NWS NOAA documentation. However, from my research it appears that several of these sources seem to be communities of people that are reporting events. This leads to more questions about how objective the reporting is from these groups. There may be differences in how certain people classify certain events. 
 
 
 ```{r echo = FALSE}
@@ -288,6 +297,9 @@ events_2019 %>%
 ```
 
 
+
+#### More Points for Long Term Trends  
+
 * include information from the US census  
 
 * Here is link to the population data: [US census data](https://www.census.gov/data/tables/time-series/demo/popest/2010s-total-cities-and-towns.html) 
@@ -298,7 +310,15 @@ events_2019 %>%
 
 #### Breakdown of percentage of events reported by a given source: 
 
-* Notice sleet only reported by newspaper, high surf most heavily reported by trained spotter, importance of public in reporting events such as hail (may be because the public is usually highly affected)
+
+The following graph shows, for each type of event in 2019, the percent reported by each source. Both axes of the plot are ordered by overall frequency (i.e., overall number of each type of event and overall number of reports from each source).
+ 
+For some types of events, reporting is dominated by a specific source. For example, most high surf reports come from trained spotters, while most drought reports come from drought monitors and most tornado reports come from the NWS Storm Survey. Another example is that rip currents are mostly reported by broadcast media and newspapers. This may be because rip currents can pose a serious danger to humans and cause death in certain instances. These instances are more likely to make the news than other types of general events. 
+
+For other types of events, reporting sources are more diversified.
+
+Additionally, certain sources are more influential in reporting certain events. For example, the public often reports hail and marine hail events. This may be because the public is usually highly affected by this type of weather event. 
+
 
 ```{r fig.height = 7, fig.width = 10, echo = FALSE, message = FALSE, warning = FALSE, fig.align = "center"}
 tot_events <- events_2019 %>%
@@ -362,7 +382,10 @@ More temporal bias may be showcased on a short term scale by seasonal difference
 
 #### How start dates for events are distributed over the year 
 
-from details vignette: (event types are ordered by decreasing total count during the year; note that the y-axes vary depending on the range of events by date for each event type): 
+Here are how the start dates for listings for each event type are distributed over the year
+(event types are ordered by decreasing total count during the year; note that the y-axes vary depending on the range of events by date for each event type): 
+
+Many event types are clearly seasonal (e.g., winter weather, winter storms, heavy snow, cold, extreme cold, blizzards, ice storms, lake-effect snow, and avalanches are all much more common during winter months, while heat and extreme heat are typically limimted to summer months). However, for some events, reporting seasonal patterns might be based not just on the true pattern of events but also on the timing of important exposures and impacts of the events. For example, rip currents have many more listings during the spring and summer, which may be related to events being more likely to be listed when more people are swimming. Frost event listings are particularly high at the start and end of the frost season, rather than in the middle of winter, which may be related to the impacts of frost on crops being higher in spring and fall than during the winter. If working with this data, it important to keep in mind that the data are based on reporting, and there may be related influences on the probability of an event being reported and included in the data that differ from using data from something like a weather station.
 
 ```{r fig.width = 8, fig.height = 8, echo = FALSE, fig.align = "center"}
 events_2019 %>%
@@ -377,15 +400,14 @@ events_2019 %>%
   ungroup() %>%
   arrange(desc(tot_n)) %>%
   mutate(EVENT_TYPE = factor(EVENT_TYPE, levels = unique(EVENT_TYPE))) %>%
+  filter(EVENT_TYPE %in% c("Heat", "Blizzard","Rip Current", "Frost/Freeze")) %>%
   ggplot(aes(x = date, y = n)) + 
-  geom_point(alpha = 0.3, size = 1) + 
-  facet_wrap(~ EVENT_TYPE, scales = "free_y", ncol = 5) + 
+  geom_point(alpha = 0.3, size = 2) + 
+  facet_wrap(~ EVENT_TYPE, scales = "free_y", ncol = 1) + 
   scale_x_date(date_labels = "%m/%d", date_breaks = "4 months") + 
   theme_classic()
 ```
-Copied directly from details vignette: 
 
-"Many event types are clearly seasonal (e.g., winter weather, winter storms, heavy snow, cold, extreme cold, blizzards, ice storms, lake-effect snow, and avalanches are all much more common during winter months, while tropical depressions and tropical storms are all limited to the hurricane season). However, for some events, reporting seasonal patterns might be based not just on the true pattern of events but also on the timing of important exposures and impacts of the events. For example, rip currents have many more listings during the spring and summer, which may be related to events being more likely to be listed when more people are swimming. Frost event listings are particularly high at the start and end of the frost season, rather than in the middle of winter, which may be related to the impacts of frost on crops being higher in spring and fall than during the winter. If working with this data, it important to keep in mind that the data are based on reporting, and there may be related influences on the probability of an event being reported and included in the data that differ from using data from something like a weather station."
 
 
 
@@ -499,14 +521,16 @@ documented in the Storm Data software location database."
 
 Currently, the smallest unit of aggregation to use all parts of the database are Weather Forecasting Offices. There are currently about 122 nationwide [@konisky2016extreme]. There may be inconsistencies between where county regions are defined and where weather forecasting offices are located. NOAA Storm Events states that "a hydrometeorological event will be referenced, minimally, to the nearest hundredth of a mile, to the geographical center (not from the village/city boundaries or limits) of a particular village/city, airport, inland lake, or location providing that the reference point is documented in the Storm Data software location database" [@nwsinstruction]. Problems may arise here if the exact location of an event is not already documented in the Storm Data software location database. [BA: In this section, we may also want to talk about how some events might be very localized (for example, a flash flood, or even storm surge that's only near the coast of the county), but the county-level reporting of the event means that all the county gets classified as experiencing or not experiencing the event. I think that sometimes the "Narratives" of the events give details that you could use to find out exactly what parts of the county were affected, and some events like tornadoes give the starting and ending latitude and longitude, so you can figure out the path and where that was in the county. However, overall, it's much easier from the database to get an idea of an event occurrance for the county as a whole rather than for locations within the county.] [We may want to talk a bit about the idea of ecological bias here.] [Maybe want to talk about spatial alignment.]
 
-* the above quote is from the NWS documentation pdf that I used a misc. bibtex to cite 
+
 
 * include zone and fips script here?   
 
 
-Copied directly from details vignette: 
+#### Forecast Zone versus County 
 
-"Some events are reported by forecast zone (`CZTYPE` of "Z") rather than county (`CZTYPE` of "C"). Specific types of events are typically either always reported for a county or always reported for a forecast zone (see table below). Events typically reported by county include floods ("Flash Flood", "Flood", "Debris Flow"), tornado-like events ("Tornado", "Funnel Cloud", "Dust Devil"), and a few other events often related to thunderstorms ("Thunderstorm Wind", "Hail", "Heavy Rain", "Lightning"). Events typically reported by forecast zone include severe winter weather ("Winter Weather", "Winter Storm", "Heavy Snow", "Cold/Wind Chill", "Extreme Cold/Wind Chill", "Blizzard", "Frost/Freeze", "Ice Storm", "Sleet", "Lake-Effect Snow", "Avalanche", "Freezing Fog"), extreme heat ("Heat", "Excessive Heat", "Drought"), events related to the water or coast ("Marine Thunderstorm Wind", "High Surf", "Coastal Flood", "Waterspout", "Astronomical Low Tide", "Rip Current", "Tropical Storm", "Marine High Wind", "Marine Hail", "Marine Strong Wind", "Hurricane", "Seiche", "Storm Surge/Tide", "Tropical Depression", "Marine Dense Fog", "Sneakerwave", "Tsunami"), and a few others ("High Wind", "Dense Fog", "Strong Wind", "Wildfire", "Dust Storm", "Dense Smoke")."
+Some events are reported by forecast zone (`CZTYPE` of "Z") rather than county (`CZTYPE` of "C"). Specific types of events are typically either always reported for a county or always reported for a forecast zone (see table below). Events typically reported by county include floods, tornado-like events, and a few other events often related to thunderstorms. Events typically reported by forecast zone include severe winter weather, extreme heat, events related to the water or coast, and a few others ("High Wind", "Dense Fog", "Strong Wind", "Wildfire", "Dust Storm", "Dense Smoke").
+
+This demonstrates the difficulty of narrowing down where exactly certain events occured. It is important to keep in mind that some events might be very localized (for example, a flash flood, or even storm surge that's only near the coast of the county), but the county-level reporting of the event means that the whole county gets classified as experiencing or not experiencing the event.
 
 ```{r echo = FALSE}
 events_2019 %>%
