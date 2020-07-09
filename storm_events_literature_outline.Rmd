@@ -52,6 +52,8 @@ starting point for helping to illustrate that.]
 [BA: Let's add some examples of papers in which this database was used to identify
 storm exposures, and then the paper was looking at how they impacted humans.]
 
+
+
 # Concerns with Storm Events Database  
 
 [BA: Could we start on a paragraph here that gives an introduction to this section
