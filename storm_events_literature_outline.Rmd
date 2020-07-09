@@ -108,9 +108,20 @@ Something like: The Storm Events database aims to record listings for all hazard
     
         * script for how noaa deals with this? or examples of this? Probably explained in narrative sections of events [BA: This comes in with the epidsode ID and the event ID. I think there's an example in the vignette where we check this out. One is used to help collect all the types of hazards from one overall event using a common ID. We might want to bring that analysis in here.]
 
-#### Number of events reported per episode ID:  
-For these episodes with the most events in 2019, the following graph shows the number of events reported for the episode. This figure demonstrates how one large weather 'episode' can 
-include several other events types. Episode 133801, the second episode in this figure, indicates several reports of flood, debris flow, strong winds, high wind, and hail. All of these different event types occured as a result of one large storm. NOAA categorizes these large storms by assigning them an episode ID which contains all of the different event types reported for that storm. This helps to avoid events that were all from one storm getting double counted as separate entities. 
+#### Number of events reported per episode ID: 
+For these episodes with the most events in 2019, the following graph shows the
+number of events reported for the episode. This figure demonstrates how one
+large weather 'episode' can include several other events types. Episode 133801,
+the second episode in this figure, indicates several reports of flood, debris
+flow, strong winds, high wind, and hail. All of these different event types
+occured as a result of one large storm. NOAA categorizes these large storms by
+assigning them an episode ID which contains all of the different event types
+reported for that storm. This helps to avoid events that were all from one storm
+getting double counted as separate entities. [Can we add anything from the
+database's documentation in terms of how they decide how to define an episode
+and how to link events with that episode? Or really, anything that have in their
+documentation on this episode / event piece might be interesting to try to work
+in here.]
 
 
 
@@ -384,10 +395,15 @@ More temporal bias may be showcased on a short term scale by seasonal difference
 
 #### How start dates for events are distributed over the year 
 
+[I don't know if we've explained yet that events are listed with a start and end date. We
+might want to explain that here.]
 Here are how the start dates for listings for each event type are distributed over the year
 (event types are ordered by decreasing total count during the year; note that the y-axes vary depending on the range of events by date for each event type): 
 
 Many event types are clearly seasonal (e.g., winter weather, winter storms, heavy snow, cold, extreme cold, blizzards, ice storms, lake-effect snow, and avalanches are all much more common during winter months, while heat and extreme heat are typically limimted to summer months). However, for some events, reporting seasonal patterns might be based not just on the true pattern of events but also on the timing of important exposures and impacts of the events. For example, rip currents have many more listings during the spring and summer, which may be related to events being more likely to be listed when more people are swimming. Frost event listings are particularly high at the start and end of the frost season, rather than in the middle of winter, which may be related to the impacts of frost on crops being higher in spring and fall than during the winter. If working with this data, it important to keep in mind that the data are based on reporting, and there may be related influences on the probability of an event being reported and included in the data that differ from using data from something like a weather station.
+[Could you check on Google Scholar and see if we could find out anything from the literature
+to support our idea here that you're going to get frost through the winter, but that the 
+most economically damaging frost comes near the edges of the frost season.]
 
 ```{r fig.width = 8, fig.height = 8, echo = FALSE, fig.align = "center"}
 events_2019 %>%
