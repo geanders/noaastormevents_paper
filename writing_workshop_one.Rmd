@@ -1,0 +1,74 @@
+---
+title: "Writing Workshop Day 1"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+### Ranking Articles:  
+
+1. Losses- easier to read and understand, interesing topic, a lot of new information  
+2. Ten Rules for Twitter-easy to read and follow, light topic that I already mostly understood, not as interesting  
+3. Shwartz Ecological fallacy-wordy and hard to follow at times, very interesting topic with plenty of evidence to back its claims  
+
+### Identifying Characters in Example Papers: 
+
+* Twitter- twitter, active users, researchers, you, this article, we  
+* Shwartz Fallacy- epidemiology texts, the flaws, the problems, a logical fallacy, the consequences, Robinson, many papers  
+* Losses- insurance industry, federal agencies, the US, collection of loss data, US agencies, NWS, FEMA, existing loss data  
+
+### Identifying Characters in Quotes: 
+
+1. “The use of the ecological fallacy to explain the discrepancy between individual and ecological correlations may have unintended consequences.” Schwartz, 1994  
+
+* characters= implied: researchers, the use of.., the discrepancy?  
+
+* "Researchers may face unitended consuequences when they use ecologocial fallacy to distinguish between individual and ecological correlations."
+
+2. “For these reasons, using Twitter appropriately can be more than just a social media activity; it can be a real career incubator in which researchers can develop their professional circles, launch new research projects and get helped by the community at various stages of the projects.” Cheplygina et al., 2020  
+
+* characters= the use of twitter, researchers  
+
+* "For these reasons, researchers can use twitter for more than just social media activity. Researchers can use Twitter as a career incubator to develop their professional circles, launch new research projects and get helped by the community at various stages of the projects."
+
+### Identifying Characters in Manuscript and Rewriting: 
+
+"Technological advancements within storm recording such as the development of radar and larger networks of monitors have increased our ability to detect extreme weather events as they happen. For example, over time, forecasters and storm spotters have learned how to recognize key weather patterns and structures that make it more likely for a tornado to form. The development and advancement of doppler radar and dual-polarization radar technology has also increased our ability to collect and use data to detect tornado events [@tornadodetection]. One study states that "the number of tornadoes reported in the United States has doubled from about 600 per year in the 1950s to around 1200 in the 2000s"[@verbout2006evolution]. This may be influenced by factors other than meteorological changes." 
+
+* characters= technological advancements, the development, out, forecastors and storm spotters, the development and advancement, the number of.., this   
+
+Technological advancements within storm recording such as the development of radar and larger networks of monitors have increased our ability to detect extreme weather events as they happen.
+
+1. Technological advancements within storm recording such as the development of radar and larger networks of monitors have led to an increased ability for the detection of extreme weather events as they happen.
+2. Forecasters and storm spotters have developed advanced radar and larger networks of monitors that detect extreme weather events much more effectively.
+
+Problematic sentences: 
+
+Technological advancements within storm recording such as the development of radar and larger networks of monitors have increased our ability to detect extreme weather events as they happen.
+
+The development and advancement of doppler radar and dual-polarization radar technology has also increased our ability to collect and use data to detect tornado events [@tornadodetection].
+
+One study states that "the number of tornadoes reported in the United States has doubled from about 600 per year in the 1950s to around 1200 in the 2000s"[@verbout2006evolution].
+
+### Identify and replace nominalizations 
+
+“We begin with a description of the validity framework and the definition of key terms.” Schwartz, 1994  
+
+* "First, we describe the validity framework and define key terms."  
+
+Manuscript:  
+
+All of these different event types occured as a result of one large storm.  
+* Edited: One large storm resulted in several event types. 
+
+There is also limited information on event severity or distinction between events within the database [@luh2015vulnerability].  
+* Edited: The database lacks information regarding event severity or distinction between events. 
+
+Drought hazards are apparently notoriously underreported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses [@gall2009losses].   
+* Edited: Droughts produce limited physical damage causing databbases to notoriously underreport their spatial and monetary losses. 
+
+### Editing sentences in a paragraph:
+“Natural hazard losses exhibit an upward trend over time. This is a function of increases in wealth and population but is also attributed to better loss accounting in recent years. The escalating pattern of hazard losses is therefore partially an artifact of advances in reporting losses, but how much or how little this effect contributes to the skyrocketing losses in comparison to effects of population growth and increasing wealth in high hazard areas is unclear.” Gall et al., 2009
+
+Edited: Natural hazard losses generally exhibit an upward trend over time because of increases in wealth and population. However, in recent years, better loss accounting may also be contributing to this rise. In high hazard areas, it is unclear which factors play a larger role in the skyrocketing rise of losses. 
+

@@ -1,0 +1,46 @@
+---
+title: "Writing Workshop Day 3"
+output: html_document
+---
+# Day 3
+
+### Identify thematic strings in a paragraph from an example paper
+“Even if you use Twitter only for professional purposes, consider opening up a little bit to show your followers you are a real person. People outside your field are not likely to follow you if your tweets are only about sharing events, articles, and positions in your own field. You need to add an extra ingredient—your opinions, or something personal—to what you share. One way to do this is through sharing failures: a rejected paper or job application, or even a spilt coffee. This is a great way to give and receive moral support from other academics.”
+
+Make two lists. In one, list the characters you remember. In the other, list just two or three words that would capture the central concepts that the writer weaves around those characters, words that constitute the conceptual center of that paragraph.
+
+1. Characters:
+    - the twitter user (the reader), their followers, Twitter 
+2. Concepts: 
+    - humanity, relatable, friendly 
+
+Go back and look at the paragraph. Do the thematic strings in the paragraph agree with the characters and concepts that you remembered and listed?
+
+I found that this paragraph was easy to understand when I first read it. I remembered characters and concepts from the paragraph that, after reading again, agree with its thematic strings. To me, the thematic strings revovle around being personable on your Twitter and not only posting around detailed scientific information. 
+
+### Identify thematic strings in a paragraph from your manuscript.
+Pick a paragraph from your manuscript that you think “hangs together”. Do the same exercise for this paragraph and identify the thematic strings.
+
+Next pick a paragraph from your manuscript that feels vague when you re-read it. Do the same exercise, and see if you can revise the paragraph so that its thematic strings are consistent and clear.
+
+
+Hangs together: 
+
+Another area of concern in the NOAA storm events database arises with geographic bias. This bias explains the idea that there may be inconsistencies in the recording of events due to geographic location. First, there may be differences in the supply of information from different regions based on population differences or locations of weather stations. Secondly, structural changes in the database create differences in how location data is obtained and recorded. 
+
+1. Characters
+    - database, recorded events 
+2. Concepts
+    - geography, location, bias/differences, data entry 
+
+
+Vague: 
+
+Some temporal changes are structural, in terms of the database changing what types of events are recorded. In the NOAA database, from 1950 to 1954, only tornado events were recorded [@stormeventsdetails]. Then, from 1955 to 1996, only tornado, thunderstorm wind and hail events were recorded as digital data [@stormeventsdetails]. Starting in 1996, the database began including all 48 event types that are recorded today [@stormeventsdetails]. Additionally, the NWS reports that there was reduced funding from 1976 to 1979 that led to a decrease in flood damage data collection [@downton2005reanalysis]. Then, after 1983, Congress began to require The US Army Corps of Engineers to provide yearly flood damage reports in contract with the NWS [@downton2005reanalysis]. This provides a more consistent report of flood damage that may not have otherwise been reported. These changes pose inconsistensies in the number of certain storm events over large periods of time.
+
+1. Characters
+    - the database, temporal changes, NWS, Congress 
+    
+2. Concepts
+    - changes, time, data entry
+ 

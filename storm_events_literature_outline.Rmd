@@ -108,7 +108,7 @@ Something like: The Storm Events database aims to record listings for all hazard
     
         * script for how noaa deals with this? or examples of this? Probably explained in narrative sections of events [BA: This comes in with the epidsode ID and the event ID. I think there's an example in the vignette where we check this out. One is used to help collect all the types of hazards from one overall event using a common ID. We might want to bring that analysis in here.]
 
-#### Number of events reported per episode ID: 
+#### Number of events reported per episode ID:   
 For these episodes with the most events in 2019, the following graph shows the
 number of events reported for the episode. This figure demonstrates how one
 large weather 'episode' can include several other events types. Episode 133801,
@@ -117,13 +117,60 @@ flow, strong winds, high wind, and hail. All of these different event types
 occured as a result of one large storm. NOAA categorizes these large storms by
 assigning them an episode ID which contains all of the different event types
 reported for that storm. This helps to avoid events that were all from one storm
-getting double counted as separate entities. [Can we add anything from the
+getting double counted as separate entities.
+
+[Can we add anything from the
 database's documentation in terms of how they decide how to define an episode
 and how to link events with that episode? Or really, anything that have in their
 documentation on this episode / event piece might be interesting to try to work
-in here.]
+in here.]  
 
+Copied from NWS Instruction Documentation:  
+> 2.9.1 Episode Narrative. Generate an episode with a narrative; otherwise individual events
+cannot be entered into the Storm Data software. An episode narrative describes the entire
+episode in a general fashion, and briefly describes the synoptic meteorology associated with the episode. Information in the episode narrative can be very useful for researchers and other users of Storm Data. This narrative does not need to be long or elaborate, rather make it brief and informative. An example would be “A strong cold front passed through the Washington, D.C.area, triggering several instances of damaging thunderstorm winds and large, baseball-size hail.”  
+To ensure events being logged in a single episode are part of the same synoptic meteorological
+system, events within the same episode may begin no more than five (5) calendar days apart.
+This will enable the Storm Data preparer to properly document events that double back into a
+specific region or events that are very slow moving. Examples include Hurricane and Winter
+Storm events.  
+The episode narrative will appear in the Storm Data publication after all events contained within the episode. The episode narrative does not appear in the examples shown in Appendix A, which is reserved for only event narratives. Additionally, a brief summary of fatalities and injuries should be part of the episode narrative for zone-based events.
 
+> 2.9.2 Event Narrative. Detailed information pertaining specifically to the event and not the
+overall episode will appear in an event narrative. The event narrative describes the significance or impact of an event within an episode. An event narrative is required for all Tornado events, all Thunderstorm Wind events, and all Lightning events, whether over land or marine zones.  
+This narrative will appear immediately below the header-strip in the publication and should
+contain descriptive information about the times, locations, and severity of destruction of
+property, trees, crops, power lines, roads, bridges, etc. Additionally, a brief summary of fatalities and injuries should be part of the event narrative for county-based and marine zone-based events. For Thunderstorm Wind events with estimated gusts, use sentences such as “Several trees were toppled by powerful downburst gusts.”
+
+```{r echo = FALSE}
+c_events_2019 <- events_2019 %>%
+  dplyr::select_(~ BEGIN_YEARMONTH, ~ BEGIN_DAY, ~ END_YEARMONTH, ~ END_DAY,
+                   ~ EPISODE_ID, ~EVENT_ID, ~ STATE, ~ CZ_TYPE, ~ CZ_NAME,
+                  ~ DEATHS_DIRECT, ~ DEATHS_INDIRECT, ~ INJURIES_DIRECT,
+                  ~ INJURIES_INDIRECT, ~ DAMAGE_PROPERTY, ~ DAMAGE_CROPS,
+                   ~ EVENT_TYPE, ~ STATE_FIPS, ~ CZ_FIPS, ~ SOURCE,
+                   ~ EPISODE_NARRATIVE, ~ EVENT_NARRATIVE) %>%
+  setNames(tolower(names(.))) %>%
+  dplyr::filter_(~ cz_type == "C") %>%
+  dplyr::mutate_(fips = ~ as.numeric(paste0(state_fips, str_pad(cz_fips, 3, pad = "0"))))
+
+county_events_2019 <- bind_rows(c_events_2019, filter(z_events_2019, !is.na(fips)))
+```
+
+```{r echo = FALSE}
+county_damage_2019 <- county_events_2019 %>%
+  dplyr::select(episode_id , event_id, fips, event_type, contains("damage")) %>% 
+  tidyr::gather(key = impact, value = amount, -event_type, -event_id, -episode_id, -fips) %>%
+  dplyr::mutate(amount = parse_damage(amount)) 
+```
+
+```{r echo = FALSE}
+county_events_2019 %>%
+  filter(episode_id == "99142" & fips == 2023) %>%
+  select(event_type, contains("damage"), cz_name, state, event_narrative, episode_narrative) %>% 
+  as.data.frame() %>% 
+  pander::pander()
+```
 
 ```{r echo = FALSE, fig.align = "center", fig.width = 6, fig.height = 4}
 top_episodes <- events_2019 %>%
@@ -256,7 +303,7 @@ Within the NOAA Storm Events database, there are comparable differences in event
 ### Long Term Trends: 
 The long term patterns of temporal bias are related to advancements in monitoring and detecting storm events, changes in population size and locations, and structural changes in recording strategies and monetary loss accounting.
 
-Technological advancements within storm recording such as the development of radar and larger networks of monitors have increased our ability to detect extreme weather events as they happen. For example, over time, forecastors and storm spotters have learned how to recognize key weather patterns and structures that make it more likely for a tornado to form. The development and advancement of doppler radar and dual-polarization radar technology has also increased our ability to collect and use data to detect tornado events [@tornadodetection]. One study states that "the number of tornadoes reported in the United States has doubled from about 600 per year in the 1950s to around 1200 in the 2000s"[@verbout2006evolution]. This may be influenced by factors other than meteorological changes. 
+Technological advancements within storm recording such as the development of radar and larger networks of monitors have increased our ability to detect extreme weather events as they happen. For example, over time, forcasters and storm spotters have learned how to recognize key weather patterns and structures that make it more likely for a tornado to form. The development and advancement of doppler radar and dual-polarization radar technology has also increased our ability to collect and use data to detect tornado events [@tornadodetection]. One study states that "the number of tornadoes reported in the United States has doubled from about 600 per year in the 1950s to around 1200 in the 2000s"[@verbout2006evolution]. This may be influenced by factors other than meteorological changes. 
 
 
 [BA: Great! This is a great explanation of this idea that we may be able to "see" more events
@@ -431,7 +478,7 @@ events_2019 %>%
 
 ## Threshold Bias  
 
-The varying severity of an event creates threshold bias in the storm events database. Events of larger maginutude and/or damage to human health are better documented, while events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]. Small events may even be excluded due to threshold criteria in the database [@gall2009losses]. For example, ff a flood has received a presidential disaster declaration, FEMA storm survey teams go to the scene and provide extra damage assessments [@downton2005reanalysis]. 
+The varying severity of an event creates threshold bias in the storm events database. Events of larger maginutude and/or damage to human health are better documented, while events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]. Small events may even be excluded due to threshold criteria in the database [@gall2009losses]. For example, if a flood has received a presidential disaster declaration, FEMA storm survey teams go to the scene and provide extra damage assessments [@downton2005reanalysis]. 
 
 * Events of smaller magnitude are less reported becasue less people are affected [@gall2009losses]   
 
@@ -504,7 +551,7 @@ The value of a dollar has changed over time. This can be addressed by normalizin
 
 ### Introduction 
 
-Another area of concern in the NOAA storm events database arises with geographic bias. This bias explains the idea that there may be inconsistencies in the recording of events due to geographic location. First, there may be differences in the supply of information from different regions based on population differences or locations of weather stations. Secondly,  structural changes in the database create differences in how location data is obtained and recorded. 
+Another area of concern in the NOAA storm events database arises with geographic bias. This bias explains the idea that there may be inconsistencies in the recording of events due to geographic location. First, there may be differences in the supply of information from different regions based on population differences or locations of weather stations. Secondly, structural changes in the database create differences in how location data is obtained and recorded. 
 
 ### Location / Density of people
 
@@ -532,10 +579,6 @@ There can also be changes at country or state level over time that lead to exclu
 
 ### Aggregation of reporting 
 
-Currently, the smallest unit of aggregation to use all parts of database are Weather Forecasting Offices and there are about 122 nationwide [@konisky2016extreme]. There may be inconsistencies between county regions and weather forecasting offices. NOAA Storm Events states that "a hydrometeorological event will be referenced, minimally, to the nearest
-hundredth of a mile, to the geographical center (not from the village/city boundaries or limits) of
-a particular village/city, airport, inland lake, or location providing that the reference point is
-documented in the Storm Data software location database." 
 
 Currently, the smallest unit of aggregation to use all parts of the database are Weather Forecasting Offices. There are currently about 122 nationwide [@konisky2016extreme]. There may be inconsistencies between where county regions are defined and where weather forecasting offices are located. NOAA Storm Events states that "a hydrometeorological event will be referenced, minimally, to the nearest hundredth of a mile, to the geographical center (not from the village/city boundaries or limits) of a particular village/city, airport, inland lake, or location providing that the reference point is documented in the Storm Data software location database" [@nwsinstruction]. Problems may arise here if the exact location of an event is not already documented in the Storm Data software location database. [BA: In this section, we may also want to talk about how some events might be very localized (for example, a flash flood, or even storm surge that's only near the coast of the county), but the county-level reporting of the event means that all the county gets classified as experiencing or not experiencing the event. I think that sometimes the "Narratives" of the events give details that you could use to find out exactly what parts of the county were affected, and some events like tornadoes give the starting and ending latitude and longitude, so you can figure out the path and where that was in the county. However, overall, it's much easier from the database to get an idea of an event occurrance for the county as a whole rather than for locations within the county.] [We may want to talk a bit about the idea of ecological bias here.] [Maybe want to talk about spatial alignment.]
 
