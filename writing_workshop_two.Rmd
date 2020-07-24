@@ -1,17 +1,19 @@
 ---
 title: "Writing Workshop Day 2"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
-# Day 2 
-### Summarize your manuscript 
+
+## Summarize your manuscript 
 
 The Storm Events database collects information from the National Weather Service regarding weather events that occur in the United States. Many researchers use this database to conduct studies on how weather events impact human life, property and crop damage, and commerce. Though the database is quite extensive, several concerns and biases may be present in its data. 
 
 
 It is important to understand these biases so that studies using this dataset can accurately portray trends and changes caused by weather events. 
 
-### Identify key Introduction components in an example paper
+## Identify key Introduction components in an example paper
 Twitter: 
 
 1. What is the larger problem that the paper will be tackling?
@@ -48,14 +50,14 @@ Shwartz Ecological Fallacy:
     - redefining ecological fallacy as a general validity issue 
     - showing how this new definition will dissect ecological fallacy into three distinct fallacy notions   
 
-### Diagnose the Opening for an example paper 
+## Diagnose the Opening for an example paper 
 
 Shwartz Ecological Fallacy:
 Who do you think is the intended audience for the paper? What is the larger issue the paper will address? Do you think that they are properly “advertising” what they will later cover in the paper?  
 
 I think that this article is trying to target epidemiologists and other researchers that use population data or are interested in this field of science. The first paragraph brings up epidemiology, ecological studies, and ecological fallacy. This leads the reader to believe that the paper will be about these topics, but it is unclear that the rest of the paper will be about redefining ecological fallacy. 
 
-### Define Opening components for your paper.
+## Define Opening components for your paper.
 
 What is the target audience? Is it broad / interdisciplinary or targeted to researchers in a certain field?
 What is the larger issue that the manuscript will address? In writing this, be sure to be clear about the scope with which the manuscript will cover this issue.
@@ -64,17 +66,54 @@ What are a few elements of the issue that are interesting but that your manuscri
 My manuscript is attempting to target scientists using the NOAA storm events database for research. It is broad in terms of how it discusses general bias in data, but specific in that it focuses on the NOAA database and its weather data. My manuscript covers what the NOAA Storm Events database is, examples of how it has been used in research, and 4-5 biases that occur in the dataset. Though my writing will cover 4-5 broad biases and include some examples of each type, there are several other examples that could also showcase the biases. There may also be other forms of bias in the data that I do not cover. 
 
 
-### Revise the Opening for your manuscript.
+## Revise the Opening for your manuscript
 Does your Opening need the whole paragraph, or just the first sentence or two? Does this first paragraph include any signals to clarify what audience you expect for the manuscript? Does the paragraph give readers clues on the larger issue that the manuscript will address? Does the paragraph “overpromise”, indicating that the manuscript will cover a larger scope than it does?
 
+**What is the Storm Events Database**
+
+The National Oceanic & Atmospheric Administration (NOAA) Storm Events database collects information on storms, significant weather phenomena, rare or unusual weather, and other significant meteorological events across the United States. NOAA stores this information in csv files for each year. It has been recording weather information since 1950. However, the database has undergone several changes since then. In 1950, NOAA only recorded tornado events and now it records 48 different event types. Following these changes, the NOAA Storm Events website states that they have reformatted and standardized events types without changing any specific values or details [@stormeventsdetails]. 
+
+The database assigns each weather phenomenon with a location, date, event type, event ID, episode ID, property damage estimate, crop damage estimate, county name, state, event narative, and episode narrative. The database categorizes large storms as episodes which contain several individual events. For example, a hurricane will be given one episode ID, and the rain, wind, floods, etc associated with that hurricane will be given event IDs that fall under that episode. 
+
+The US National Weather Service (NWS) collects weather data from storm trackers, federal agencies, the media, the public, and several other sources. The NWS then uses this data to create the NOAA Storm Events database that is released as a monthly publication. 
+
+**Concerns with the Database**
+
+Though the NOAA Storm Events database is quite extensive, several biases affect its data. These biases fall under five major categories which are common in weather data. These include hazard bias, temporal bias, threshold bias, accounting bias, and geographic bias. These biases result from various factors including structural changes over time, reporting errors, inherent bias, and others. 
 
 
-The Storm Events database collects information from the National Weather Service regarding weather events that occur in the United States. Many researchers use this database to conduct studies on how weather events impact human life, property and crop damage, and commerce. Though the database is quite extensive, several concerns and biases may be present in its data. 
+
+The Storm Events website gives a disclaimer that "an effort is made to use the best available information but because of time and resource constraints, information from [the] sources may be unverified by the NWS" [@stormdatafaq]. 
+
+
+## After Meeting  
+
+### 9. Evaluate the Funnel and Challenge of example papers.
+Re-read the Introductions for the three example papers. Find and write down the text in each paper that presents the Challenge of the paper.
+
+Twitter-share our personal experience and advice in the form of ten simple rules, and we hope that this material will help a number of researchers who are planning to start their journey on Twitter to take their first steps and advance their careers using Twitter.
+
+Fallacy- Examining this issue from a different perspective as a general validity problem will show that the ecological falacy, as often used, encourages three interelated, fala- cious notions: (1) that individual-level models are more perfectly specified than ecological level models,(2) that ecologi- cal correlations are always substitutes for individual-level corelations,and (3) that group-level variables do not cause disease.We begin with a description of the validity framework and the definition of key terms.
+
+Gall- This paper highlights some common limitations associated with loss data by describing potential biases in the data, how these affect the loss statistics, and how they potentially lead to misinterpretations of the loss information. 
+
+
+Next, re-read the Introduction of the Gall et al. paper. How does the Introduction funnel the readers from the Opening to the Challenge at the end of the Introduction? What background information does it give readers to help them understand and appreciate the Challenge? What examples do they use from the literature to convince readers that their Challenge is important?
+
+The Gall Introduction starts by stating that there is a probblem with how disaster data is collected in the US now. It then goes into detail about some of the ways in which the US gov does collect disaster data. It also states the limitations that exist within these agencies. The article are cites other articles that state the problems with disaster data collection. 
 
 
 
+### 10. Define the Challenge of your manuscript.
+In 1–2 sentences, write the Challenge of your manuscript.
 
-It is important to understand these biases so that studies using this dataset can accurately portray trends and changes caused by weather events. 
+Look at the draft of your Introduction. Is this Challenge clear in the text? If so, is it at the end of the Introduction, or somewhere else?
+
+Write down three pieces of background information that you think it is critical for your reader to know to believe that your manuscript’s Challenge is important. Draft a paragraph one each of these explaining and presenting the background information to readers.
+
+Write down two examples that you think might help readers understand why your Challenge is important. Draft a few sentences presenting each of these examples.
+
+Revise your Introduction to integrate your drafted material on the background and examples.
 
 
 

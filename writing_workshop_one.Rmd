@@ -40,7 +40,7 @@ output:
 Technological advancements within storm recording such as the development of radar and larger networks of monitors have increased our ability to detect extreme weather events as they happen.
 
 1. Technological advancements within storm recording such as the development of radar and larger networks of monitors have led to an increased ability for the detection of extreme weather events as they happen.
-2. Forecasters and storm spotters have developed advanced radar and larger networks of monitors that detect extreme weather events much more effectively.
+2. Scientists have developed advanced radar and larger networks of monitors that detect extreme weather events much more effectively.
 
 Problematic sentences: 
 
@@ -71,4 +71,16 @@ Drought hazards are apparently notoriously underreported because there is a lack
 “Natural hazard losses exhibit an upward trend over time. This is a function of increases in wealth and population but is also attributed to better loss accounting in recent years. The escalating pattern of hazard losses is therefore partially an artifact of advances in reporting losses, but how much or how little this effect contributes to the skyrocketing losses in comparison to effects of population growth and increasing wealth in high hazard areas is unclear.” Gall et al., 2009
 
 Edited: Natural hazard losses generally exhibit an upward trend over time because of increases in wealth and population. However, in recent years, better loss accounting may also be contributing to this rise. In high hazard areas, it is unclear which factors play a larger role in the skyrocketing rise of losses. 
+
+# After Meeting  
+
+### Identify topics in a paragraph of your manuscript: 
+
+Manuscript:  
+For **these episodes** with the most events in 2019, the following graph shows the number of events reported for the **episode**. This figure demonstrates how one large weather **‘episode’** can include several other events types. **Episode 133801**, the second episode in this figure, indicates several reports of flood, debris flow, strong winds, high wind, and hail. All of these different event types occured as a result of one **large storm**. NOAA categorizes these large storms by assigning them an **episode ID** which contains all of the different event types reported for that storm. This helps to avoid events that were all from one storm getting double counted as separate entities.
+
+
+Revised:  
+For **these episodes** with the most events in 2019, the following graph shows the number of events reported for the **episode**. This figure demonstrates how one large weather **‘episode’** can include several other events types. For example, **Episode 133801** in this figure indicates several reports of flood, debris flow, strong winds, high wind, and hail. All of these different event types occured as a result of one **large storm labelled episode 133801**. This unique **episode ID** prevents related events from getting double counted as separate entities. 
+
 

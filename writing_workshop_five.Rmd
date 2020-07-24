@@ -1,6 +1,117 @@
 ---
 title: "Writing Workshop Day 5"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
+# 2.Diagnose and fix word redundance in paragraphs from example papers.
+Based on what you just read, identify words in this text that might be redundant. Try re-writing the text to remove those redundant words. 
+
+Schwartz:  
+
+“The question of disease etiology is complex. It is likely that a multitude of causes is involved in the development of any particular disease. Where in the causal chain, among the myriad of variables, one chooses to examine and ascertain causation is often a question of where intervention is most efficacious. That, in turn, is often a political and not a scientific issue. An examination of the full range of variables potentially involved in disease etiology, with a synthesis of findings from all levels of analysis, provides the best opportunity for a full understanding of disease etiology.”  
+
+Disease etiology is complex. The development of any disease involves many causes. Examining causation typically occurs where intervention is most efficacious. That, in turn, is often political, not scientific. However, an examination of all variables and findings provides the best opportunity for a full understanding of disease etiology.
+
+
+Cheplygina et al.:  
+
+“**But** even more importantly, Twitter culture **has** exposed **a part of academia that has** traditionally always been hidden from view, namely the inception of new research activities. Now, ECRs can observe and **even join the process of** creating national or international research projects (for instance, [6] stems from a discussion at Twitter and Bik et al [1] write their work resulted from online interactions). Senior researchers **openly** share ideas through Twitter and **this can lead to the development** of new concepts which often move on to become fully-fledged research projects.”  
+
+Even more importantly, Twitter culture exposes a traditionally hidden part of academia, namely the inception of new research activities. Now, ECRs can observe or create national or international research projects (for instance, [6] stems from a discussion at Twitter and Bik et al [1] write their work resulted from online interactions). Senior researchers share ideas through Twitter which can develop new concepts into fully-fledged research projects.
+
+# 3. Diagnose and fix redundant words in your manuscript.
+
+
+### Long Term Trends: 
+**The long term patterns of** temporal bias are related to advancements in monitoring and detecting storm events, changes in population size and locations, and structural changes in recording strategies and monetary loss accounting.
+
+Scientists have developed advanced radar and larger networks of monitors that detect extreme weather events much more effectively. For example, over time, forcasters and storm spotters have learned how to recognize key weather patterns and structures that make it more likely for a tornado to form. The **development and advancement** of doppler radar and dual-polarization radar technology has **also** increased our ability **to collect** and use data to detect tornado events [@tornadodetection]. One study states that "the number of tornadoes reported in the United States has doubled from about 600 per year in the 1950s to around 1200 in the 2000s"[@verbout2006evolution]. **This may be influenced by** factors other than meteorological changes.  
+
+**Increases in** population size **throughout the US** and **further** land development may also contribute to increased event reporting. For example, population growth **over time** in some areas might mean there's a higher chance that an event **that happens** in that area gets reported. This is because events are reported to the NWS by a number of sources including trained spotters, the public, law enforcement, broadcast media, social media, local and county officials, etc. 
+ 
+
+### Introduction to Temporal Bias: 
+Within the NOAA Storm Events database, **there are comparable differences in** event and loss recording over time. Temporal bias **is helpful in describing and understanding** these changes within the database. **There are** long term patterns of temporal bias that may be caused by changes in measuring and recording events and losses. **There are also** seasonal patterns within the database **that relate to** unique attributes and temporality of certain weather events.  
+
+### Introduction to Temporal Bias: 
+Within the NOAA Storm Events database, event and loss recording differs over time. Temporal bias helps describe these changes **within the database**. Structural changes in measuring and recording events and losses lead to long term patterns of temporal bias. **Unique** attributes and temporality of certain weather events lead to seasonal patterns of temporal bias.  
+
+seasonal temporal bias can also be created by...
+is the subject recording?
+
+
+### Long Term Trends: 
+**The long term patterns of** temporal bias are related to advancements in monitoring and detecting storm events, changes in population size and locations, and structural changes in recording strategies and monetary loss accounting.
+
+Scientists have developed advanced radar and larger networks of monitors that detect extreme weather events much more effectively. For example, over time, forcasters and storm spotters have learned how to recognize key weather patterns and structures that make it more likely for a tornado to form. The **development and advancement** of doppler radar and dual-polarization radar technology has **also** increased our ability **to collect** and use data to detect tornado events [@tornadodetection]. One study states that "the number of tornadoes reported in the United States has doubled from about 600 per year in the 1950s to around 1200 in the 2000s"[@verbout2006evolution]. **This may be influenced by** factors other than meteorological changes.  
+
+
+### Long Term Trends: 
+Long term temporal bias arises because technology is getting better at detecting storm events, population size is growing in high hazard areas, and the NWS has changed their recording strategies and monetary loss acounting. 
+
+
+Scientists have improved radar and expanded networks of monitors and so they detect more extreme weather events. The advancement of doppler radar and dual-polarization radar technology has increased our ability to detect tornado events [@tornadodetection]. Forcasters and storm spotters have also discovered patterns that help them recognize tornado formation. These advancements increase the tornadoes detected. Verbout et. al states that "the number of tornadoes reported in the United States has doubled from about 600 per year in the 1950s to around 1200 in the 2000s"[@verbout2006evolution]. Technology increases this reported number rather than meteorological changes. 
+
+
+Increasing population size and land development also contribute to increased event reporting over time.  Population growth increases the probability that an event in an area gets reported. This is because events are reported to the NWS by trained spotters, the public, law enforcement, broadcast media, social media, local and county officials, etc. When the number of these individuals increases in an area, so does the likelihood that they will see and report an event. 
+
+# 5. Identify technical terms versus jargon in a paragraph from an example paper.
+Re-read the following paragraph from the Gall et al. paper:
+
+“Natural hazard losses exhibit an upward trend over time (Fig. 2). This is a function of increases in wealth and population (Cutter and Emrich 2005; Pielke et al. 2008) but is also attributed to better loss accounting in recent years. The escalating pattern of hazard losses is therefore partially an **artifact of advances in reporting losses**, but how much or how little this effect contributes to the skyrocketing losses in comparison to effects of population growth and increasing wealth in **high hazard areas** is unclear.”
+
+
+Make a list of the terms in this paragraph that you think are technical terms, as defined on page 147 of Writing Science. Then, highlight any terms that you think might be jargon, again using the definition from Writing Science.  
+
+Technical terms:  
+
+* natural hazard losses: money lost to natural hazards that is recorded in a databbase
+* loss accounting: keeping track of this lost money
+* losses: the money lost 
+
+These ideas are mentioned early in the paper when they describe that economic losses are suffered from natural hazaards. 
+ 
+
+Finally, revise the paragraph to replace all the jargon terms with simpler language.  
+
+“Natural hazard losses exhibit an upward trend over time (Fig. 2). This is a function of increases in wealth and population (Cutter and Emrich 2005; Pielke et al. 2008) but is also attributed to better loss accounting in recent years. The escalating pattern of hazard losses is therefore partially due to better loss reporting, but how much or how little this effect contributes to the skyrocketing losses in comparison to effects of population growth and increasing wealth in areas with many natural hazards is unclear.” 
+
+# 6. Identify technical terms necessary in your manuscript.
+Go through your entire manuscript and make a glossary of the technical terms that you must use in the manuscript. These might be proper nouns, like the name of a specific package repository like “CRAN” or a database like “NOAA Storm Events”. They may be ideas that are very specific to your topic, like “reproducibility” or “exposure misclassification”. In your glossary, include both the term and your definition for it. 
+
+Technical Terms:  
+
+* NOAA Storm Events: National Oceanic & Atmospheric Administration Storm Events database
+* NWS: National Weather Service
+* bias and all the types: prejudice, influences, etc (the types are explained in outline)
+* event and loss recording: databases keeping track of events and the damages they cause
+* losses: economic damages from weather events
+* episode ID and event ID: codes assigned by NWS to events in the database
+* cluster analysis: graph we created grouping events together
+* SHELDUS: Spatial Hazard Events and Losses Database
+* temporality: characteristics based on time
+* doppler radar: storm tracking technology
+* dual-polarization radar technology: provides size, shape, and variety of weather events
+* all of the acronyms for who reports events (all defined in outline)
+* FEMA: Federal Emergency Management Association
+* damage assessments: records of storm damages
+* Aggregation of reporting: the levels at which the NWS records location data
+* Weather Forecasting Offices: regions that the NWS service has defined for reporting
+* forecast zones: another way the NWS has defined regions for reporting
+
+
+# 7. Diagnose and fix jargon in your manuscript.
+Use the same paragraphs from your manuscript that you did for prompt 3. Highlight any terms in these paragraphs that are in the glossary you created in the last prompt. Now look at all the remaining words. Are any more complex than they need to be? Identify jargon and revise the paragraphs to use simpler words.
+
+### Introduction to Temporal Bias: 
+Within the NOAA Storm Events database, **event and loss recording** differs over time. **Temporal bias** helps describe these changes within the database. Changes in measuring and recording events and losses lead to long term patterns of temporal bias. Unique attributes and **temporality** of certain weather events lead to seasonal patterns of temporal bias.  
+
+### Long Term Trends: 
+Long term temporal bias arises from advancements in monitoring and detecting storm events, changes in population size and locations, and structural changes in recording strategies and monetary loss accounting. 
+
+Scientists have developed technology that detects extreme weather events much more effectively. The advancement of **doppler radar** and **dual-polarization radar technology** has increased our ability to detect tornado events [@tornadodetection]. Forcasters and storm spotters have also discovered key weather patterns and structures that help them recognize tornado formation. These advancements increase the number of tornadoes that are detected per year. Verbout et. al states that "the number of tornadoes reported in the United States has doubled from about 600 per year in the 1950s to around 1200 in the 2000s"[@verbout2006evolution]. Technology may artificially increase this reported number rather than meteorological changes. 
+
+Increasing population size and land development also contribute to increased event reporting over time.  Population growth increases the probability that an event in an area gets reported. This is because events are reported to the NWS by trained spotters, the public, law enforcement, broadcast media, social media, local and county officials, etc. When the number of these individuals increases in an area, so does the likelihood that they will see and report an event. 
 
