@@ -51,6 +51,30 @@ parts: (1) tools to access and explore the data (which we've made through the pa
 
 Several organizations collect disaster data in the US including the National Weather Service, NCDC, FEMA. Collecting disaster data is very important to understand how hazards impact human life, agriculture, commerce, etc. However, current collections of disaster data posses several flaws and biases. The data can often be varied and vague. 
 
+[BA: This is great. As we draft this, we will want to make sure we aren't too negative about
+the data---these are huge and helpful databases, that have taken loads of work to collect. 
+However, the process of recording this data is evolving, and our technologies are advancing, 
+which are all very good things but which leave remnants in the data that researchers who
+want to use it need to understand to use it appropriately.
+
+Also, it we want to focus our opening on one direciton, I think the key one you've identified
+is "it is very important to understand how hazards impact humans" (health, agriculture, 
+commerce, etc.). I think this would be a great focus for the opening. It's nice and broad, 
+and we could talk a bit about how anticipated changes in patterns of these hazards is 
+expected with climate change, and how this, in combination with the large impacts we
+see from some events in the present, make it critical that we understand their impacts 
+better, both the scale of those impacts and the pathways from the hazard to the impact.
+For the present-day impact, we might want to talk some about the billion dollar disasters
+that the US expereiences each year (see https://www.ncdc.noaa.gov/billions/ for more on 
+this). For future threats, we could look at the US Climate and Health Assessment
+(https://health2016.globalchange.gov/) and some of the IPCC reports (for example, 
+https://www.ipcc.ch/report/managing-the-risks-of-extreme-events-and-disasters-to-advance-climate-change-adaptation/changes-in-impacts-of-climate-extremes-human-systems-and-ecosystems/).
+
+Some of the other parts you've identified here could move into the funnel. For example, 
+how collecting disaster data is important for us to improve our understanding of these
+impacts, and then this idea that we have large sets of the data, but it comes with quirks
+that need to be understood by the researcher to be properly used.]
+
 ### Funnel 
 
 Using disaster data is common in interdisciplinary research because natural hazards impact several fields of study: economics, epidemiology, atmospheric science, agriculture, etc. 
