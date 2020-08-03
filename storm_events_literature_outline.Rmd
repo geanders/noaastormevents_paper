@@ -81,6 +81,10 @@ Using disaster data is common in interdisciplinary research because natural haza
 
 [TK: Include examples of studies that use the NOAA Storm Events database here] 
 
+[BA: Yes, what you have here will be great for the funnel. See my note for the opening about
+how some of that could move into this funnel, too, so we have the opening more broad 
+(focus on disaster impacts, and not get into the question of data until the funnel.)]
+
 ### Challenge 
 
 Gall et al. covers six major biases associated with the major disaster databases used in the US [@gall2009losses]. In this paper, we will describe the structure and documentation of NOAA Storm Events and bias can affect its data. We introduce examples of how certain hazards exemplify the biases and how features of the noaastormevents package in R dissect these issues. It is important to understand the biases in Storm Events to accurately portray new findings and avoid making the same mistakes. 
