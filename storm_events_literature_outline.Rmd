@@ -22,6 +22,31 @@ events_2019 <- create_storm_data(date_range = c("2019-01-01", "2019-12-31"))
 * mention how Gall's paper on losses covers these topics but we are focusing on Storm Events database 
 * make it clear that we are using this database in R ] 
 
+[BA: I absolutely agree with your points here. These will make a nice Intro. Regarding
+your question about distinguishing this from the Gall paper, I think our key contribution
+will be showing how many of these concerns/mechanisms for bias exist specifically in the
+NOAA Storm Events database. They more used examples from other studies that illustrated
+some of the biases. We can really hone in on how they play out in the Storm Events 
+database specifically. I've added an Issue on the GitHub page suggesting one new analysis
+we can do for long-term trends. I'll add some more as I go through the draft as I think
+of any.
+
+Also, I love the point you have here about understanding the quirks. Disaster databases
+aren't perfect reflections of when and where severe weather events happened. I don't think
+that they ever will be (at least not in the near future, and we certainly can't go back 
+to fix records of past events to be perfect, although there have been some helpful 
+re-analysis projects like Chris Landsea's reanalysis of hurricanes that try to make the
+data more consisent over time [and this would be a nice example to add to the temporal
+bias section! I've added an Issue on this.])
+
+I also strongly agree with the idea that, if we know the quirks, we can build tools to 
+help address them. Bias correction is one thing that's been done to try to address long-term
+temporal bias in tornado studies. This might be an example for us to use. Also, even having
+the tools to *get* the data is helpful. We might want to frame the "tools" idea in two 
+parts: (1) tools to access and explore the data (which we've made through the package) and
+(2) tools to help adjust or account for the mechanisms that might otherwise lead to bias
+(we don't have these in the package yet, but this could be room for future development.)]
+
 ### Opening 
 
 Several organizations collect disaster data in the US including the National Weather Service, NCDC, FEMA. Collecting disaster data is very important to understand how hazards impact human life, agriculture, commerce, etc. However, current collections of disaster data posses several flaws and biases. The data can often be varied and vague. 
