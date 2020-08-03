@@ -89,6 +89,28 @@ how some of that could move into this funnel, too, so we have the opening more b
 
 Gall et al. covers six major biases associated with the major disaster databases used in the US [@gall2009losses]. In this paper, we will describe the structure and documentation of NOAA Storm Events and bias can affect its data. We introduce examples of how certain hazards exemplify the biases and how features of the noaastormevents package in R dissect these issues. It is important to understand the biases in Storm Events to accurately portray new findings and avoid making the same mistakes. 
 
+[BA: This is a great start on the Challenge! I recommend that we move the last sentence 
+("It is important to...") into the end of our funnel. This will nicely set readers up to agree
+that this study is important and something they want to read. The first sentence ("Gall et al...")
+could also move to the funnel. So, then, our funnel might be: 
+(1) To better understand the scale and pathways of human impacts from disasters, we need
+thorough data recording disaster events; (2) NOAA Storm Events provides this for certain
+types of disasters in the US (define which ones, plus some more describing the history and
+content of this database); (3) however, as with any disaster database, there are quirks that
+have arisen from the recording and collection process of creating this database; (4) to 
+appropriately use this database, it is critical for researchers to understand and, if 
+possible, account for these quirks (we can try to find a better word than "quirks" at some 
+point, but we can use it as a placeholder now). These points would cover a few paragraphs
+and nicely funnel us down to our challenge in the last paragraph of the introduction. 
+
+For the challenge itself, I think your middle two sentences ("In this paper..." and 
+"We introduce") work for now, but I think we might want to edit these to strengthen them 
+as we edit. Right now, they're a bit too focused on the descriptive, where really we're
+moving, with our analysis of the data, more toward an active investigation to identify 
+evidence in this dataset of mechanisms/quirks that could lead to several types of bias
+previously identified as things to look out for in disaster databases (through the Gall
+paper and others). I think that focus on an active investigation will sound stronger.]
+
  
 # What is the Storm Events Database
 
