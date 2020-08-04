@@ -114,6 +114,8 @@ paper and others). I think that focus on an active investigation will sound stro
  
 # What is the Storm Events Database
 
+[BA: This description is great. I think this part could probably go in the "funnel" of the Introduction.]
+
 The National Oceanic & Atmospheric Administration (NOAA) Storm Events database collects information on storms, significant weather phenomena, rare or unusual weather, and other significant meteorological events across the United States. NOAA stores this information in csv files for each year. It has been recording weather information since 1950. However, the database has undergone several changes since then. In 1950, NOAA only recorded tornado events and now it records 48 different event types. Following these changes, the NOAA Storm Events website states that they have reformatted and standardized events types without changing any specific values or details [@stormeventsdetails]. 
 
 The database assigns each weather phenomenon with a location, date, event type, event ID, episode ID, property damage estimate, crop damage estimate, county name, state, event narative, and episode narrative. The database categorizes large storms as episodes which contain several individual events. For example, a hurricane will be given one episode ID, and the rain, wind, floods, etc associated with that hurricane will be given event IDs that fall under that episode. 
