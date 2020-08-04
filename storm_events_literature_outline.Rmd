@@ -135,6 +135,11 @@ aspect of how listings are included in the database. You could take a look throu
 noaastormevents to see if there's a figure or illustration there that might make a good
 starting point for helping to illustrate that.]
 
+[BA: For this description, it would be helpful to have some more references on its 
+history. For early history, since this was mainly the tornado database, info about
+it might be under a different name for the database. I'll try to find some papers we 
+could look into to get some more of these details and references to add.]
+
 
 
 # Use of Storm Events Database in research on societal impacts
