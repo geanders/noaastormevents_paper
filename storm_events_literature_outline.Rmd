@@ -156,6 +156,7 @@ about potential biases? One thing here would be to talk about the idea of the pr
 of an event being recorded given that it happens.]
 
 Though the NOAA Storm Events database is quite extensive, several biases affect its data. These biases fall under five major categories which are common in weather data. These include hazard bias, temporal bias, threshold bias, accounting bias, and geographic bias. These biases result from various factors including structural changes over time, reporting errors, inherent bias, and others. 
+[BA: Great! The above paragraph definitely belongs in the "funnel" of our Introduction, I think.]
 
 
 The Storm Events website gives a disclaimer that "an effort is made to use the best available information but because of time and resource constraints, information from [the] sources may be unverified by the NWS" [@stormdatafaq]. 
