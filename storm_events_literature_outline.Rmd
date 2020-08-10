@@ -164,10 +164,10 @@ The Storm Events website gives a disclaimer that "an effort is made to use the b
 
 
 * extensive database  
-* several changes over time  
-* not all events may be reported, some may be double counted
+* several changes over time (in both *which events* are reported and also *what details of reported events* are included. For example, I think that the reports for tornadoes include estimates of intensity, and the scale used for this has changed over time, from no scale (I think) to the Fujita scale to the enhanced Fujita scale. I think there's been some work to smooth over these changes (i.e., re-analysis), but I'm sure it could still cause issues.) 
+* not all events may be reported, some may be double counted [Could you explain this point some more? Perhaps add an example?]
 * lots of sources 
-* inherent bias in data collection in this specific field 
+* inherent bias in data collection in this specific field (some of this is because it's over such a long time period---over 50 years for some event types)
 
 
 [BA: Maybe it would be helpful for us to start a small table here that lists each 
