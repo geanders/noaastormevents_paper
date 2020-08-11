@@ -10,8 +10,13 @@ output:
 
 The Storm Events database collects information from the National Weather Service regarding weather events that occur in the United States. Many researchers use this database to conduct studies on how weather events impact human life, property and crop damage, and commerce. Though the database is quite extensive, several concerns and biases may be present in its data. 
 
+[BA: This should *definitely* go in the "funnel" part of the Introduction.]
+
 
 It is important to understand these biases so that studies using this dataset can accurately portray trends and changes caused by weather events. 
+
+[BA: I could see this statement ending the "funnel" part of the Introduction, right before
+you move into the challenge.]
 
 ## Identify key Introduction components in an example paper
 Twitter: 
@@ -57,6 +62,7 @@ Who do you think is the intended audience for the paper? What is the larger issu
 
 I think that this article is trying to target epidemiologists and other researchers that use population data or are interested in this field of science. The first paragraph brings up epidemiology, ecological studies, and ecological fallacy. This leads the reader to believe that the paper will be about these topics, but it is unclear that the rest of the paper will be about redefining ecological fallacy. 
 
+
 ## Define Opening components for your paper.
 
 What is the target audience? Is it broad / interdisciplinary or targeted to researchers in a certain field?
@@ -66,20 +72,29 @@ What are a few elements of the issue that are interesting but that your manuscri
 My manuscript is attempting to target scientists using the NOAA storm events database for research. It is broad in terms of how it discusses general bias in data, but specific in that it focuses on the NOAA database and its weather data. My manuscript covers what the NOAA Storm Events database is, examples of how it has been used in research, and 4-5 biases that occur in the dataset. Though my writing will cover 4-5 broad biases and include some examples of each type, there are several other examples that could also showcase the biases. There may also be other forms of bias in the data that I do not cover. 
 
 
+[BA: I think you've done a great job of capturing these points. I think we could broaden the target audience just a bit, to include any scientist doing research on the impacts of the types of disasters covered in this database. Whether they end up using NOAA Storm Events or not, they would probably be interested in it as a potential source. For the focus of the body of your paper, I think we might be moving to really focus on whether (and how) mechanisms that might cause these 4--5 types of bias might exist in the NOAA Storm Events database. We're doing that by taking these ideas of the mechanisms of bias (from the Gall paper) and exploring how they might exist in this database. If we take that focus, then part of our description of the database could move into the "funnel" section of the Introduction, and then the body of the paper goes into the potential biases and our investigation of how these might apply to the database. So, some broad parts of the description (for example, that they're based on reports from lots of different sources) might briefly be introduced in the Introduction, and then we have deeper examples based on the data (e.g., how many events reported from each source for each event type) within the body of the paper. Then, in the Discussion, we can talk about how there may be other forms of bias that we don't cover in this paper.]
+
+
 ## Revise the Opening for your manuscript
 Does your Opening need the whole paragraph, or just the first sentence or two? Does this first paragraph include any signals to clarify what audience you expect for the manuscript? Does the paragraph give readers clues on the larger issue that the manuscript will address? Does the paragraph “overpromise”, indicating that the manuscript will cover a larger scope than it does?
 
+[BA: This is *really* nice. I think it's all stuff to go in the "funnel", though. I think that
+we'll want to add a paragraph before we get into this with the "Opening", about how important
+it is for us to understand the human impacts of disasters better, and that this research needs 
+large databases that record when disasters occurred and what their characteristics were.]
+
 **What is the Storm Events Database**
 
-The National Oceanic & Atmospheric Administration (NOAA) Storm Events database collects information on storms, significant weather phenomena, rare or unusual weather, and other significant meteorological events across the United States. NOAA stores this information in csv files for each year. It has been recording weather information since 1950. However, the database has undergone several changes since then. In 1950, NOAA only recorded tornado events and now it records 48 different event types. Following these changes, the NOAA Storm Events website states that they have reformatted and standardized events types without changing any specific values or details [@stormeventsdetails]. 
+The National Oceanic & Atmospheric Administration (NOAA) Storm Events database collects information on storms, significant weather phenomena, rare or unusual weather, and other significant meteorological events across the United States [could we add a reference for this to the Storm Events webpage?]. NOAA stores this information in csv files [I think they might provide other formats, too. It would be worth double-checking] for each year. It has been recording weather information since 1950. However, the database has undergone several changes since then. In 1950, NOAA only recorded tornado events and now it records 48 different event types [again, a reference would be great to add here]. Following these changes, the NOAA Storm Events website states that they have reformatted and standardized events types without changing any specific values or details [@stormeventsdetails]. 
 
-The database assigns each weather phenomenon with a location, date, event type, event ID, episode ID, property damage estimate, crop damage estimate, county name, state, event narative, and episode narrative. The database categorizes large storms as episodes which contain several individual events. For example, a hurricane will be given one episode ID, and the rain, wind, floods, etc associated with that hurricane will be given event IDs that fall under that episode. 
+The database assigns each weather phenomenon with a location, date, event type, event ID, episode ID, property damage estimate, crop damage estimate, county name, state, event narative, and episode narrative [could we add a reference for this? maybe some of the documentation from the Storm Events page?]. The database categorizes large storms as episodes which contain several individual events. For example, a hurricane will be given one episode ID, and the rain, wind, floods, etc associated with that hurricane will be given event IDs that fall under that episode [same thing here. a reference would be great here, probably to some of the Storm Events help documentation]. 
 
-The US National Weather Service (NWS) collects weather data from storm trackers, federal agencies, the media, the public, and several other sources. The NWS then uses this data to create the NOAA Storm Events database that is released as a monthly publication. 
+The US National Weather Service (NWS) collects weather data from storm trackers, federal agencies, the media, the public, and several other sources [a reference here would be good, too]. The NWS then uses this data to create the NOAA Storm Events database that is released as a monthly publication. 
 
 **Concerns with the Database**
 
-Though the NOAA Storm Events database is quite extensive, several biases affect its data. These biases fall under five major categories which are common in weather data. These include hazard bias, temporal bias, threshold bias, accounting bias, and geographic bias. These biases result from various factors including structural changes over time, reporting errors, inherent bias, and others. 
+Though the NOAA Storm Events database is quite extensive, several biases affect its data. These biases fall under five major categories which are common in weather data 
+[BA: This might be a great place to add a reference to the Gall paper ]. These include hazard bias, temporal bias, threshold bias, accounting bias, and geographic bias. These biases result from various factors including structural changes over time, reporting errors, inherent bias, and others. 
 
 
 

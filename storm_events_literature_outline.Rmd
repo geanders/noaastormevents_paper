@@ -129,9 +129,15 @@ paper and others). I think that focus on an active investigation will sound stro
  
 # What is the Storm Events Database
 
+<<<<<<< HEAD
 [TK: I have moved this information into the funnel of the introduction]
 
 The National Oceanic & Atmospheric Administration (NOAA) Storm Events database contains information on storms, significant weather phenomena, rare or unusual weather, and other significant meteorological events across the United States. NOAA has been recording weather information since 1950 and storing it csv files for each year. However, the database has undergone several changes since then. In 1950, NOAA only recorded tornado events and now it records 48 different event types. Following these changes, the NOAA Storm Events website states that they have reformatted and standardized events types without changing any specific values or details [@stormeventsdetails]. 
+=======
+[BA: This description is great. I think this part could probably go in the "funnel" of the Introduction.]
+
+The National Oceanic & Atmospheric Administration (NOAA) Storm Events database collects information on storms, significant weather phenomena, rare or unusual weather, and other significant meteorological events across the United States. NOAA stores this information in csv files for each year. It has been recording weather information since 1950. However, the database has undergone several changes since then. In 1950, NOAA only recorded tornado events and now it records 48 different event types. Following these changes, the NOAA Storm Events website states that they have reformatted and standardized events types without changing any specific values or details [@stormeventsdetails]. 
+>>>>>>> 6c1dfad72e6dc3c04ee632384df16fbba327c698
 
 The database assigns each weather phenomenon with a location, date, event type, event ID, episode ID, property damage estimate, crop damage estimate, county name, state, event narative, and episode narrative. The database categorizes large storms as episodes which contain several individual events. For example, a hurricane will be given one episode ID, and the rain, wind, floods, etc associated with that hurricane will be given event IDs that fall under that episode. 
 
@@ -150,6 +156,11 @@ aspect of how listings are included in the database. You could take a look throu
 noaastormevents to see if there's a figure or illustration there that might make a good
 starting point for helping to illustrate that.]
 
+[BA: For this description, it would be helpful to have some more references on its 
+history. For early history, since this was mainly the tornado database, info about
+it might be under a different name for the database. I'll try to find some papers we 
+could look into to get some more of these details and references to add.]
+
 
 
 # Use of Storm Events Database in research on societal impacts
@@ -166,6 +177,7 @@ about potential biases? One thing here would be to talk about the idea of the pr
 of an event being recorded given that it happens.]
 
 Though the NOAA Storm Events database is quite extensive, several biases affect its data. These biases fall under five major categories which are common in weather data. These include hazard bias, temporal bias, threshold bias, accounting bias, and geographic bias. These biases result from various factors including structural changes over time, reporting errors, inherent bias, and others. 
+[BA: Great! The above paragraph definitely belongs in the "funnel" of our Introduction, I think.]
 
 
 The Storm Events website gives a disclaimer that "an effort is made to use the best available information but because of time and resource constraints, information from [the] sources may be unverified by the NWS" [@stormdatafaq]. 
@@ -173,10 +185,10 @@ The Storm Events website gives a disclaimer that "an effort is made to use the b
 
 
 * extensive database  
-* several changes over time  
-* not all events may be reported, some may be double counted
+* several changes over time (in both *which events* are reported and also *what details of reported events* are included. For example, I think that the reports for tornadoes include estimates of intensity, and the scale used for this has changed over time, from no scale (I think) to the Fujita scale to the enhanced Fujita scale. I think there's been some work to smooth over these changes (i.e., re-analysis), but I'm sure it could still cause issues.) 
+* not all events may be reported, some may be double counted [Could you explain this point some more? Perhaps add an example?]
 * lots of sources 
-* inherent bias in data collection in this specific field 
+* inherent bias in data collection in this specific field (some of this is because it's over such a long time period---over 50 years for some event types)
 
 
 [BA: Maybe it would be helpful for us to start a small table here that lists each 
@@ -210,12 +222,13 @@ The Storm Events database aims to record listings for all hazards brought by a p
 
 [BA: We may want to add something like, "and, in general, the probability that an event is recorded here might differ by type of event." I'm thinking that this type of hazard would especially come into play for a study where you're trying to *compare* the frequency of two or more hazards with each other, or even trying to see how each is related with an outcome. We might want to see if we can find some examples of studies that have used this database while looking at two or more types of hazards, to help us in thinking through how a reporting bias that's different by type of hazard might bias the results. Many of our example studies focus on one type of hazard (e.g., tornadoes, rip tides), but maybe we can find some that consider two or more in the same study?]
 
+[BA: For our definition of hazard bias---is it that the probability of an event being record if it happens varies by event type/hazard, and also that the quality and quantity about information provided for a recorded event might also vary by event type/hazard? In other words, some hazards may be less likely to be reported as an event in this database, and when an event is recorded, the information recorded for it might be more comprehensive, accurate, and precise for some types of hazards compared to others.]
 
 ### P (event recorded | event happened)
 
-The probability that an event is recorded might differ by event type.   The US government has certain programs that focus on some weather events more than others.  For example, the NWS is obliged to provide monetary loss estimates for any flood event even if the damage assessment is a 'guesstimate' (Gall, Borden, and Cutter 2009).  This leads to overrepresentation of flood events in Storm Data because of how they get information.  [TK: I need to look into the flood insurance program to see if this also has an effect]   
+The probability that an event is recorded might differ by event type. This could result from several mechanisms.  First, the US government has certain programs that focus on specific hazards more than others.  For example, the NWS is obliged to provide monetary loss estimates for any flood event even if the damage assessment is a 'guesstimate' (Gall, Borden, and Cutter 2009).  This leads to a higher probability of reporting for flood events in Storm Data because of how they get information.  [TK: I need to look into the flood insurance program to see if this also has an effect]   
 
-Additionally, certain characteristics of event types influence how easy or difficult it is to obtain information about the event.  It is more difficult to obtain information on event types that do not cause much physical damage or monetary loss. This is because insurance companies typically keep strict records of monetary damages caused by weather events.  If this is lacking, then the NWS struggles to find exact damage amounts.  Drought hazards exemplify this issue; they are notoriously underreported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses (Gall, Borden, and Cutter 2009).  Avalanches also showcase this issue as they typically occur in remote locations with little physical damage or fatalities. [TK: I just made this assumption, so I need to check the literature] On the other hand, hurricanes or tornadoes that pass through large cities will cause high amounts of physical damage and fatalities. This would attract the attention of insurance companies and produce clear records of damages.   
+Additionally, certain characteristics of event types influence how easy or difficult it is to obtain information about the event. [Would these points help explain our observations from the data? For example, why hail is frequent but sneakerwaves and sleet are rare?] For example, it is more difficult to obtain information [any information (e.g., they aren't recorded at all) or loss information specifically (e.g., they are reported, but the info on the losses isn't good)?] on event types that do not cause much physical damage or monetary loss [Do we have a reference for this? Otherwise, we might need to soften the language in this sentence]. This is because insurance companies typically keep strict records of monetary damages caused by weather events [for all types of hazards, or just certain types? In practice in our data, it looks like not a lot of events are reported by insurance companies, so we might want to think about how that plays in with this idea.].  If this is lacking, then the NWS struggles to find exact damage amounts [any info on alternative sources they use?].  Drought hazards exemplify this issue; they are notoriously underreported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses (Gall, Borden, and Cutter 2009).  Avalanches also showcase this issue as they typically occur in remote locations with little physical damage or fatalities. [TK: I just made this assumption, so I need to check the literature] On the other hand, hurricanes or tornadoes that pass through large cities will cause high amounts of physical damage and fatalities. This would attract the attention of insurance companies and produce clear records of damages.   
 
 [TK: I still want to consider the idea that event severity may affect the probability (events that happen closer to larger populations of people may have a higher likelihood of being reported than an event that is in a more secluded area) . I’m still debating if that would go here or under threshold bias.
 Points you have brought up: 
@@ -230,7 +243,7 @@ I also still need to look into a tornado paper that we think mentions this idea 
 
 ### Associated Hazards 
 
-Even when storms are entered into the database, all of their associated hazards might not be entered or their events may be double counted.  NOAA records one large event as an episode and all of its associated hazards as events under than episode.   The NWS documentation goes into detail on this recording structure. 
+Even when severe weather events are entered into the database, all of their associated hazards might not be entered or their events may be double counted.  NOAA records one large event as an episode and all of its associated hazards as events under than episode.   The NWS documentation goes into detail on this recording structure. 
 
 > "2.9.1 Episode Narrative. Generate an episode with a narrative; otherwise individual events cannot be entered into the Storm Data software. An episode narrative describes the entire episode in a general fashion, and briefly describes the synoptic meteorology associated with the episode. Information in the episode narrative can be very useful for researchers and other users of Storm Data. This narrative does not need to be long or elaborate, rather make it brief and informative. An example would be “A strong cold front passed through the Washington, D.C. area, triggering several instances of damaging thunderstorm winds and large, baseball-size hail.”
 > “To ensure events being logged in a single episode are part of the same synoptic meteorological system, events within the same episode may begin no more than five (5) calendar days apart. This will enable the Storm Data preparer to properly document events that double back into a specific region or events that are very slow moving. Examples include Hurricane and Winter Storm events.” [@nwsinstruction]
