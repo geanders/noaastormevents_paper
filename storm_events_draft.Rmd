@@ -1,0 +1,38 @@
+---
+title: "NOAA Storm Events Paper Draft"
+output:
+  pdf_document: default
+  word_document: default
+  html_document: default
+bibliography: scholar.bib
+---
+
+# Introduction  
+
+Severe weather events currently cause extensive monetary loss, property and crop damage, interruptions in commerce, and human injury and fatality. Since 1980, the US has experienced 273 weather and climate disasters that each left over $1 billion in damages [@impacts]. In total, these events cost the US over $1.790 trillion and caused 14,223 deaths [@impacts].   
+
+Scientists expect the impacts of weather events to worsen over time as a result of climate change. For example, the increasing presence of greenhouse gases in the atmosphere leads to increasing annual and extreme temperatures. Extreme temperatures lead to a wide range of health complications. Extreme heat can lead to heat cramps, heat exhaustion, heatstroke, and hyperthermia, while extreme cold leads to hypothermia and frostbite [@climatechange]. Extreme temperatures also exacerbate health conditions related to cardiovascular disease, respiratory disease, cerebrovascular disease, and diabetes [@climatechange]. The continually increasing extreme temperatures will increase the number of temperature related illnesses and deaths in the US per year. 
+
+Climate change is also projected to increase the number and severity of extreme natural disasters. In specific, scientists expect the number of naturally occurring wildfires to increase [@climatechange]. Wildfires emit particulate matter and ozone precursors which decrease air quality. Low air quality harms the human respiratory and cardiovascular systems and decreases overall well being and productivity. Other natural disasters threaten physical and mental health resulting from "damage to property, destruction of assets, loss of infrastructure and public services, social and economic impacts, environmental degradation, and other factors" [@climatechange].  
+
+The current impacts of disasters combined with the anticipated increases in their severity and occurrence make it critical that we understand the patterns and scale of weather hazards. Continued disaster data collection and research will improve scientists' ability to predict these events and avoid such large fallout and loss.  
+
+Several organizations currently collect disaster data in the US including the National Weather Service, NCEI, and FEMA. Using this disaster data is common in interdisciplinary research because natural hazards impact several fields of study: economics, epidemiology, atmospheric science, agriculture, etc.   
+
+The American Meteorological Society has published various papers analyzing fatalities associated with weather events [@terti2017situation, @ashley2005derecho, @ashley2008fatalities, @gensini2010examination].   
+Ashley and Black examined the cause, spatial distributions, and fatalities caused by nonconvective high-wind events in the US from 1980 to 2005. This study found that fatalities associated with nonconvective high-wind events often occur in boats or vehicles. These fatalities are most likely to occur on the West Coast or Northeast because of extratropical cyclones. These areas of the US have large forests and bodies of water with high population densities that are opportune to being highly affected by high winds [@ashley2008fatalities]. Keeping these vulnerabilities in mind, the study outlines possible improvements to high wind warning systems in the areas. These improvements aim to protect people most likely to be injured or killed by nonconvective high-wind events.   
+
+Ashley and Mote conducted a similar study examining derecho events in the US from 1986 to 2003 [@ashley2005derecho]. Derechoes are often overlooked when examining impactful weather events. However, this study revealed how they actually produce damage comparable to tornadoes and hurricanes. Derechoes caused 153 fatalities and over 2,600 injuries over the 18 year span of this study. They were also responsible for as much or more monetary loss than some hurricane and tornado events over the time span. Their study helps to draw attention to this type of weather event in hopes to advance derecho risk assessments.   
+
+Both of these studies, in part, used data from the National Oceanic & Atmospheric Administration (NOAA) Storm Events database to conduct research. This database currently contains information on 48 different storms, significant weather phenomena, rare/unusual weather, and other significant meteorological events across the United States. NOAA has been recording weather information since 1950 and storing it csv files for each year. NOAA has changed its recording strategies several times from only recording tornado events starting in 1950 to its current 48 event types. Following these changes, they have reformatted and standardized events types without changing any specific values or details [@stormeventsdetails]. 
+
+The database assigns each weather phenomenon with a location, date, event type, event ID, episode ID, property damage estimate, crop damage estimate, county name, state, event narrative, and episode narrative. The database categorizes large storms as episodes which contain several individual events. For example, a hurricane will be given one episode ID, and the rain, wind, floods, etc. associated with that hurricane will be given event IDs that fall under that episode. 
+
+The US National Weather Service (NWS) collects weather data for NOAA from storm trackers, federal agencies, the media, the public, and several other sources. The NWS then uses this data to create the NOAA Storm Events database that is released as a monthly publication. 
+
+This data allows scientists to examine how weather events impact human life and how we can reduce or avoid these impacts. However, storing disaster data does not go without limitations. This is because the process of recording disaster data and the technology we use to do it are constantly evolving. These factors make it incumbent that scientists understand the biases and limitations in weather datasets to use large amounts of data appropriately and portray new findings accurately.  
+
+Gall et al. wrote a paper covering six major biases associated with major disaster databases used in the US [@gall2009losses]. In our paper, we will focus on the NOAA Storm Events database and investigate the presence of mechanisms that could lead to these major biases in the data. We used the noaastormevents package in R to dissect these issues and examine evidence of bias in several hazard types.   
+
+# References  
+
