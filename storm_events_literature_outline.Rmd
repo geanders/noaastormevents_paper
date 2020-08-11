@@ -237,6 +237,8 @@ This narrative will appear immediately below the header-strip in the publication
 contain descriptive information about the times, locations, and severity of destruction of
 property, trees, crops, power lines, roads, bridges, etc. Additionally, a brief summary of fatalities and injuries should be part of the event narrative for county-based and marine zone-based events. For Thunderstorm Wind events with estimated gusts, use sentences such as “Several trees were toppled by powerful downburst gusts.”]
 
+[BA: This might provide an example of how the quantity and quality of information provided ]
+
 Categorizing these events and episodes can be unclear.  Events could get double counted outside of the episode. Gall et. all provides an example that  hurricane wind, storm surge, and a tornado that were all caused by a hurricane could be counted as three separate events even though they all stemmed from one hurricane [@gall2009losses]. 
 
 [TK: This idea was also mentioned in the Konisky article ("one episode can correlates to mulitple events") so I want to look into that again) [@konisky2016extreme]  ]
