@@ -238,7 +238,7 @@ I also still need to look into a tornado paper that we think mentions this idea 
 
 ### Associated Hazards 
 
-Even when severe weather events are entered into the database, all of their associated hazards might not be entered or their events may be double counted.  NOAA records one large event as an episode and all of its associated hazards as events under than episode.   The NWS documentation goes into detail on this recording structure. 
+Even when severe weather events are entered into the database, all of their associated hazards might not be entered or their events may be double counted [BA: Do we have any examples of how double-counting might happen in Storm Events?].  NOAA records one large event as an episode and all of its associated hazards as events under than episode.   The NWS documentation goes into detail on this recording structure. 
 
 > "2.9.1 Episode Narrative. Generate an episode with a narrative; otherwise individual events cannot be entered into the Storm Data software. An episode narrative describes the entire episode in a general fashion, and briefly describes the synoptic meteorology associated with the episode. Information in the episode narrative can be very useful for researchers and other users of Storm Data. This narrative does not need to be long or elaborate, rather make it brief and informative. An example would be “A strong cold front passed through the Washington, D.C. area, triggering several instances of damaging thunderstorm winds and large, baseball-size hail.”
 > “To ensure events being logged in a single episode are part of the same synoptic meteorological system, events within the same episode may begin no more than five (5) calendar days apart. This will enable the Storm Data preparer to properly document events that double back into a specific region or events that are very slow moving. Examples include Hurricane and Winter Storm events.” [@nwsinstruction]
@@ -253,14 +253,58 @@ This narrative will appear immediately below the header-strip in the publication
 contain descriptive information about the times, locations, and severity of destruction of
 property, trees, crops, power lines, roads, bridges, etc. Additionally, a brief summary of fatalities and injuries should be part of the event narrative for county-based and marine zone-based events. For Thunderstorm Wind events with estimated gusts, use sentences such as “Several trees were toppled by powerful downburst gusts.”]
 
-[BA: This might provide an example of how the quantity and quality of information provided ]
+[BA: This might provide an example of how the quantity and quality of information provided could
+vary by event type. First, it sounds like for some types of reporting, the *episode* gets the
+narrative, but not separate narratives for each event, while for some events (like tornadoes), 
+each *event* might get a narrative. Also, for fatalities and injuries, it sounds like the 
+estimates are given at the *episode level* for forecast zone-based events but then at the 
+*event level* for county-based events. This could be a place for us to talk about how some
+events are reported by county versus some by forecast zone, and then we could talk about how
+this could lead to differences across hazard types in the granularity of information reported
+(including the spatial scale in which the info is reported). Related to this idea, I think that
+some event types include latitude and longitude locations (even starting and ending points), 
+while some do not include more detailed location information beyond the area they're reported
+for (county or forecast zone). This would be another case of where there's a different amount
+of information available for different types of hazards listed in the database, and we could
+use our data to show that (it might also be listed in the NOAA manual which events lat/long should
+be reported for). Another point on this idea of different amount/quality of information on 
+different hazards might be that some hazards are recorded based on clear ways to measure
+intensity (for example, using a well-defined scale, as is done for tornadoes with the Fujita
+scale), while others don't. The NOAA guidebook might have some details on this in terms of 
+telling people to use specific scales to report some types of events.]
+
+[BA: There's some helpful language in the exerpts you've quoted here about how events are 
+grouped together into episodes, including that they're part of the "same synoptic meteorological
+system" and must have start dates within 5 days of each other. This information would be helpful
+to include in the paragraph or paragraphs where we talk about what "episodes" are in this 
+database.]
 
 Categorizing these events and episodes can be unclear.  Events could get double counted outside of the episode. Gall et. all provides an example that  hurricane wind, storm surge, and a tornado that were all caused by a hurricane could be counted as three separate events even though they all stemmed from one hurricane [@gall2009losses]. 
 
 [TK: This idea was also mentioned in the Konisky article ("one episode can correlates to mulitple events") so I want to look into that again) [@konisky2016extreme]  ]
 
+[BA: Yes, definitely let's check the Konsiky article. We might want to think, too, if we'd 
+consider it "double-counting" if multiple types of hazards are listed as separate events
+under the same larger episode. I think we want to talk about this idea of multiple events
+from an episode in the same county or forecast zone, but I'm not sure that "double-counting"
+is the right word, as long as the data user understands how the data's set up. I'd think of 
+double-counting more as when something is unintentionally listed twice, whereas in this case
+they've got a system they're following.]
+
 To showcase this idea, for the episodes with the most events in 2019, the following graph shows the number of events reported for the episode. This figure demonstrates how one large weather ‘episode’ can include several other events types. For example, Episode 133801 in this figure indicates several reports of flood, debris flow, strong winds, high wind, and hail. All of these different event types occurred as a result of one large storm labelled episode 133801. This unique episode ID helps related events from getting double counted as separate entities.
 
+[BA: See Issue #8 in the GitHub repo for a suggestion of finding some better labels rather than
+using the Episode numbers here. Also, we could look at the Episode narrative for this
+specific episode to add to our description of the larger (synoptic) weather system that caused
+all these listed hazards (flood, debris flow, strong winds, high wind, and hail). It looks like 
+it was something called an "atmospheric river" and it had a cold front associated with it. It 
+would also be nice to list what part of the country this was in (somewhere around Washington
+State, I think, because the Episode narrative mentions Mount Saint Helena).]
+
+[BA: Also, in the above paragraph (or near it), we could add in some of the details from the 
+quotes you pulled from the NOAA guidebook, like that an episode is capturing events from the 
+same larger (synoptic) weather system and that they are supposed to have start dates within 
+a few days (5) of each other.]
        
 #### Number of events reported per episode ID:   
 
