@@ -1,40 +1,27 @@
-events_2019 %>%
-  group_by(EVENT_TYPE) %>%
-  summarize(N = n()) %>%
-  arrange(desc(N)) %>%
-  mutate(N = prettyNum(N, big.mark = ",")) %>%
-  knitr::kable(col.names = c("Event type", "Number of events in 2019"))
-
-
-events_2019 %>%
-  group_by(EVENT_TYPE) %>%
-  count() %>%
-  knitr::kable(col.names = c("Event type", "Number of events in 2019"))
-
 library(noaastormevents)
 library(dplyr)
 
-data(package = "noaastormevents")
-storms <- unique(hurr_tracks$storm_id)
-storm_years <- gsub(".+-", "", storm_id_table$storm_id)
+all_years <- 1990:2019
+year_events <- vector("list", length(all_years))
 
-storm_events <- vector("list", length(storms))
-names(storm_events) <- storms
+for( i in 1:length(all_years)) {
+  year_to_run <- all_years[i]
+  print(year_to_run)
+  events <- create_storm_data(date_range = c(paste(year_to_run, "01-01", sep = "-"), 
+                                           paste(year_to_run, "12-31", sep = "-")))
 
-for(storm_year in unique(storm_years)){
-  print(storm_year)
-  yearly_storms <- storms[storm_years == storm_year]
-  for(storm in yearly_storms){
-    print(storm)
-    i <- which(storms == storm)
-    this_storm_events <- find_events(storm = storm, dist_limit = 500) %>%
-      dplyr::rename(type = event_type) %>%
-      dplyr::mutate(fips = stringr::str_pad(fips, width = 5, side = "left", pad = "0")) %>%
-      dplyr::select(fips, type) %>%
-      dplyr::group_by(fips) %>%
-      dplyr::summarize(events = list(type))
-    storm_events[[i]] <- this_storm_events
-  }
+
+  event_count<- events %>%
+    group_by(EVENT_TYPE) %>%
+    count() %>% 
+    mutate(year = year_to_run)
+  year_events[[i]] <- event_count
+  
   # Remove data after each year (otherwise, this is lots of data)
   rm(noaastormevents_package_env)
 }
+
+year_events_df <- bind_rows(year_events)
+
+
+
