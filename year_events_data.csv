@@ -1,0 +1,1224 @@
+"","EVENT_TYPE","n","year"
+"1","Tornado",223,1950
+"2","Tornado",269,1951
+"3","Tornado",272,1952
+"4","Tornado",492,1953
+"5","Tornado",609,1954
+"6","Hail",360,1955
+"7","Thunderstorm Wind",421,1955
+"8","Tornado",632,1955
+"9","Hail",401,1956
+"10","Thunderstorm Wind",735,1956
+"11","Tornado",567,1956
+"12","Hail",479,1957
+"13","Thunderstorm Wind",775,1957
+"14","Tornado",930,1957
+"15","Hail",706,1958
+"16","Thunderstorm Wind",899,1958
+"17","Tornado",608,1958
+"18","Hail",531,1959
+"19","Thunderstorm Wind",652,1959
+"20","Tornado",630,1959
+"21","Hail",581,1960
+"22","Thunderstorm Wind",719,1960
+"23","Tornado",645,1960
+"24","Hail",722,1961
+"25","Thunderstorm Wind",752,1961
+"26","Tornado",772,1961
+"27","Hail",886,1962
+"28","Thunderstorm Wind",830,1962
+"29","Tornado",673,1962
+"30","Hail",652,1963
+"31","Thunderstorm Wind",823,1963
+"32","Tornado",493,1963
+"33","Hail",679,1964
+"34","Thunderstorm Wind",909,1964
+"35","Tornado",760,1964
+"36","Hail",801,1965
+"37","Thunderstorm Wind",1044,1965
+"38","Tornado",990,1965
+"39","Hail",732,1966
+"40","Thunderstorm Wind",1050,1966
+"41","Tornado",606,1966
+"42","Hail",764,1967
+"43","Thunderstorm Wind",958,1967
+"44","Tornado",966,1967
+"45","Hail",1068,1968
+"46","Thunderstorm Wind",1529,1968
+"47","Tornado",715,1968
+"48","Hail",766,1969
+"49","Thunderstorm Wind",1510,1969
+"50","Tornado",650,1969
+"51","Hail",721,1970
+"52","Thunderstorm Wind",1794,1970
+"53","Tornado",700,1970
+"54","Hail",964,1971
+"55","Thunderstorm Wind",1544,1971
+"56","Tornado",963,1971
+"57","Hail",681,1972
+"58","Thunderstorm Wind",712,1972
+"59","Tornado",778,1972
+"60","Hail",1098,1973
+"61","Thunderstorm Wind",2157,1973
+"62","Tornado",1198,1973
+"63","Hail",1656,1974
+"64","Thunderstorm Wind",2599,1974
+"65","Tornado",1120,1974
+"66","Hail",1374,1975
+"67","Thunderstorm Wind",2639,1975
+"68","Tornado",962,1975
+"69","Hail",1091,1976
+"70","Thunderstorm Wind",1742,1976
+"71","Tornado",935,1976
+"72","Hail",1083,1977
+"73","Thunderstorm Wind",1723,1977
+"74","Tornado",922,1977
+"75","Hail",1024,1978
+"76","Thunderstorm Wind",1758,1978
+"77","Tornado",875,1978
+"78","Hail",1315,1979
+"79","Thunderstorm Wind",2046,1979
+"80","Tornado",918,1979
+"81","Hail",1985,1980
+"82","Thunderstorm Wind",3179,1980
+"83","Tornado",972,1980
+"84","Hail",1494,1981
+"85","Thunderstorm Wind",2193,1981
+"86","Tornado",830,1981
+"87","Hail",2376,1982
+"88","Thunderstorm Wind",3570,1982
+"89","Tornado",1180,1982
+"90","Hail",2334,1983
+"91","Thunderstorm Wind",4993,1983
+"92","Tornado",995,1983
+"93","Hail",2749,1984
+"94","Thunderstorm Wind",3566,1984
+"95","Tornado",1020,1984
+"96","Hail",3379,1985
+"97","Thunderstorm Wind",3827,1985
+"98","Tornado",773,1985
+"99","Hail",3511,1986
+"100","Thunderstorm Wind",4365,1986
+"101","Tornado",849,1986
+"102","Hail",2413,1987
+"103","Thunderstorm Wind",4255,1987
+"104","Tornado",695,1987
+"105","Hail",2537,1988
+"106","Thunderstorm Wind",3947,1988
+"107","Tornado",773,1988
+"108","Hail",3777,1989
+"109","Thunderstorm Wind",5709,1989
+"110","Tornado",921,1989
+"111","Hail",3618,1990
+"112","Thunderstorm Wind",6063,1990
+"113","Tornado",1264,1990
+"114","Hail",4811,1991
+"115","Thunderstorm Wind",6497,1991
+"116","Tornado",1208,1991
+"117","Hail",5687,1992
+"118","Thunderstorm Wind",6443,1992
+"119","Tornado",1404,1992
+"120","Hail",4215,1993
+"121","Thunderstorm Wind",3832,1993
+"122","Tornado",616,1993
+"123","TORNADOES, TSTM WIND, HAIL",1,1993
+"124","Hail",6733,1994
+"125","HAIL/ICY ROADS",1,1994
+"126","Thunderstorm Wind",7945,1994
+"127","THUNDERSTORM WINDS/FLOODING",1,1994
+"128","Tornado",947,1994
+"129","Hail",8370,1995
+"130","HAIL FLOODING",1,1995
+"131","Thunderstorm Wind",10859,1995
+"132","THUNDERSTORM WIND/ TREE",1,1995
+"133","THUNDERSTORM WIND/ TREES",3,1995
+"134","THUNDERSTORM WINDS FUNNEL CLOU",2,1995
+"135","THUNDERSTORM WINDS HEAVY RAIN",1,1995
+"136","THUNDERSTORM WINDS LIGHTNING",2,1995
+"137","THUNDERSTORM WINDS/ FLOOD",2,1995
+"138","THUNDERSTORM WINDS/FLASH FLOOD",1,1995
+"139","THUNDERSTORM WINDS/HEAVY RAIN",1,1995
+"140","Tornado",1217,1995
+"141","TORNADO/WATERSPOUT",1,1995
+"142","Avalanche",7,1996
+"143","Blizzard",1431,1996
+"144","Coastal Flood",201,1996
+"145","Cold/Wind Chill",2578,1996
+"146","Debris Flow",24,1996
+"147","Dense Fog",272,1996
+"148","Drought",772,1996
+"149","Dust Devil",11,1996
+"150","Dust Storm",6,1996
+"151","Flash Flood",3325,1996
+"152","Flood",2218,1996
+"153","Freezing Fog",20,1996
+"154","Frost/Freeze",72,1996
+"155","Funnel Cloud",290,1996
+"156","Hail",10826,1996
+"157","Heat",348,1996
+"158","Heavy Rain",635,1996
+"159","Heavy Snow",4301,1996
+"160","High Surf",73,1996
+"161","High Wind",3818,1996
+"162","Hurricane (Typhoon)",174,1996
+"163","Ice Storm",722,1996
+"164","Lightning",917,1996
+"165","Marine High Wind",1,1996
+"166","Rip Current",31,1996
+"167","Storm Surge/Tide",20,1996
+"168","Strong Wind",120,1996
+"169","Thunderstorm Wind",10084,1996
+"170","Tornado",1267,1996
+"171","Tropical Storm",116,1996
+"172","Waterspout",150,1996
+"173","Wildfire",62,1996
+"174","Winter Storm",3028,1996
+"175","Winter Weather",641,1996
+"176","Astronomical Low Tide",5,1997
+"177","Avalanche",4,1997
+"178","Blizzard",888,1997
+"179","Coastal Flood",94,1997
+"180","Cold/Wind Chill",1579,1997
+"181","Debris Flow",19,1997
+"182","Dense Fog",307,1997
+"183","Drought",392,1997
+"184","Dust Devil",8,1997
+"185","Dust Storm",8,1997
+"186","Flash Flood",3027,1997
+"187","Flood",1946,1997
+"188","Frost/Freeze",159,1997
+"189","Funnel Cloud",372,1997
+"190","Hail",8612,1997
+"191","Heat",739,1997
+"192","Heavy Rain",558,1997
+"193","Heavy Snow",2994,1997
+"194","High Surf",251,1997
+"195","High Wind",2415,1997
+"196","Hurricane (Typhoon)",37,1997
+"197","Ice Storm",668,1997
+"198","Lake-Effect Snow",64,1997
+"199","Lightning",841,1997
+"200","Marine High Wind",1,1997
+"201","Rip Current",17,1997
+"202","Sleet",25,1997
+"203","Storm Surge/Tide",26,1997
+"204","Strong Wind",604,1997
+"205","Thunderstorm Wind",9868,1997
+"206","Tornado",1180,1997
+"207","Tropical Storm",12,1997
+"208","Volcanic Ash",2,1997
+"209","Waterspout",218,1997
+"210","Wildfire",37,1997
+"211","Winter Storm",3008,1997
+"212","Winter Weather",1006,1997
+"213","Avalanche",17,1998
+"214","Blizzard",389,1998
+"215","Coastal Flood",123,1998
+"216","Cold/Wind Chill",505,1998
+"217","Debris Flow",3,1998
+"218","Dense Fog",407,1998
+"219","Drought",1774,1998
+"220","Dust Devil",4,1998
+"221","Dust Storm",10,1998
+"222","Flash Flood",3582,1998
+"223","Flood",2318,1998
+"224","Frost/Freeze",12,1998
+"225","Funnel Cloud",442,1998
+"226","Hail",12561,1998
+"227","Heat",1404,1998
+"228","Heavy Rain",981,1998
+"229","Heavy Snow",2197,1998
+"230","High Surf",299,1998
+"231","High Wind",2165,1998
+"232","Hurricane (Typhoon)",191,1998
+"233","Ice Storm",1158,1998
+"234","Lake-Effect Snow",36,1998
+"235","Lightning",901,1998
+"236","Rip Current",38,1998
+"237","Seiche",8,1998
+"238","Sleet",50,1998
+"239","Storm Surge/Tide",55,1998
+"240","Strong Wind",920,1998
+"241","Thunderstorm Wind",13603,1998
+"242","Tornado",1529,1998
+"243","Tropical Storm",144,1998
+"244","Waterspout",176,1998
+"245","Wildfire",113,1998
+"246","Winter Storm",2025,1998
+"247","Winter Weather",833,1998
+"248","Avalanche",24,1999
+"249","Blizzard",237,1999
+"250","Coastal Flood",56,1999
+"251","Cold/Wind Chill",599,1999
+"252","Dense Fog",619,1999
+"253","Drought",2662,1999
+"254","Dust Devil",10,1999
+"255","Dust Storm",19,1999
+"256","Flash Flood",2495,1999
+"257","Flood",1601,1999
+"258","Freezing Fog",5,1999
+"259","Frost/Freeze",35,1999
+"260","Funnel Cloud",322,1999
+"261","Hail",10146,1999
+"262","Heat",1864,1999
+"263","Heavy Rain",642,1999
+"264","Heavy Snow",2467,1999
+"265","High Surf",263,1999
+"266","High Wind",3025,1999
+"267","Hurricane (Typhoon)",266,1999
+"268","Ice Storm",505,1999
+"269","Lake-Effect Snow",34,1999
+"270","Lightning",862,1999
+"271","Marine High Wind",1,1999
+"272","Rip Current",35,1999
+"273","Seiche",1,1999
+"274","Sleet",41,1999
+"275","Storm Surge/Tide",28,1999
+"276","Strong Wind",883,1999
+"277","Thunderstorm Wind",10347,1999
+"278","Tornado",1520,1999
+"279","Tropical Storm",54,1999
+"280","Volcanic Ash",2,1999
+"281","Waterspout",270,1999
+"282","Wildfire",298,1999
+"283","Winter Storm",3035,1999
+"284","Winter Weather",1110,1999
+"285","Avalanche",29,2000
+"286","Blizzard",520,2000
+"287","Coastal Flood",6,2000
+"288","Cold/Wind Chill",236,2000
+"289","Debris Flow",2,2000
+"290","Dense Fog",476,2000
+"291","Drought",2332,2000
+"292","Dust Devil",3,2000
+"293","Dust Storm",20,2000
+"294","Excessive Heat",378,2000
+"295","Extreme Cold/Wind Chill",1720,2000
+"296","Flash Flood",2757,2000
+"297","Flood",1135,2000
+"298","Freezing Fog",12,2000
+"299","Frost/Freeze",233,2000
+"300","Funnel Cloud",315,2000
+"301","Hail",11296,2000
+"302","Heat",976,2000
+"303","Heavy Rain",737,2000
+"304","Heavy Snow",4086,2000
+"305","High Surf",245,2000
+"306","High Wind",3114,2000
+"307","Hurricane (Typhoon)",42,2000
+"308","Ice Storm",845,2000
+"309","Lake-Effect Snow",1,2000
+"310","Lightning",909,2000
+"311","Rip Current",43,2000
+"312","Seiche",1,2000
+"313","Sleet",34,2000
+"314","Storm Surge/Tide",6,2000
+"315","Strong Wind",601,2000
+"316","Thunderstorm Wind",12408,2000
+"317","Tornado",1169,2000
+"318","Tropical Storm",44,2000
+"319","Waterspout",263,2000
+"320","Wildfire",372,2000
+"321","Winter Storm",4070,2000
+"322","Winter Weather",571,2000
+"323","Avalanche",26,2001
+"324","Blizzard",289,2001
+"325","Cold/Wind Chill",127,2001
+"326","Debris Flow",1,2001
+"327","Dense Fog",637,2001
+"328","Drought",1602,2001
+"329","Dust Devil",7,2001
+"330","Dust Storm",69,2001
+"331","Excessive Heat",100,2001
+"332","Extreme Cold/Wind Chill",573,2001
+"333","Flash Flood",2917,2001
+"334","Flood",1872,2001
+"335","Frost/Freeze",194,2001
+"336","Funnel Cloud",303,2001
+"337","Hail",12224,2001
+"338","Heat",1854,2001
+"339","Heavy Rain",624,2001
+"340","Heavy Snow",2827,2001
+"341","Heavy Wind",4,2001
+"342","High Snow",1,2001
+"343","High Surf",422,2001
+"344","High Wind",2922,2001
+"345","Hurricane (Typhoon)",9,2001
+"346","Ice Storm",419,2001
+"347","Lake-Effect Snow",3,2001
+"348","Lightning",880,2001
+"349","Marine Thunderstorm Wind",96,2001
+"350","Northern Lights",8,2001
+"351","OTHER",1,2001
+"352","Rip Current",78,2001
+"353","Sleet",93,2001
+"354","Storm Surge/Tide",17,2001
+"355","Strong Wind",495,2001
+"356","Thunderstorm Wind",11971,2001
+"357","Tornado",1351,2001
+"358","Tropical Storm",103,2001
+"359","Volcanic Ash",17,2001
+"360","Waterspout",178,2001
+"361","Wildfire",244,2001
+"362","Winter Storm",2569,2001
+"363","Winter Weather",748,2001
+"364","Avalanche",26,2002
+"365","Blizzard",175,2002
+"366","Coastal Flood",5,2002
+"367","Cold/Wind Chill",154,2002
+"368","Dense Fog",405,2002
+"369","Drought",1978,2002
+"370","Dust Devil",8,2002
+"371","Dust Storm",44,2002
+"372","Excessive Heat",243,2002
+"373","Extreme Cold/Wind Chill",460,2002
+"374","Flash Flood",3234,2002
+"375","Flood",1773,2002
+"376","Freezing Fog",2,2002
+"377","Frost/Freeze",180,2002
+"378","Funnel Cloud",235,2002
+"379","Hail",12540,2002
+"380","Heat",1315,2002
+"381","Heavy Rain",562,2002
+"382","Heavy Snow",3126,2002
+"383","High Surf",202,2002
+"384","High Wind",3228,2002
+"385","Hurricane (Typhoon)",69,2002
+"386","Ice Storm",565,2002
+"387","Lightning",875,2002
+"388","Marine Hail",15,2002
+"389","Marine Thunderstorm Wind",1142,2002
+"390","Rip Current",61,2002
+"391","Seiche",1,2002
+"392","Sleet",57,2002
+"393","Storm Surge/Tide",32,2002
+"394","Strong Wind",503,2002
+"395","Thunderstorm Wind",12004,2002
+"396","Tornado",1040,2002
+"397","Tropical Storm",234,2002
+"398","Volcanic Ash",10,2002
+"399","Waterspout",207,2002
+"400","Wildfire",411,2002
+"401","Winter Storm",3376,2002
+"402","Winter Weather",439,2002
+"403","Avalanche",11,2003
+"404","Blizzard",223,2003
+"405","Cold/Wind Chill",390,2003
+"406","Debris Flow",58,2003
+"407","Dense Fog",305,2003
+"408","Drought",974,2003
+"409","Dust Devil",14,2003
+"410","Dust Storm",40,2003
+"411","Extreme Cold/Wind Chill",309,2003
+"412","Flash Flood",3936,2003
+"413","Flood",2259,2003
+"414","Frost/Freeze",356,2003
+"415","Funnel Cloud",349,2003
+"416","Hail",13915,2003
+"417","Heat",315,2003
+"418","Heavy Rain",934,2003
+"419","Heavy Snow",2851,2003
+"420","High Surf",213,2003
+"421","High Wind",2305,2003
+"422","Hurricane (Typhoon)",76,2003
+"423","Ice Storm",279,2003
+"424","Lightning",741,2003
+"425","Marine Hail",41,2003
+"426","Marine Thunderstorm Wind",1446,2003
+"427","Rip Current",46,2003
+"428","Sleet",28,2003
+"429","Storm Surge/Tide",207,2003
+"430","Strong Wind",757,2003
+"431","Thunderstorm Wind",11996,2003
+"432","Tornado",1535,2003
+"433","Tropical Storm",280,2003
+"434","Volcanic Ash",24,2003
+"435","Waterspout",239,2003
+"436","Wildfire",312,2003
+"437","Winter Storm",3569,2003
+"438","Winter Weather",1623,2003
+"439","Avalanche",24,2004
+"440","Blizzard",223,2004
+"441","Cold/Wind Chill",1064,2004
+"442","Debris Flow",102,2004
+"443","Dense Fog",338,2004
+"444","Drought",545,2004
+"445","Dust Devil",9,2004
+"446","Dust Storm",31,2004
+"447","Flash Flood",4375,2004
+"448","Flood",2566,2004
+"449","Frost/Freeze",350,2004
+"450","Funnel Cloud",386,2004
+"451","Hail",13164,2004
+"452","Heat",91,2004
+"453","Heavy Rain",715,2004
+"454","Heavy Snow",2203,2004
+"455","High Surf",338,2004
+"456","High Wind",2385,2004
+"457","Hurricane (Typhoon)",171,2004
+"458","Ice Storm",448,2004
+"459","Lightning",705,2004
+"460","Marine Hail",54,2004
+"461","Marine Thunderstorm Wind",1337,2004
+"462","Rip Current",44,2004
+"463","Seiche",2,2004
+"464","Sleet",31,2004
+"465","Storm Surge/Tide",158,2004
+"466","Strong Wind",899,2004
+"467","Thunderstorm Wind",11892,2004
+"468","Tornado",1947,2004
+"469","Tropical Storm",614,2004
+"470","Volcanic Ash",10,2004
+"471","Waterspout",238,2004
+"472","Wildfire",166,2004
+"473","Winter Storm",3081,2004
+"474","Winter Weather",1703,2004
+"475","Avalanche",41,2005
+"476","Blizzard",416,2005
+"477","Coastal Flood",10,2005
+"478","Cold/Wind Chill",583,2005
+"479","Debris Flow",118,2005
+"480","Dense Fog",310,2005
+"481","Drought",1538,2005
+"482","Dust Devil",9,2005
+"483","Dust Storm",23,2005
+"484","Flash Flood",2981,2005
+"485","Flood",2595,2005
+"486","Freezing Fog",95,2005
+"487","Frost/Freeze",351,2005
+"488","Funnel Cloud",433,2005
+"489","Hail",13808,2005
+"490","Heat",612,2005
+"491","Heavy Rain",854,2005
+"492","Heavy Snow",2654,2005
+"493","High Surf",517,2005
+"494","High Wind",2255,2005
+"495","Hurricane (Typhoon)",555,2005
+"496","Ice Storm",605,2005
+"497","Lake-Effect Snow",36,2005
+"498","Lightning",864,2005
+"499","Marine Hail",41,2005
+"500","Marine High Wind",5,2005
+"501","Marine Thunderstorm Wind",1165,2005
+"502","Rip Current",39,2005
+"503","Seiche",3,2005
+"504","Sleet",11,2005
+"505","Storm Surge/Tide",257,2005
+"506","Strong Wind",704,2005
+"507","Thunderstorm Wind",12274,2005
+"508","Tornado",1343,2005
+"509","Tropical Storm",637,2005
+"510","Volcanic Ash",4,2005
+"511","Waterspout",192,2005
+"512","Wildfire",221,2005
+"513","Winter Storm",2760,2005
+"514","Winter Weather",2057,2005
+"515","Avalanche",46,2006
+"516","Blizzard",248,2006
+"517","Coastal Flood",219,2006
+"518","Cold/Wind Chill",345,2006
+"519","Debris Flow",59,2006
+"520","Dense Fog",681,2006
+"521","Dense Smoke",1,2006
+"522","Drought",2835,2006
+"523","Dust Devil",7,2006
+"524","Dust Storm",61,2006
+"525","Extreme Cold/Wind Chill",5,2006
+"526","Flash Flood",2641,2006
+"527","Flood",1227,2006
+"528","Freezing Fog",3,2006
+"529","Frost/Freeze",413,2006
+"530","Funnel Cloud",366,2006
+"531","Hail",16656,2006
+"532","Heat",1608,2006
+"533","Heavy Rain",810,2006
+"534","Heavy Snow",1605,2006
+"535","High Surf",441,2006
+"536","High Wind",3026,2006
+"537","Ice Storm",223,2006
+"538","Lake-Effect Snow",116,2006
+"539","Lakeshore Flood",1,2006
+"540","Landslide",10,2006
+"541","Lightning",840,2006
+"542","Marine Hail",92,2006
+"543","Marine High Wind",9,2006
+"544","Marine Strong Wind",3,2006
+"545","Marine Thunderstorm Wind",1131,2006
+"546","Rip Current",30,2006
+"547","Seiche",3,2006
+"548","Sleet",8,2006
+"549","Storm Surge/Tide",33,2006
+"550","Strong Wind",1179,2006
+"551","Thunderstorm Wind",13888,2006
+"552","Tornado",1263,2006
+"553","Tropical Storm",148,2006
+"554","Tsunami",5,2006
+"555","Volcanic Ash",1,2006
+"556","Waterspout",230,2006
+"557","Wildfire",419,2006
+"558","Winter Storm",1903,2006
+"559","Winter Weather",1562,2006
+"560","Astronomical Low Tide",61,2007
+"561","Avalanche",25,2007
+"562","Blizzard",494,2007
+"563","Coastal Flood",246,2007
+"564","Cold/Wind Chill",454,2007
+"565","Dense Fog",780,2007
+"566","Dense Smoke",3,2007
+"567","Drought",3616,2007
+"568","Dust Devil",6,2007
+"569","Dust Storm",56,2007
+"570","Excessive Heat",488,2007
+"571","Extreme Cold/Wind Chill",506,2007
+"572","Flash Flood",3688,2007
+"573","Flood",1805,2007
+"574","Freezing Fog",11,2007
+"575","Frost/Freeze",1851,2007
+"576","Funnel Cloud",340,2007
+"577","Hail",12712,2007
+"578","Heat",464,2007
+"579","Heavy Rain",874,2007
+"580","Heavy Snow",2533,2007
+"581","High Surf",400,2007
+"582","High Wind",2168,2007
+"583","Hurricane",49,2007
+"584","Ice Storm",1071,2007
+"585","Lake-Effect Snow",238,2007
+"586","Lakeshore Flood",6,2007
+"587","Landslide",67,2007
+"588","Lightning",722,2007
+"589","Marine Hail",60,2007
+"590","Marine High Wind",1,2007
+"591","Marine Strong Wind",8,2007
+"592","Marine Thunderstorm Wind",960,2007
+"593","Rip Current",61,2007
+"594","Sleet",36,2007
+"595","Storm Surge/Tide",11,2007
+"596","Strong Wind",825,2007
+"597","Thunderstorm Wind",13017,2007
+"598","Tornado",1241,2007
+"599","Tropical Depression",46,2007
+"600","Tropical Storm",32,2007
+"601","Volcanic Ashfall",1,2007
+"602","Waterspout",288,2007
+"603","Wildfire",274,2007
+"604","Winter Storm",3032,2007
+"605","Winter Weather",3383,2007
+"606","Astronomical Low Tide",44,2008
+"607","Avalanche",43,2008
+"608","Blizzard",729,2008
+"609","Coastal Flood",61,2008
+"610","Cold/Wind Chill",523,2008
+"611","Dense Fog",559,2008
+"612","Dense Smoke",2,2008
+"613","Drought",1909,2008
+"614","Dust Devil",13,2008
+"615","Dust Storm",15,2008
+"616","Excessive Heat",147,2008
+"617","Extreme Cold/Wind Chill",983,2008
+"618","Flash Flood",3832,2008
+"619","Flood",2496,2008
+"620","Freezing Fog",3,2008
+"621","Frost/Freeze",780,2008
+"622","Funnel Cloud",383,2008
+"623","Hail",17768,2008
+"624","Heat",185,2008
+"625","Heavy Rain",858,2008
+"626","Heavy Snow",2768,2008
+"627","High Surf",375,2008
+"628","High Wind",3565,2008
+"629","Hurricane (Typhoon)",72,2008
+"630","Ice Storm",601,2008
+"631","Lake-Effect Snow",237,2008
+"632","Landslide",38,2008
+"633","Lightning",795,2008
+"634","Marine Hail",55,2008
+"635","Marine High Wind",13,2008
+"636","Marine Strong Wind",7,2008
+"637","Marine Thunderstorm Wind",1268,2008
+"638","Rip Current",68,2008
+"639","Seiche",6,2008
+"640","Sleet",68,2008
+"641","Storm Surge/Tide",124,2008
+"642","Strong Wind",1514,2008
+"643","Thunderstorm Wind",17161,2008
+"644","Tornado",1954,2008
+"645","Tropical Depression",131,2008
+"646","Tropical Storm",589,2008
+"647","Volcanic Ashfall",3,2008
+"648","Waterspout",221,2008
+"649","Wildfire",333,2008
+"650","Winter Storm",4033,2008
+"651","Winter Weather",3858,2008
+"652","Astronomical Low Tide",41,2009
+"653","Avalanche",12,2009
+"654","Blizzard",1247,2009
+"655","Coastal Flood",201,2009
+"656","Cold/Wind Chill",436,2009
+"657","Dense Fog",370,2009
+"658","Dense Smoke",2,2009
+"659","Drought",1242,2009
+"660","Dust Devil",12,2009
+"661","Dust Storm",60,2009
+"662","Excessive Heat",146,2009
+"663","Extreme Cold/Wind Chill",567,2009
+"664","Flash Flood",4091,2009
+"665","Flood",1978,2009
+"666","Freezing Fog",41,2009
+"667","Frost/Freeze",649,2009
+"668","Funnel Cloud",449,2009
+"669","Hail",13313,2009
+"670","Heat",241,2009
+"671","Heavy Rain",1087,2009
+"672","Heavy Snow",2306,2009
+"673","High Surf",534,2009
+"674","High Wind",2968,2009
+"675","Hurricane (Typhoon)",1,2009
+"676","Ice Storm",442,2009
+"677","Lake-Effect Snow",148,2009
+"678","Landslide",52,2009
+"679","Lightning",721,2009
+"680","Marine Hail",28,2009
+"681","Marine High Wind",32,2009
+"682","Marine Strong Wind",2,2009
+"683","Marine Thunderstorm Wind",984,2009
+"684","Rip Current",58,2009
+"685","Seiche",3,2009
+"686","Sleet",6,2009
+"687","Storm Surge/Tide",14,2009
+"688","Strong Wind",1328,2009
+"689","Thunderstorm Wind",13379,2009
+"690","Tornado",1273,2009
+"691","Tropical Depression",39,2009
+"692","Tropical Storm",130,2009
+"693","Tsunami",1,2009
+"694","Waterspout",224,2009
+"695","Wildfire",245,2009
+"696","Winter Storm",3341,2009
+"697","Winter Weather",2954,2009
+"698","Astronomical Low Tide",40,2010
+"699","Avalanche",50,2010
+"700","Blizzard",953,2010
+"701","Coastal Flood",102,2010
+"702","Cold/Wind Chill",344,2010
+"703","Dense Fog",496,2010
+"704","Dense Smoke",1,2010
+"705","Drought",1518,2010
+"706","Dust Devil",11,2010
+"707","Dust Storm",50,2010
+"708","Excessive Heat",1240,2010
+"709","Extreme Cold/Wind Chill",257,2010
+"710","Flash Flood",4024,2010
+"711","Flood",2640,2010
+"712","Freezing Fog",60,2010
+"713","Frost/Freeze",824,2010
+"714","Funnel Cloud",524,2010
+"715","Hail",10918,2010
+"716","Heat",1403,2010
+"717","Heavy Rain",1099,2010
+"718","Heavy Snow",3531,2010
+"719","High Surf",436,2010
+"720","High Wind",2753,2010
+"721","Hurricane (Typhoon)",2,2010
+"722","Ice Storm",276,2010
+"723","Lake-Effect Snow",209,2010
+"724","Lakeshore Flood",7,2010
+"725","Landslide",65,2010
+"726","Lightning",864,2010
+"727","Marine Hail",28,2010
+"728","Marine High Wind",37,2010
+"729","Marine Strong Wind",17,2010
+"730","Marine Thunderstorm Wind",1268,2010
+"731","Rip Current",77,2010
+"732","Seiche",2,2010
+"733","Sleet",15,2010
+"734","Storm Surge/Tide",25,2010
+"735","Strong Wind",983,2010
+"736","Thunderstorm Wind",15812,2010
+"737","Tornado",1449,2010
+"738","Tropical Storm",41,2010
+"739","Tsunami",8,2010
+"740","Waterspout",148,2010
+"741","Wildfire",231,2010
+"742","Winter Storm",3763,2010
+"743","Winter Weather",4206,2010
+"744","Astronomical Low Tide",28,2011
+"745","Avalanche",26,2011
+"746","Blizzard",814,2011
+"747","Coastal Flood",106,2011
+"748","Cold/Wind Chill",195,2011
+"749","Dense Fog",407,2011
+"750","Dense Smoke",1,2011
+"751","Drought",5160,2011
+"752","Dust Devil",10,2011
+"753","Dust Storm",54,2011
+"754","Excessive Heat",1698,2011
+"755","Extreme Cold/Wind Chill",608,2011
+"756","Flash Flood",3423,2011
+"757","Flood",3729,2011
+"758","Freezing Fog",7,2011
+"759","Frost/Freeze",482,2011
+"760","Funnel Cloud",526,2011
+"761","Hail",17331,2011
+"762","Heat",997,2011
+"763","Heavy Rain",1087,2011
+"764","Heavy Snow",2541,2011
+"765","High Surf",466,2011
+"766","High Wind",3191,2011
+"767","Hurricane (Typhoon)",16,2011
+"768","Ice Storm",420,2011
+"769","Lake-Effect Snow",102,2011
+"770","Lakeshore Flood",28,2011
+"771","Landslide",102,2011
+"772","Lightning",765,2011
+"773","Marine Hail",51,2011
+"774","Marine High Wind",73,2011
+"775","Marine Strong Wind",13,2011
+"776","Marine Thunderstorm Wind",1674,2011
+"777","Rip Current",47,2011
+"778","Seiche",6,2011
+"779","Sleet",1,2011
+"780","Storm Surge/Tide",82,2011
+"781","Strong Wind",1112,2011
+"782","Thunderstorm Wind",21282,2011
+"783","Tornado",2074,2011
+"784","Tropical Storm",466,2011
+"785","Tsunami",13,2011
+"786","Waterspout",169,2011
+"787","Wildfire",856,2011
+"788","Winter Storm",3182,2011
+"789","Winter Weather",3670,2011
+"790","Astronomical Low Tide",51,2012
+"791","Avalanche",31,2012
+"792","Blizzard",509,2012
+"793","Coastal Flood",269,2012
+"794","Cold/Wind Chill",56,2012
+"795","Debris Flow",26,2012
+"796","Dense Fog",977,2012
+"797","Dense Smoke",5,2012
+"798","Drought",7903,2012
+"799","Dust Devil",17,2012
+"800","Dust Storm",77,2012
+"801","Excessive Heat",1156,2012
+"802","Extreme Cold/Wind Chill",254,2012
+"803","Flash Flood",2304,2012
+"804","Flood",993,2012
+"805","Freezing Fog",16,2012
+"806","Frost/Freeze",1027,2012
+"807","Funnel Cloud",326,2012
+"808","Hail",13385,2012
+"809","Heat",1633,2012
+"810","Heavy Rain",1043,2012
+"811","Heavy Snow",1478,2012
+"812","High Surf",377,2012
+"813","High Wind",3765,2012
+"814","Hurricane (Typhoon)",33,2012
+"815","Ice Storm",30,2012
+"816","Lake-Effect Snow",114,2012
+"817","Landslide",38,2012
+"818","Lightning",591,2012
+"819","Marine Dense Fog",1,2012
+"820","Marine Hail",57,2012
+"821","Marine High Wind",43,2012
+"822","Marine Hurricane/Typhoon",13,2012
+"823","Marine Strong Wind",24,2012
+"824","Marine Thunderstorm Wind",1733,2012
+"825","Marine Tropical Storm",11,2012
+"826","Rip Current",70,2012
+"827","Seiche",9,2012
+"828","Sleet",1,2012
+"829","Sneakerwave",1,2012
+"830","Storm Surge/Tide",62,2012
+"831","Strong Wind",1071,2012
+"832","Thunderstorm Wind",16235,2012
+"833","Tornado",1058,2012
+"834","Tropical Depression",97,2012
+"835","Tropical Storm",190,2012
+"836","Waterspout",251,2012
+"837","Wildfire",481,2012
+"838","Winter Storm",1809,2012
+"839","Winter Weather",2802,2012
+"840","Astronomical Low Tide",28,2013
+"841","Avalanche",29,2013
+"842","Blizzard",691,2013
+"843","Coastal Flood",104,2013
+"844","Cold/Wind Chill",459,2013
+"845","Debris Flow",71,2013
+"846","Dense Fog",624,2013
+"847","Dense Smoke",3,2013
+"848","Drought",5539,2013
+"849","Dust Devil",12,2013
+"850","Dust Storm",70,2013
+"851","Excessive Heat",208,2013
+"852","Extreme Cold/Wind Chill",625,2013
+"853","Flash Flood",4484,2013
+"854","Flood",2176,2013
+"855","Freezing Fog",28,2013
+"856","Frost/Freeze",664,2013
+"857","Funnel Cloud",312,2013
+"858","Hail",9625,2013
+"859","Heat",478,2013
+"860","Heavy Rain",1351,2013
+"861","Heavy Snow",2225,2013
+"862","High Surf",377,2013
+"863","High Wind",2307,2013
+"864","Hurricane",2,2013
+"865","Ice Storm",452,2013
+"866","Lake-Effect Snow",225,2013
+"867","Lightning",471,2013
+"868","Marine Dense Fog",1,2013
+"869","Marine Hail",22,2013
+"870","Marine High Wind",33,2013
+"871","Marine Strong Wind",7,2013
+"872","Marine Thunderstorm Wind",1388,2013
+"873","Rip Current",63,2013
+"874","Sleet",18,2013
+"875","Sneakerwave",2,2013
+"876","Storm Surge/Tide",4,2013
+"877","Strong Wind",773,2013
+"878","Thunderstorm Wind",14355,2013
+"879","Tornado",1053,2013
+"880","Tropical Storm",95,2013
+"881","Tsunami",5,2013
+"882","Waterspout",201,2013
+"883","Wildfire",210,2013
+"884","Winter Storm",3446,2013
+"885","Winter Weather",4669,2013
+"886","Astronomical Low Tide",62,2014
+"887","Avalanche",42,2014
+"888","Blizzard",684,2014
+"889","Coastal Flood",106,2014
+"890","Cold/Wind Chill",1146,2014
+"891","Debris Flow",62,2014
+"892","Dense Fog",794,2014
+"893","Dense Smoke",1,2014
+"894","Drought",3009,2014
+"895","Dust Devil",11,2014
+"896","Dust Storm",114,2014
+"897","Excessive Heat",83,2014
+"898","Extreme Cold/Wind Chill",1821,2014
+"899","Flash Flood",3234,2014
+"900","Flood",1904,2014
+"901","Freezing Fog",65,2014
+"902","Frost/Freeze",473,2014
+"903","Funnel Cloud",334,2014
+"904","Hail",9964,2014
+"905","Heat",181,2014
+"906","Heavy Rain",1625,2014
+"907","Heavy Snow",2637,2014
+"908","High Surf",409,2014
+"909","High Wind",3253,2014
+"910","Hurricane (Typhoon)",6,2014
+"911","Ice Storm",282,2014
+"912","Lake-Effect Snow",147,2014
+"913","Lakeshore Flood",6,2014
+"914","Lightning",498,2014
+"915","Marine Hail",27,2014
+"916","Marine High Wind",11,2014
+"917","Marine Lightning",1,2014
+"918","Marine Strong Wind",6,2014
+"919","Marine Thunderstorm Wind",1584,2014
+"920","Marine Tropical Storm",5,2014
+"921","Rip Current",60,2014
+"922","Seiche",6,2014
+"923","Sleet",57,2014
+"924","Sneakerwave",5,2014
+"925","Storm Surge/Tide",2,2014
+"926","Strong Wind",830,2014
+"927","Thunderstorm Wind",13830,2014
+"928","Tornado",1055,2014
+"929","Tropical Storm",31,2014
+"930","Waterspout",166,2014
+"931","Wildfire",269,2014
+"932","Winter Storm",3952,2014
+"933","Winter Weather",4615,2014
+"934","Astronomical Low Tide",80,2015
+"935","Avalanche",27,2015
+"936","Blizzard",348,2015
+"937","Coastal Flood",270,2015
+"938","Cold/Wind Chill",925,2015
+"939","Debris Flow",54,2015
+"940","Dense Fog",819,2015
+"941","Dense Smoke",2,2015
+"942","Drought",1397,2015
+"943","Dust Devil",10,2015
+"944","Dust Storm",41,2015
+"945","Excessive Heat",325,2015
+"946","Extreme Cold/Wind Chill",853,2015
+"947","Flash Flood",5063,2015
+"948","Flood",2587,2015
+"949","Freezing Fog",10,2015
+"950","Frost/Freeze",345,2015
+"951","Funnel Cloud",362,2015
+"952","Hail",9398,2015
+"953","Heat",397,2015
+"954","Heavy Rain",1518,2015
+"955","Heavy Snow",2557,2015
+"956","High Surf",561,2015
+"957","High Wind",2143,2015
+"958","Hurricane (Typhoon)",7,2015
+"959","Ice Storm",327,2015
+"960","Lake-Effect Snow",63,2015
+"961","Lightning",403,2015
+"962","Marine Dense Fog",2,2015
+"963","Marine Hail",19,2015
+"964","Marine High Wind",24,2015
+"965","Marine Strong Wind",9,2015
+"966","Marine Thunderstorm Wind",1880,2015
+"967","Rip Current",68,2015
+"968","Seiche",6,2015
+"969","Sleet",95,2015
+"970","Sneakerwave",1,2015
+"971","Storm Surge/Tide",4,2015
+"972","Strong Wind",711,2015
+"973","Thunderstorm Wind",14400,2015
+"974","Tornado",1320,2015
+"975","Tropical Depression",4,2015
+"976","Tropical Storm",49,2015
+"977","Tsunami",1,2015
+"978","Waterspout",240,2015
+"979","Wildfire",284,2015
+"980","Winter Storm",3537,2015
+"981","Winter Weather",4242,2015
+"982","Astronomical Low Tide",46,2016
+"983","Avalanche",30,2016
+"984","Blizzard",544,2016
+"985","Coastal Flood",223,2016
+"986","Cold/Wind Chill",181,2016
+"987","Debris Flow",52,2016
+"988","Dense Fog",829,2016
+"989","Drought",2271,2016
+"990","Dust Devil",13,2016
+"991","Dust Storm",68,2016
+"992","Excessive Heat",555,2016
+"993","Extreme Cold/Wind Chill",570,2016
+"994","Flash Flood",3586,2016
+"995","Flood",1703,2016
+"996","Freezing Fog",4,2016
+"997","Frost/Freeze",832,2016
+"998","Funnel Cloud",289,2016
+"999","Hail",9407,2016
+"1000","Heat",811,2016
+"1001","Heavy Rain",1795,2016
+"1002","Heavy Snow",1518,2016
+"1003","High Surf",568,2016
+"1004","High Wind",3120,2016
+"1005","Hurricane",11,2016
+"1006","Hurricane (Typhoon)",22,2016
+"1007","Ice Storm",101,2016
+"1008","Lake-Effect Snow",251,2016
+"1009","Lakeshore Flood",1,2016
+"1010","Lightning",409,2016
+"1011","Marine Dense Fog",4,2016
+"1012","Marine Hail",23,2016
+"1013","Marine High Wind",51,2016
+"1014","Marine Hurricane/Typhoon",10,2016
+"1015","Marine Strong Wind",9,2016
+"1016","Marine Thunderstorm Wind",2173,2016
+"1017","Marine Tropical Depression",1,2016
+"1018","Marine Tropical Storm",13,2016
+"1019","Rip Current",69,2016
+"1020","Seiche",2,2016
+"1021","Sleet",3,2016
+"1022","Sneakerwave",1,2016
+"1023","Storm Surge/Tide",34,2016
+"1024","Strong Wind",902,2016
+"1025","Thunderstorm Wind",15659,2016
+"1026","Tornado",1079,2016
+"1027","Tropical Depression",12,2016
+"1028","Tropical Storm",319,2016
+"1029","Waterspout",199,2016
+"1030","Wildfire",347,2016
+"1031","Winter Storm",2367,2016
+"1032","Winter Weather",2916,2016
+"1033","Astronomical Low Tide",13,2017
+"1034","Avalanche",27,2017
+"1035","Blizzard",356,2017
+"1036","Coastal Flood",175,2017
+"1037","Cold/Wind Chill",285,2017
+"1038","Debris Flow",191,2017
+"1039","Dense Fog",505,2017
+"1040","Dense Smoke",16,2017
+"1041","Drought",1219,2017
+"1042","Dust Devil",6,2017
+"1043","Dust Storm",39,2017
+"1044","Excessive Heat",260,2017
+"1045","Extreme Cold/Wind Chill",456,2017
+"1046","Flash Flood",3662,2017
+"1047","Flood",2472,2017
+"1048","Freezing Fog",5,2017
+"1049","Frost/Freeze",409,2017
+"1050","Funnel Cloud",255,2017
+"1051","Hail",10398,2017
+"1052","Heat",500,2017
+"1053","Heavy Rain",1469,2017
+"1054","Heavy Snow",1705,2017
+"1055","High Surf",436,2017
+"1056","High Wind",3536,2017
+"1057","Hurricane",45,2017
+"1058","Ice Storm",339,2017
+"1059","Lake-Effect Snow",169,2017
+"1060","Lakeshore Flood",10,2017
+"1061","Lightning",365,2017
+"1062","Marine Hail",40,2017
+"1063","Marine High Wind",59,2017
+"1064","Marine Hurricane/Typhoon",15,2017
+"1065","Marine Strong Wind",10,2017
+"1066","Marine Thunderstorm Wind",2088,2017
+"1067","Marine Tropical Depression",1,2017
+"1068","Marine Tropical Storm",62,2017
+"1069","Rip Current",80,2017
+"1070","Sleet",39,2017
+"1071","Sneakerwave",3,2017
+"1072","Storm Surge/Tide",74,2017
+"1073","Strong Wind",1096,2017
+"1074","Thunderstorm Wind",16472,2017
+"1075","Tornado",1647,2017
+"1076","Tropical Depression",17,2017
+"1077","Tropical Storm",357,2017
+"1078","Waterspout",232,2017
+"1079","Wildfire",358,2017
+"1080","Winter Storm",2245,2017
+"1081","Winter Weather",2806,2017
+"1082","Astronomical Low Tide",33,2018
+"1083","Avalanche",16,2018
+"1084","Blizzard",761,2018
+"1085","Coastal Flood",321,2018
+"1086","Cold/Wind Chill",582,2018
+"1087","Debris Flow",136,2018
+"1088","Dense Fog",754,2018
+"1089","Dense Smoke",45,2018
+"1090","Drought",2417,2018
+"1091","Dust Devil",8,2018
+"1092","Dust Storm",114,2018
+"1093","Excessive Heat",668,2018
+"1094","Extreme Cold/Wind Chill",590,2018
+"1095","Flash Flood",4378,2018
+"1096","Flood",4824,2018
+"1097","Freezing Fog",18,2018
+"1098","Frost/Freeze",710,2018
+"1099","Funnel Cloud",349,2018
+"1100","Hail",7863,2018
+"1101","Heat",1374,2018
+"1102","Heavy Rain",1924,2018
+"1103","Heavy Snow",2289,2018
+"1104","High Surf",540,2018
+"1105","High Wind",2972,2018
+"1106","Hurricane",61,2018
+"1107","Ice Storm",172,2018
+"1108","Lake-Effect Snow",56,2018
+"1109","Lakeshore Flood",10,2018
+"1110","Lightning",396,2018
+"1111","Marine Hail",24,2018
+"1112","Marine High Wind",26,2018
+"1113","Marine Hurricane/Typhoon",6,2018
+"1114","Marine Strong Wind",9,2018
+"1115","Marine Thunderstorm Wind",2090,2018
+"1116","Marine Tropical Depression",5,2018
+"1117","Marine Tropical Storm",42,2018
+"1118","Rip Current",84,2018
+"1119","Seiche",2,2018
+"1120","Sleet",8,2018
+"1121","Sneakerwave",2,2018
+"1122","Storm Surge/Tide",26,2018
+"1123","Strong Wind",1025,2018
+"1124","Thunderstorm Wind",14620,2018
+"1125","Tornado",1254,2018
+"1126","Tropical Depression",37,2018
+"1127","Tropical Storm",317,2018
+"1128","Volcanic Ashfall",65,2018
+"1129","Waterspout",203,2018
+"1130","Wildfire",417,2018
+"1131","Winter Storm",3468,2018
+"1132","Winter Weather",4570,2018
+"1133","Astronomical Low Tide",16,2019
+"1134","Avalanche",44,2019
+"1135","Blizzard",852,2019
+"1136","Coastal Flood",240,2019
+"1137","Cold/Wind Chill",470,2019
+"1138","Debris Flow",185,2019
+"1139","Dense Fog",652,2019
+"1140","Dense Smoke",2,2019
+"1141","Drought",1007,2019
+"1142","Dust Devil",8,2019
+"1143","Dust Storm",40,2019
+"1144","Excessive Heat",852,2019
+"1145","Extreme Cold/Wind Chill",1065,2019
+"1146","Flash Flood",4072,2019
+"1147","Flood",4949,2019
+"1148","Freezing Fog",6,2019
+"1149","Frost/Freeze",654,2019
+"1150","Funnel Cloud",348,2019
+"1151","Hail",9013,2019
+"1152","Heat",1294,2019
+"1153","Heavy Rain",1441,2019
+"1154","Heavy Snow",2872,2019
+"1155","High Surf",468,2019
+"1156","High Wind",3784,2019
+"1157","Hurricane",10,2019
+"1158","Ice Storm",200,2019
+"1159","Lake-Effect Snow",78,2019
+"1160","Lakeshore Flood",146,2019
+"1161","Lightning",343,2019
+"1162","Marine Hail",32,2019
+"1163","Marine High Wind",77,2019
+"1164","Marine Hurricane/Typhoon",6,2019
+"1165","Marine Strong Wind",17,2019
+"1166","Marine Thunderstorm Wind",2502,2019
+"1167","Marine Tropical Depression",4,2019
+"1168","Marine Tropical Storm",37,2019
+"1169","Rip Current",74,2019
+"1170","Seiche",4,2019
+"1171","Sleet",1,2019
+"1172","Sneakerwave",3,2019
+"1173","Storm Surge/Tide",25,2019
+"1174","Strong Wind",1591,2019
+"1175","Thunderstorm Wind",18617,2019
+"1176","Tornado",1728,2019
+"1177","Tropical Depression",26,2019
+"1178","Tropical Storm",143,2019
+"1179","Volcanic Ashfall",1,2019
+"1180","Waterspout",183,2019
+"1181","Wildfire",180,2019
+"1182","Winter Storm",3336,2019
+"1183","Winter Weather",3808,2019
+"1184","Astronomical Low Tide",1,2020
+"1185","Avalanche",16,2020
+"1186","Blizzard",292,2020
+"1187","Coastal Flood",26,2020
+"1188","Cold/Wind Chill",105,2020
+"1189","Debris Flow",29,2020
+"1190","Dense Fog",446,2020
+"1191","Drought",301,2020
+"1192","Dust Devil",2,2020
+"1193","Dust Storm",6,2020
+"1194","Excessive Heat",8,2020
+"1195","Extreme Cold/Wind Chill",206,2020
+"1196","Flash Flood",862,2020
+"1197","Flood",1049,2020
+"1198","Freezing Fog",3,2020
+"1199","Frost/Freeze",224,2020
+"1200","Funnel Cloud",40,2020
+"1201","Hail",2130,2020
+"1202","Heat",2,2020
+"1203","Heavy Rain",195,2020
+"1204","Heavy Snow",870,2020
+"1205","High Surf",219,2020
+"1206","High Wind",1328,2020
+"1207","Ice Storm",51,2020
+"1208","Lake-Effect Snow",45,2020
+"1209","Lakeshore Flood",67,2020
+"1210","Lightning",33,2020
+"1211","Marine Hail",9,2020
+"1212","Marine High Wind",29,2020
+"1213","Marine Strong Wind",2,2020
+"1214","Marine Thunderstorm Wind",611,2020
+"1215","Rip Current",3,2020
+"1216","Sleet",7,2020
+"1217","Strong Wind",656,2020
+"1218","Thunderstorm Wind",4501,2020
+"1219","Tornado",549,2020
+"1220","Waterspout",11,2020
+"1221","Wildfire",25,2020
+"1222","Winter Storm",1127,2020
+"1223","Winter Weather",1828,2020

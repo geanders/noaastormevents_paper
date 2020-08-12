@@ -1,7 +1,7 @@
 library(noaastormevents)
 library(dplyr)
 
-all_years <- 1990:2019
+all_years <- 1950:2020
 year_events <- vector("list", length(all_years))
 
 for( i in 1:length(all_years)) {
@@ -23,5 +23,6 @@ for( i in 1:length(all_years)) {
 
 year_events_df <- bind_rows(year_events)
 
+write.csv(year_events_df, 'year_events_data.csv', row.names = TRUE)
 
 
