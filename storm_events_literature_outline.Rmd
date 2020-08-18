@@ -172,6 +172,7 @@ about potential biases? One thing here would be to talk about the idea of the pr
 of an event being recorded given that it happens.]
 
 Though the NOAA Storm Events database is quite extensive, several biases affect its data. These biases fall under five major categories which are common in weather data. These include hazard bias, temporal bias, threshold bias, accounting bias, and geographic bias. These biases result from various factors including structural changes over time, reporting errors, inherent bias, and others. 
+
 [BA: Great! The above paragraph definitely belongs in the "funnel" of our Introduction, I think.]
 
 
@@ -215,15 +216,25 @@ Within the Storm Events database, there may be inaccurate recording in the numbe
 The Storm Events database aims to record listings for all hazards brought by a particular storm event. However, in some cases, when a storm event is recorded certain types of hazards within the storm can tend to go unreported. 
 
 
+
 [BA: We may want to add something like, "and, in general, the probability that an event is recorded here might differ by type of event." I'm thinking that this type of hazard would especially come into play for a study where you're trying to *compare* the frequency of two or more hazards with each other, or even trying to see how each is related with an outcome. We might want to see if we can find some examples of studies that have used this database while looking at two or more types of hazards, to help us in thinking through how a reporting bias that's different by type of hazard might bias the results. Many of our example studies focus on one type of hazard (e.g., tornadoes, rip tides), but maybe we can find some that consider two or more in the same study?]
 
 [BA: For our definition of hazard bias---is it that the probability of an event being record if it happens varies by event type/hazard, and also that the quality and quantity about information provided for a recorded event might also vary by event type/hazard? In other words, some hazards may be less likely to be reported as an event in this database, and when an event is recorded, the information recorded for it might be more comprehensive, accurate, and precise for some types of hazards compared to others.]
 
 ### P (event recorded | event happened)
 
-The probability that an event is recorded might differ by event type. This could result from several mechanisms.  First, the US government has certain programs that focus on specific hazards more than others.  For example, the NWS is obliged to provide monetary loss estimates for any flood event even if the damage assessment is a 'guesstimate' (Gall, Borden, and Cutter 2009).  This leads to a higher probability of reporting for flood events in Storm Data because of how they get information.  [TK: I need to look into the flood insurance program to see if this also has an effect]   
+The probability that an event is recorded might differ by event type. This could result from several mechanisms.  First, the US government has certain programs that focus on specific hazards more than others.  For example, the NWS is obliged to provide monetary loss estimates for any flood event even if the damage assessment is a 'guesstimate' (Gall, Borden, and Cutter 2009).  This leads to a higher probability of reporting for flood events in Storm Data because of how they get information.  
 
-Additionally, certain characteristics of event types influence how easy or difficult it is to obtain information about the event. [Would these points help explain our observations from the data? For example, why hail is frequent but sneakerwaves and sleet are rare?] For example, it is more difficult to obtain information [any information (e.g., they aren't recorded at all) or loss information specifically (e.g., they are reported, but the info on the losses isn't good)?] on event types that do not cause much physical damage or monetary loss [Do we have a reference for this? Otherwise, we might need to soften the language in this sentence]. This is because insurance companies typically keep strict records of monetary damages caused by weather events [for all types of hazards, or just certain types? In practice in our data, it looks like not a lot of events are reported by insurance companies, so we might want to think about how that plays in with this idea.].  If this is lacking, then the NWS struggles to find exact damage amounts [any info on alternative sources they use?].  Drought hazards exemplify this issue; they are notoriously underreported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses (Gall, Borden, and Cutter 2009).  Avalanches also showcase this issue as they typically occur in remote locations with little physical damage or fatalities. [TK: I just made this assumption, so I need to check the literature] On the other hand, hurricanes or tornadoes that pass through large cities will cause high amounts of physical damage and fatalities. This would attract the attention of insurance companies and produce clear records of damages.   
+[TK: I need to look into the flood insurance program to see if this also has an effect]   
+
+Additionally, certain characteristics of event types influence how easy or difficult it is to obtain information about the event. 
+
+[Would these points help explain our observations from the data? For example, why hail is frequent but sneakerwaves and sleet are rare?] For example, it is more difficult to obtain information [any information (e.g., they aren't recorded at all) or loss information specifically (e.g., they are reported, but the info on the losses isn't good)?] on event types that do not cause much physical damage or monetary loss [Do we have a reference for this? Otherwise, we might need to soften the language in this sentence].
+
+This is because insurance companies typically keep strict records of monetary damages caused by weather events [for all types of hazards, or just certain types? In practice in our data, it looks like not a lot of events are reported by insurance companies, so we might want to think about how that plays in with this idea.].  If this is lacking, then the NWS struggles to find exact damage amounts [any info on alternative sources they use?].  Drought hazards exemplify this issue; they are notoriously underreported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses (Gall, Borden, and Cutter 2009).  Avalanches also showcase this issue as they typically occur in remote locations with little physical damage or fatalities. [TK: I just made this assumption, so I need to check the literature] 
+
+
+On the other hand, hurricanes or tornadoes that pass through large cities will cause high amounts of physical damage and fatalities. This would attract the attention of insurance companies and produce clear records of damages.   
 
 [TK: I still want to consider the idea that event severity may affect the probability (events that happen closer to larger populations of people may have a higher likelihood of being reported than an event that is in a more secluded area) . I’m still debating if that would go here or under threshold bias.
 Points you have brought up: 
@@ -658,13 +669,21 @@ events_2019 %>%
 
 ### Current techniques for improvement (re-analysis)  
 
-* Christopher Landsea et al. has reanalyzed the Atlantic Hurricane Database for 1911-1930. These studies examine records of hurricanes, determine their accuracy, and readjust if necessary. This readjustment involves removing recorded hurricanes, adding hurricanes, and/or altering the recorded track or intensity.
-They do this by 
+Many atmospheric scientists have recognized this concept of temporal bias in weather data and have revisted data and recording strategies in an attempt to account for it. 
+
+For example, Christopher Landsea et al. has published work on hurricane data reanalysis. In this work, he reanalyzes the National Hurricane Center’s North Atlantic hurricane database (HURDAT) across several years [@landsea2008reanalysis, @landsea2012reanalysis, @landsea2014reanalysis, @delgado2018reanalysis]. HURDAT is the main archive of tropical cyclones of the North Atlantic Ocean, Caribbean Sea, and Gulf of Mexico. 
+
+Landsea examines HURDAT's record of hurricanes and tropical cyclones to determine their accuracy and readjust if necessary. This readjustment involves removing recorded hurricanes or tropical cyclones, adding them, and/or editing the recorded track or intensity. The goal of this work is to correct systemic biases and random errors in the data in order to make the data comparable over time. 
+
+Hagen and Landsea conducted a similar study in which they investigated if the 10 most recent Category 5 hurricanes would still have been classified as so if they had occured during the mid-twentieth century (1944–53) using the available monitoring technology at the time  [@hagen2012classification]. The 10 most recent Category 5 hurricanes start with hurricane Andrew in 1992 and end with hurricane Felix in 2007. The study looks at all recorded observations for these hurricanes and then removes ones that were obtained from technology (i.e. satellite data, air reconnaissance) not available during the time period in question. Using the new subset of observations, the authors re-categorized the hurricanes.  This process concluded that only two of the most recent Category 5 hurricanes would hace been classified as so if they had occured during the late 1940s. It is more likely that all of these hurricanes would have instead been classified as Category 4 hurricanes. 
+
+This study hopes to determine how much advanced monitoring contriutes to the increasing prevalence of intense hurricanes. This determination thus helps in finding the true effect climate change or other factors have on this increasing prevalence. 
+
+In terms of recording tecnhniques, scientists have worked to improve the current process of tornado monitoring. In the late 1970s the NWS officially adopted the Fujita scale for ranking tornadoes. The Fujita scale was developed as a result of T. Theodore Fujita and Pearson's efforts to provide damage assessments for tornadoes in a systematic manner by determining their airflow characteristics [@edwards2010enhanced]. The scale provides path width and length ratings on a 0-5 scale and provides damage amounts on a scale of F0-F5. 
+
+Over the years, concerns arose about the effectiveness of the Fujita scale. Scientists then developed the enhanced Fujita (EF) scale to estimate wind speeds for degrees of damage (?) across 28 damage indicators (?). This enhanced scale serves to increase precision and accuracy for tornado and thunderstorm wind event recording. The NWS adopted this scale in 2007 [@edwards2013tornado]. 
 
 
-
-
-The goal of this work is to correct systemic biases and random errors in the data. 
 
 
 ## Threshold Bias  
