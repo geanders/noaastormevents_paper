@@ -203,6 +203,32 @@ to a table later.]
 
 ## Hazard Bias   
 
+**Societal responses to environmental hazards**
+
+"Hazard is the broadest term and reflects a source of danger or the potential for harm. Risk is the likelihood or probability of a risk ocurring. 
+
+Hazards include risk (e.g. probability), impact (or magnitude) and contextual (sociopolitical) elements. In other words, hazards are threats to people and the things they value). They are therfore socially constructed, where people contibute to, exaverbate and modify them. 
+
+Hazards can vary bby culture, gender, race, socioeconomic status and political structure. Disasters, on the other hand are singular hazard events (like those mentioned in the introduction above) that have a profound impact on local people or places" 
+
+
+
+**Revisiting the definition of “hazard” and the importance of reducing vulnerability** 
+
+"One view is that hazards are reducible to the physical events that trigger disasters."
+"The second, and currently more popular, perspective on hazards acknowledges the role of the physical environment but also acknowledges the complex relationship between hazards and human activity." 
+
+"It is apparent that most individuals assume a hazard to be the latent threat or active agent that triggers disasters. This view is not incorrect, and, understandably, it is widely used. However, the desire to put this definition of hazards at the center of EM presents unrecognized challenges for the field. Problems inevitably arise when we rely heavily on this concept because it inadvertently downplays human culpability for disasters."
+
+"hazards may be geophysical, atmospheric, or biological in origin. Other
+research makes similar references, giving the impression that these potentialities are reducible to their
+sources (environmental, climatological, geophysical, biological, technological, or civil/conflict origin)" 
+
+"A disaster is usually described as an event that has a large impact on society, and, because our subject matter is limited to natural hazards, it is geophysical events that create disasters."
+
+"A disaster might be defined loosely as a hazardous event that significantly disrupts the workings of society."
+
+
 [BA: I think there might be a few different things going on with this one. Let's talk about how we can make sure we bring these different elements together in describing this type of bias. Here are some of the elements that seemed to me to be coming up here: (1) some types of events might be more likely to be recorded than others; (2) some
 types of hazards within an event might be more likely to be recorded than others; (3) for some types of events, maybe there's some encouragement to list it as a single event; (4) for the events that are listed, they can differ a lot in severity, and there's not much information in the database to help figure out how severe they are; (5) some of the listings are coming from different sources (e.g., media rather than the NWS)]
 
@@ -367,7 +393,7 @@ top_episodes <- events_2019 %>%
   group_by(EPISODE_ID) %>%
   summarize(n = n()) %>%
   arrange(desc(n)) %>%
-  slice(1:10)
+  slice(1:12)
 
 a <- events_2019 %>%
   filter(EPISODE_ID %in% top_episodes$EPISODE_ID) %>%
@@ -397,7 +423,7 @@ events_2019 %>%
   theme(axis.text.x  = element_text(angle=45, vjust = 1, hjust = 0),
         legend.position = "top",
         plot.margin = unit(c(0, 1, 0, 0), "cm")) +
-  scale_x_discrete(position = "top") +
+  scale_x_discrete(position = "top", labels = c("A powerful coastal storm\n along New Jersey to\n the Northeast", "An atmospheric river\n and cold front near\n Mount Saint Helena", "Line of thunderstorms", "Multiple storms over\n Missouri Ozarks", "Squall line of thunderstorms\n in South Carolina", "An atmospheric river\n in the North Bay", "Frontal boundary over\n the mid-Atlantic creating\n a low pressure wave", "971mb bomb cyclone\n moving out of the\n Rockies", "Strong cold front and\n deep upper level trough\n in the Ozarks", "Moderate to strong\n atmospheric river in\n California", "Several severe storms\n along southern plains", "Heat wave in eastern\n New York")) +
   scale_fill_viridis(option = "A", direction = -1)
 ```      
 
@@ -545,6 +571,56 @@ events_2019 %>%
   mutate(N = prettyNum(N, big.mark = ",")) %>%
   knitr::kable(col.names = c("Source of event report", "Number of events reported in 2019"))
 ```
+### Automated observation systems:
+Mesonet
+ASOS
+AWOS
+River/Stream Gage
+Drought Monitor (we should check that this is from automated equipment, otherwise it should go in a different category)
+Buoy
+SNOTEL (we should check that this is from automated equipment, otherwise it should go in a different category)
+RAWS
+C-MAN Station
+AWSS
+
+### Officials or emergency response/agency:
+Emergency Manager
+Law Enforcement
+911 Call Center
+Department of Highways
+State Official
+Fire Department / Rescue
+NWS Employee
+Other Federal Agency
+County Official
+Park/Forest Service
+Local official
+Lifeguard
+Post Office
+Tribal Official
+Coast Guard
+
+### Trained volunteers:
+Trained spotter
+COOP Observer (I wasn't sure here---is this a trained volunteer similar to a trained spotter?)
+CoCoRaHS (I think this is a network from trained volunteers collecting precipitation, right?)
+Storm Chaser (I think we would consider them "trained"? If not, could be move to general public)
+Media:
+Broadcast Media
+Newspaper
+WLON (I'm guessing this really should have been coded in the data as "Broadcast Media")
+
+### Company or general public:
+Public
+Social Media
+Amateur Radio
+Utility Company
+Mariner
+Airplane Pilot
+Insurance Company
+
+[BA: Whatever we do, we should take clear notes so we can report how we handled this. Also, we should add this as an example in temporal bias, in terms of changes in typical ways of reporting over time. If you were working with this data and didn't know this, and wanted to get a subset of data just with "Thunderstorm Wind", this could cause problems. You might filter just to event_types of "Thunderstorm Wind", and that would be find for earlier in the data and also for recent years, but you'd miss loads of things in this period with these unconventional event types.]
+
 
 
 
@@ -785,6 +861,18 @@ Geographic bias also results from structural changes at the county or state leve
 
 [BA: If this is a change that would happen over time, do we want to consider moving it to temporal? Or might it happen at different times in different places? For this, maybe we want to include a map of climate regions? I think a lot of readers might not know how large or small those are off the top of their heads. Also, I really like the idea of comparing event reports before and after this change. Can we see that, before the change, they followed the boundaries of the climate region?]
 
+
+
+"47.3 Tornadoes Crossing CWA Boundaries. Tornadoes crossing state lines or boundaries of
+WFO CWA responsibility will be coordinated between WFOs. The preparer will ensure that the
+exact location where a tornado crosses a county, parish, or state line, is incorporated into the
+event narrative. Sharp-turning tornadoes may need to be segmented into individual pieces to
+adequately describe the path of that event. However, segmenting a tornado within the same
+county/parish is not permitted since this practice may lead to confusion and over-counting of
+tornadoes by the Storm Prediction Center, NCEI, and Storm Data users. It is recommended that
+the preparer encode only one beginning and ending point for the tornado path within each
+county/parish affected, and provide detailed information in the event narrative about the
+intermediate locations where the tornado turned sharply. "
 ### Aggregation of reporting 
 
 

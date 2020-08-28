@@ -43,30 +43,32 @@ Gall et al. wrote a paper covering six major biases associated with major disast
 
 
 # Hazard Bias 
+
 ### define what a hazard is 
 
-**Societal responses to environmental hazards**
 
-"Hazard is the broadest term and reflects a source of danger or the potential for harm. Risk is the likelihood or probability of a risk ocurring. Hazards include risk (e.g. probability), impact (or magnitude) and contextual (sociopolitical) elements. In other words, hazards are threats to people and the things they value). They are therfore socially constructed, where people contibbute to, exaverbate and modify them. Hazards can vary bby culture, gender, race, socioeconomic status and political structure. Disasters, on the other hand are singular hazard events(like those mentioned in the introduction above) that have a profound impact on local people or places"
+A hazard is something that has the potential to cause damage. It is a threat that can severely disrupt society's workings. Hazards' potential to cause harm are compounded by human factors and human activity. Human factors include culture, gender, race, socioeconomic status and political structure, while human activity includes land development, urbanization, emergency preparedness, response plans, etc [cutter1996responses].  These factors can influence the actual potential for harm, the perceived potential for harm, and the ability to respond if a disaster does occur.  
 
+The terms risk and disaster are two other concepts that tie into the defintion of a hazard. Risk is the probability of a hazard occurring and actually causing harm. A disaster is the occurence of a hazard that creates a large impact on a group of people or peoples. 
 
-**Revisiting the definition of “hazard” and the importance of reducing vulnerability** 
+For example, a shark swimming in the ocean is a hazard that has potential to cause damage. However, the risk of this hazard causing a person harm varies depending on the person's location relative to the shark. This hazard would become a disaster if the shark attacked the swimmer. 
 
-" One view is that hazards are reducible to the physical events that trigger disasters."
-"The second, and currently more popular, perspective on hazards acknowledges the role of the physical environment but also acknowledges the complex relationship between hazards and human activity." 
+Susan Cutter has done extensive research on hazards and has spent much time defining these different terms. In her work, she states that hazards include the probability of an event occuring (risk), the impact, and the contextual/socioeconomic elements surrounding it.
 
-"It is apparent that most individuals assume a hazard to be the latent threat or active agent that triggers disasters. This view is not incorrect, and, understandably, it is widely used. However, the desire to put this definition of hazards at the center of EM presents unrecognized challenges for the field. Problems inevitably arise when we rely heavily on this concept because it inadvertently downplays human culpability for disasters."
+Other scientific authors have similar thoughts on the term hazard and believe it is important to include human culpability [@mcentire2005revisiting]. 
+
+In the context of this paper, a hazard would be all of the possible storm event types that can be entered in the NOAA Storm Events database. A disaster would be the atual occurence and recording of each hazard type. 
 
 
 ### defining event types 
 
-The total number of event types that can be recorded in NOAA Storm Events (based on this it looks like there are 55). In 2019 [x] total events were reported, of [x] different event types. 
+NOAA Storm Events currently records 55 different event types that are listed in the NWS instruction manual [@nwsinstruction]. 
 
-[TK: is there a way I can count this using r?]
+In 2019, 51 total events were reported, of 55 different event types. The most frequent type of events reported were Thunderstorm Wind, which had over twice as many reports as the second most frequent, Hail, which in turn had almost twice as many events reported as the next most common few---Flood, Flash Flood, and Winter Weather. The least common reported events included Volcanic Ashfall, Sleet, Dense Smoke, Sneakerwave, Seiche, and Marine Tropical Depression.
 
-The most frequent type of events reported were Thunderstorm Wind, which had over twice as many reports as the second most frequent, Hail, which in turn had almost twice as many events reported as the next most common few---Flood, Flash Flood, and Winter Weather. The least common reported events included Volcanic Ashfall, Sleet, Dense Smoke, Sneakerwave, Seiche, and Marine Tropical Depression.
 
-In a few cases, there are different "event types" for different intensities of the same type of hazard---for example, "Strong Wind" versus "High Wind" or "Cold/Wind Chill" versus "Extreme Cold/Wind Chill". 
+NOAA has different event names for different intensities of the same type of hazard. Some examples of this include the event type "Strong Wind" versus "High Wind" or "Cold/Wind Chill" versus "Extreme Cold/Wind Chill". 
+
 
 [TK: include plot of event types in 2019?]
 
