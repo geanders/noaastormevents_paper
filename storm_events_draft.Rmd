@@ -29,7 +29,7 @@ Both of these studies, in part, used data from the National Oceanic & Atmospheri
 
 [TK: do these next two paragraphs go into too much detail for the introduction?] 
 
-> The database assigns each weather phenomenon with a location, date, event type, event ID, episode ID, property damage estimate, crop damage estimate, county name, state, event narrative, and episode narrative. The database categorizes large storms as episodes which contain several individual events. For example, a hurricane will be given one episode ID, and the rain, wind, floods, etc. associated with that hurricane will be given event IDs that fall under that episode. 
+> The database assigns each weather phenomenon with a location, date, event type, event ID, episode ID, property damage estimate, crop damage estimate, county name, state, event narrative, and episode narrative. 
 
 > The US National Weather Service (NWS) collects weather data for NOAA from storm trackers, federal agencies, the media, the public, and several other sources. The NWS then uses this data to create the NOAA Storm Events database that is released as a monthly publication. 
 
@@ -44,48 +44,33 @@ Gall et al. wrote a paper covering six major biases associated with major disast
 
 # Hazard Bias 
 
-### define what a hazard is 
-
-
-A hazard is something that has the potential to cause damage. It is a threat that can severely disrupt society's workings. Hazards' potential to cause harm are compounded by human factors and human activity. Human factors include culture, gender, race, socioeconomic status and political structure, while human activity includes land development, urbanization, emergency preparedness, response plans, etc [cutter1996responses].  These factors can influence the actual potential for harm, the perceived potential for harm, and the ability to respond if a disaster does occur.  
+A hazard is something that has the potential to cause damage. It is a threat that can severely disrupt society's workings. A hazard's potential to cause harm is compounded by human factors and human activity. Human factors include culture, gender, race, socioeconomic status and political structure, while human activity includes land development, urbanization, emergency preparedness, response plans, etc. [cutter1996responses].  These factors can influence the actual potential for harm, the perceived potential for harm, and the ability to respond if a disaster does occur.  
 
 The terms risk and disaster are two other concepts that tie into the defintion of a hazard. Risk is the probability of a hazard occurring and actually causing harm. A disaster is the occurence of a hazard that creates a large impact on a group of people or peoples. 
 
 For example, a shark swimming in the ocean is a hazard that has potential to cause damage. However, the risk of this hazard causing a person harm varies depending on the person's location relative to the shark. This hazard would become a disaster if the shark attacked the swimmer. 
 
-Susan Cutter has done extensive research on hazards and has spent much time defining these different terms. In her work, she states that hazards include the probability of an event occuring (risk), the impact, and the contextual/socioeconomic elements surrounding it.
+Susan Cutter has done extensive research on hazards and has spent much time defining these different terms. In her work, she states that hazards include the probability of an event occuring (risk), the impact, and the contextual/socioeconomic elements surrounding it. Other scientific authors have similar thoughts on the term hazard and believe it is important to include human culpability [@mcentire2005revisiting]. 
 
-Other scientific authors have similar thoughts on the term hazard and believe it is important to include human culpability [@mcentire2005revisiting]. 
+In the context of this paper, we use the term hazard to refer to all of the possible major storm event types that can be entered in the NOAA Storm Events database. We use the term disaster to refer to a reported occurence of a specific hazard. NOAA Storm Events currently records 55 different event types that are listed in the NWS instruction manual [@nwsinstruction]. Most of these event types correlate to one type of hazard bbut some of them correlate to different intensitions of the same type of hazard. Some examples of this include the event type "Strong Wind" versus "High Wind" or "Cold/Wind Chill" versus "Extreme Cold/Wind Chill". In these instances, the hazard would be wind or wind chill while the intensities are strong, high, cold, or extreme cold. 
 
-In the context of this paper, a hazard would be all of the possible storm event types that can be entered in the NOAA Storm Events database. A disaster would be the atual occurence and recording of each hazard type. 
+For 2019, the database reported 51 total events of 55 different event types. The most frequent type of events reported were Thunderstorm Wind, which had over twice as many reports as the second most frequent, Hail. Hail, in turn, had almost twice as many events reported as the next most common few---Flood, Flash Flood, and Winter Weather. The least common reported events included Volcanic Ashfall, Sleet, Dense Smoke, Sneakerwave, Seiche, and Marine Tropical Depression.
 
+[TK: include plot of event types in 2019]
 
-### defining event types 
+NOAA further characterizes its data by categorizing large storms as episodes which contain several individual events. NOAA assigns the disaster with one episode ID and its associated events with event IDs. Further details of the episode and events are recorded under the event narrative and episode narrative. The NWS instruction describes this in terms of a swath of events occuring along a path from Point A to Point B during Time C to Time D [@nwsinstruction]. Events belonging to the same episode cannot be more than five calendar days apart to ensure they all resulted from one meteorological episode. This categorization helps to ensure that a single storm is not interpreted as a series of unrelated events. An example of this would be a hurricane given one episode ID, and the rain, wind, floods, etc. associated with that hurricane given event IDs that fall under that episode. 
 
-NOAA Storm Events currently records 55 different event types that are listed in the NWS instruction manual [@nwsinstruction]. 
+To showcase this idea, for the episodes with the most events in 2019, the following graph shows the number of events reported for the episode. This figure demonstrates how one large weather episode can include several other events types. For example, Episode 133801 in this figure indicates several reports of flood, debris flow, strong winds, high wind, and hail. All of these different event types occurred as a result of one large storm labelled episode 133801. This unique episode ID helps related events from getting double counted as separate entities.
 
-In 2019, 51 total events were reported, of 55 different event types. The most frequent type of events reported were Thunderstorm Wind, which had over twice as many reports as the second most frequent, Hail, which in turn had almost twice as many events reported as the next most common few---Flood, Flash Flood, and Winter Weather. The least common reported events included Volcanic Ashfall, Sleet, Dense Smoke, Sneakerwave, Seiche, and Marine Tropical Depression.
+[TK: include plot and add in names of episode in paragraph rather than numbers]
 
+In some cases, events falling under one episode are the same type of hazard just at different intensities, as described above. In these circumstances, the collection of events may be recorded in only one county/zone but will showcase the spatial range and and varying intensity of the event. This is likely why we see the events with different intensities of the same hazard clustered together (in one county/zone?) in the database, like heat/excessive heat and cold/extreme cold. 
 
-NOAA has different event names for different intensities of the same type of hazard. Some examples of this include the event type "Strong Wind" versus "High Wind" or "Cold/Wind Chill" versus "Extreme Cold/Wind Chill". 
+In other cases, a larger synoptic weather system might bring a variety of different hazards leading to several different recorded event types (e.g., thunderstorm wind and hail, which cluster together). In these cases, there may be several counties/zones in the affected area that report more than one event for the episode. 
 
+[TK: I think I am struggling with these concepts]
 
-[TK: include plot of event types in 2019?]
-
-### episodes 
-
-NOAA records one large event as an episode and all of its associated hazards as events under than episode. [TK: I have described this in the introduction. Should I leave the details of this in the intro or move it here?] Events belonging to the same episode cannot be more than five calendar days apart to ensure they all resulted from one meteorological episode.
-
-To showcase this idea, for the episodes with the most events in 2019, the following graph shows the number of events reported for the episode. This figure demonstrates how one large weather ‘episode’ can include several other events types. For example, Episode 133801 in this figure indicates several reports of flood, debris flow, strong winds, high wind, and hail. All of these different event types occurred as a result of one large storm labelled episode 133801. This unique episode ID helps related events from getting double counted as separate entities.
-
-[TK: include plot]
-
-
-In some cases, the events in an episode will all be the same type of hazard (e.g., cold), but at different intensities (e.g. extreme cold). In these cases, the collection of events might be one per county/zone over the affected area, but showing the spatial range and varying intensity of the event. This is likely why we see the events with different intensities of the same hazard clustered together, like heat/excessive heat and cold/extreme cold. 
-
-In other cases, a larger synoptic weather system might bring different hazards, and so sometimes an episode will include different hazards (e.g., thunderstorm wind and hail, which cluster together). In these cases, we'd probably get lots of counties/zones in the affected area that report more than one event for the episode.
-
-The following plot shows a cluster analysis event types to group events that are more likely to occur together within an episode. We removed event types with less that 50 listings in 2019. The figure shows that there are certain event types which are very commonly reported together such as high wind and strong wind or heat and excessive heat. These types of events are likely to be reported together becuase they are likely to occur at the same time. It is important to keep these trends in mind as there may be overlap or uncertainty in how to categorize what happened during an episode.
+The following plot shows a cluster analysis to group events that are more likely to occur together within an episode. We removed event types with less that 50 listings in 2019. The figure shows that there are certain event types which are very commonly reported together such as high wind and strong wind or heat and excessive heat. These types of events are likely to be reported together becuase they are likely to occur at the same time. It is important to keep these trends in mind as there may be overlap or uncertainty in how to categorize what happened during an episode.
 
 [TK: include cluster analysis plot]
 
