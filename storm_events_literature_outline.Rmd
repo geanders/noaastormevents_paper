@@ -448,12 +448,21 @@ b <- events_2019 %>%
   tibble::column_to_rownames(var = "EVENT_TYPE") %>%
   dist("canberra") %>%
   hclust() 
-plot(as.dendrogram(b, hang = 0.25), horiz = TRUE, axes = FALSE)
+
+
+b %>% 
+  as.dendrogram(hang=0.3) %>% 
+  set("leaves_pch", 19) %>% 
+  set("leaves_col", "green") %>% 
+  set("nodes_cex", 0.7) %>%
+  plot(horiz=TRUE, axes=FALSE, main = "Event Type Cluster Analysis", col.main = "dark green") 
+
+
 ```
 
 
 
-    - it appears that NOAA does try to account for this: "In the event it is obvious that a continuous or nearly continuous swath of thunderstorm wind or hail damage occurred, a single event should be entered into Storm Data. This single event would be described as occurring from Point A to Point B, during Time C to Time D. The related event narrative could describe the width and length of the damage swath. Scientifically, a swath is more accurate and reduces the chance of a researcher interpreting a single event as a series of events occurring across multiple points." 
+    
  
   
 3. difficulty of sorting events
