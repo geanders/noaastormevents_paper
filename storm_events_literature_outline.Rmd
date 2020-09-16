@@ -249,6 +249,21 @@ The Storm Events database aims to record listings for all hazards brought by a p
 
 ### P (event recorded | event happened)
 
+
+
+
+This guidance depends on event type, though, because later that say:
+
+"The chosen event name should be the one that most accurately
+describes the meteorological event leading to fatalities, injuries, damage, etc. However,
+significant events, such as tornadoes, having no impact or causing no damage, should also be
+included in Storm Data."
+
+So it sounds like they are trying to catch every tornado. I think this would create hazard bias, right? The probability of an event being recorded if it happens would be higher for tornadoes than other types of events, based on this standard.
+
+
+
+
 The probability that an event is recorded might differ by event type. This could result from several mechanisms.  First, the US government has certain programs that focus on specific hazards more than others.  For example, the NWS is obliged to provide monetary loss estimates for any flood event even if the damage assessment is a 'guesstimate' (Gall, Borden, and Cutter 2009).  This leads to a higher probability of reporting for flood events in Storm Data because of how they get information.  
 
 [TK: I need to look into the flood insurance program to see if this also has an effect]   
@@ -408,7 +423,7 @@ a <- events_2019 %>%
   hclust() 
 ```
 
-```{r echo = FALSE, fig.align = "center", fig.width = 6, fig.height = 3.5}
+```{r echo = FALSE, fig.align = "center", fig.width = 5, fig.height = 3}
 events_2019 %>%
   filter(EPISODE_ID %in% top_episodes$EPISODE_ID) %>%
   group_by(EPISODE_ID, EVENT_TYPE) %>%
@@ -422,12 +437,15 @@ events_2019 %>%
   labs(x = "", y = "", fill = "Number of events reported") + 
   theme(axis.text.x  = element_text(angle=45, vjust = 1, hjust = 0),
         legend.position = "top",
-        plot.margin = unit(c(0, 1, 0, 0), "cm")) +
-  scale_x_discrete(position = "top", labels = c("A powerful coastal storm\n along New Jersey to\n the Northeast", "An atmospheric river\n and cold front near\n Mount Saint Helena", "Line of thunderstorms", "Multiple storms over\n Missouri Ozarks", "Squall line of thunderstorms\n in South Carolina", "An atmospheric river\n in the North Bay", "Frontal boundary over\n the mid-Atlantic creating\n a low pressure wave", "971mb bomb cyclone\n moving out of the\n Rockies", "Strong cold front and\n deep upper level trough\n in the Ozarks", "Moderate to strong\n atmospheric river in\n California", "Several severe storms\n along southern plains", "Heat wave in eastern\n New York")) +
-  scale_fill_viridis(option = "A", direction = -1)
+        plot.margin = unit(c(0, 1, 0, 0), "cm"),
+        axis.text=element_text(size=11)) +
+  scale_x_discrete(position = "top", labels = str_wrap(c("A powerful coastal storm along New Jersey to the Northeast", "An atmospheric river and cold front near Mount Saint Helena", "Line of thunderstorms", "Multiple storms over Missouri Ozarks", "Squall line of thunderstorms in South Carolina", "An atmospheric river in the North Bay", "Frontal boundary over the mid-Atlantic creating a low pressure wave", "971mb bomb cyclone moving out of the Rockies", "Strong cold front and deep upper level trough in the Ozarks", "Moderate to strong atmospheric river in\n California", "Several severe storms along southern plains", "Heat wave in eastern New York"), width = 40, exdent = 5)) +
+  scale_y_discrete(position = "right") +
+  scale_fill_viridis(option = "A", direction = -1) +
+  coord_flip()
 ```      
 
-
+0, 1, 0, 0
 #### Cluster Analysis 
 
 Once we removed event types with less that 50 listings in 2019, we did a cluster analysis of event types, to group events that are more likely to occur together within an episode. The following plot shows the resulting cluster structure of these event types. The figure shows that there are certain event types which are very commonly reported together such as high wind and strong wind or heat and excessive heat. These types of events are likely to be reported together becuase they are likely to occur at the same time. It is important to keep these trends in mind as there may be overlap or uncertainty in how to categorize what happened during an episode. 
