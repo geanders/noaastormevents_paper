@@ -38,7 +38,21 @@ year_events_df %>%
     TRUE ~ EVENT_TYPE
   ))
 
+all_caps <- year_events_df %>% 
+  filter(EVENT_TYPE %in% c("TORNADOES, TSTM WIND, HAIL", "THUNDERSTORM WINDS/FLOODING", "HAIL FLOODING",
+                          "THUNDERSTORM WINDS FUNNEL CLOU", "THUNDERSTORM WINDS HEAVY RAIN",
+                          "THUNDERSTORM WINDS LIGHTNING", "THUNDERSTORM WINDS/ FLOOD",
+                          "THUNDERSTORM WINDS/HEAVY RAIN", "TORNADO/WATERSPOUT", "HAIL/ICY ROADS", 
+                          "THUNDERSTORM WIND/ TREE", "THUNDERSTORM WIND/ TREES ", "THUNDERSTORM WINDS/FLASH FLOOD",
+                          "OTHER", "THUNDERSTORM WIND/ TREES"))  
 
+year_events_edit <- year_events_df %>% 
+  filter(!EVENT_TYPE %in% c("TORNADOES, TSTM WIND, HAIL", "THUNDERSTORM WINDS/FLOODING", "HAIL FLOODING",
+                            "THUNDERSTORM WINDS FUNNEL CLOU", "THUNDERSTORM WINDS HEAVY RAIN",
+                            "THUNDERSTORM WINDS LIGHTNING", "THUNDERSTORM WINDS/ FLOOD",
+                            "THUNDERSTORM WINDS/HEAVY RAIN", "TORNADO/WATERSPOUT", "HAIL/ICY ROADS", 
+                            "THUNDERSTORM WIND/ TREE", "THUNDERSTORM WIND/ TREES ", "THUNDERSTORM WINDS/FLASH FLOOD",
+                            "OTHER", "THUNDERSTORM WIND/ TREES"))
 
 
 library(ggplot2)
