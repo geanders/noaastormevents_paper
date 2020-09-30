@@ -6,6 +6,9 @@ output:
   html_document: default
 bibliography: scholar.bib
 ---
+# Abstract  
+
+Severe weather events currently cause tens of thousands of deaths per year in the United States and cost trillions of dollars in damaged property and economic loss.  These weather events and their impacts are tracked and recorded by several organizations such as the National Weather Service (NWS), the National Oceanic and Atmospheric Administration (NOAA),  and the Federal Emergency Management Agency (FEMA).  This disaster data is used by scientists in several fields of study (economics, epidemiology, atmospheric science, agriculture, etc.) to examine how weather events impact human life and how we can reduce or avoid these impacts.  However, storing disaster data faces unique challenges because of the quickly evolving nature of recording processes and weather technology. These challenges pose concerns regarding biases and errors in disaster data.  This paper investigates the presence of mechanisms that could lead to biases in the NOAA Storm Events database. This database contains information on storms, significant weather phenomena, rare or unusual weather, and other significant meteorological events across the United States.  We use the noaastormevents package in R to examine evidence of bias within the Storm Events weather data and propose ways to avoid errors while using this data in future studies. This examination reveals five major categories of bias present in the Storm Events dataset that are common in weather data. These five categories include hazard bias, temporal bias, threshold bias, accounting bias, and geographic bias. We suggest that these biases result from various factors including structural changes over time, reporting errors, inherent bias, and others.  Outlining these factors and understanding their impacts will help scientists use large amounts of data appropriately and portray new findings accurately.  
 
 # Introduction  
 
@@ -68,7 +71,8 @@ In some cases, events falling under one episode are the same type of hazard just
 
 In other cases, a larger synoptic weather system might bring a variety of different hazards leading to several different recorded event types (e.g., thunderstorm wind and hail, which cluster together). In these cases, there may be several counties/zones in the affected area that report more than one event for the episode. 
 
-[TK: I think I am struggling with these concepts]
+[TK: I think I am struggling with these concepts
+TK: potentially add in map of events over different counties vs one county]
 
 The following plot shows a cluster analysis to group events that are more likely to occur together within an episode. We removed event types with less that 50 listings in 2019. The figure shows that there are certain event types which are very commonly reported together such as high wind and strong wind or heat and excessive heat. These types of events are likely to be reported together becuase they are likely to occur at the same time. It is important to keep these trends in mind as there may be overlap or uncertainty in how to categorize what happened during an episode.
 
@@ -79,16 +83,71 @@ The following plot shows a cluster analysis to group events that are more likely
 ### hazard bias by probability and quality/quantity 
 
 **probability of an event being recorded in the database if it happens**
+The NOAA Storm Events documentation records the standards that should be used when deciding whether or not to include a disaster report. In general, the documentation states that the Storm Events database seeks to record rare, unsual, recording breaking, or highly impactful weather events. However, this standard varies by event type. For example, the documentation states that all Tornado events should be recorded, regardless of if it had any impact like injury, fatality, damage [@nwsinstruction].   
 
-The probability that an event is recorded might differ by event type. 
+[TK: note to self: so basically we should word this as some sort of disclaimer that if you are going to be using this data for a study you should keep in mind what your focus is; is it to examine all events in a meteorological sense? or just to see human imapcts? because then you should refer to this table or to the NWS documentation to make sure that the database is capturing what you are trying to examine
+]
+[TK: include table that lists all events and if they recorded based on impact, or on intenstiy]
 
-Drought hazards exemplify this issue; they are notoriously underreported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses (Gall, Borden, and Cutter 2009). Avalanches also showcase this issue as they typically occur in remote locations with little physical damage or fatalities. [TK: I just made this assumption, so I need to check the literature] 
+Recorded based on impacts, noteworthiness, or public interest:  
+ 
+* astronomical low tide 
+* avalanche  
+* coastal flood 
+* dense fog 
+* dense smoke 
+* dust devil 
+* dust storm 
+* flash flood:  "A life-threatening, rapid rise of water into a normally dry area beginning within minutes to multiple hours of the causative event (e.g., intense rainfall, dam failure, ice jam)." Doesn't have to cause a fatality, but needs to happen somewhere where it could, it sounds like. There is also this note: "To maintain the most reliable data set it is important to separate low-impact flooding from flash flooding. Low-impact flooding should not be considered a Flash Flood event; rather it should be considered a Flood event. Low-impact flooding does not pose a significant threat to life or property in the same way a Flash Flood does." 
+* flood 
+* freezing fog 
+* funnel cloud 
+* freezing fog 
+* funnel cloud 
+* heavy rain 
+* high surf 
+* lakeshore flood 
+* lightning 
+* marine dense fog 
+* marine hail 
+* marine heavy freezing spray 
+* marine high wind 
+* marine hurricane/typhoon 
+* maring lightning 
+* marine strong wind 
+* marine thunderstorm wind 
+* marine tropical depression 
+* marine tropical storm 
+* rip currents 
+* seiche 
+* sneaker wave 
+* storm surge/time 
+* strong wind 
+* thunderstorm wind 
+* tsunami 
+* volcanic ash 
+* wildfire 
+* winter weather 
+
+Recorded based on intensity (or having happened at all)
+
+The probability that an event is recorded might differ by event type. Certain hazard types are underreported which leads to an undercounting in the database. 
+
+
+Drought hazards exemplify this issue; they are notoriously underreported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses (Gall, Borden, and Cutter 2009).
+
+
+There are several types of avalanches including slab, loose snow, icefall, cornice fall, glide, and slush [encyclopedia]. Many of these types can occur naturally due to a variety of envrionmental conditions or can be triggered by human activity. NOAA documentation states that avalanches should only be recorded if human fatality or injury occurs. This insinuates that the NOAA Storm Events database does not seek to record every instance of an avalanche occuring. This should be kept in mind if using Storm Events to examine avalanche events. 
+ [TK: ask CIRA if they have more info about avalanches if we are going to use this example]
+
+
 
 On the other hand, hurricanes or tornadoes that pass through large cities will cause high amounts of physical damage and fatalities. This would attract the attention of insurance companies and produce clear records of damages. 
 
 
 
 **quality and quantity of information provided for a recorded event**
+For example, you might get much more reliable estimates of damage for certain types of events than others, or longer and more helpful descriptions.
 
 The US government has certain programs that focus on specific hazards more than others. For example, the NWS is obliged to provide monetary loss estimates for any flood event even if the damage assessment is a 'guesstimate' (Gall, Borden, and Cutter 2009). 
 
