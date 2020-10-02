@@ -11,6 +11,8 @@ library(noaastormevents)
 library(tidyverse)
 library(viridis)
 library(lubridate)
+library(dendextend)
+library(kableExtra)
 events_2019 <- create_storm_data(date_range = c("2019-01-01", "2019-12-31"))
 ```
 # Introduction  
@@ -445,7 +447,7 @@ events_2019 %>%
   coord_flip()
 ```      
 
-0, 1, 0, 0
+
 #### Cluster Analysis 
 
 Once we removed event types with less that 50 listings in 2019, we did a cluster analysis of event types, to group events that are more likely to occur together within an episode. The following plot shows the resulting cluster structure of these event types. The figure shows that there are certain event types which are very commonly reported together such as high wind and strong wind or heat and excessive heat. These types of events are likely to be reported together becuase they are likely to occur at the same time. It is important to keep these trends in mind as there may be overlap or uncertainty in how to categorize what happened during an episode. 
@@ -467,13 +469,16 @@ b <- events_2019 %>%
   dist("canberra") %>%
   hclust() 
 
-
-b %>% 
-  as.dendrogram(hang=0.3) %>% 
+dend<- as.dendrogram(b, hang = 0.3)%>% 
   set("leaves_pch", 19) %>% 
   set("leaves_col", "green") %>% 
   set("nodes_cex", 0.7) %>%
+  set("branches_k_color", value = c("black", "skyblue", "orange", "black", "black", "blue","red", "hot pink", "purple", "black", "black", "brown", "black", "skyblue"), k = 14) 
+
+dend %>% 
   plot(horiz=TRUE, axes=FALSE, main = "Event Type Cluster Analysis", col.main = "dark green") 
+
+rect.dendrogram(dend, k = 3)
 
 
 ```
