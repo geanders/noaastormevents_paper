@@ -38,13 +38,19 @@ year_events_df %>%
     TRUE ~ EVENT_TYPE
   ))
 
+# Brooke: could you take a look here 
+
+library(stringr)
 all_caps <- year_events_df %>% 
   filter(EVENT_TYPE %in% c("TORNADOES, TSTM WIND, HAIL", "THUNDERSTORM WINDS/FLOODING", "HAIL FLOODING",
                           "THUNDERSTORM WINDS FUNNEL CLOU", "THUNDERSTORM WINDS HEAVY RAIN",
                           "THUNDERSTORM WINDS LIGHTNING", "THUNDERSTORM WINDS/ FLOOD",
                           "THUNDERSTORM WINDS/HEAVY RAIN", "TORNADO/WATERSPOUT", "HAIL/ICY ROADS", 
                           "THUNDERSTORM WIND/ TREE", "THUNDERSTORM WIND/ TREES ", "THUNDERSTORM WINDS/FLASH FLOOD",
-                          "OTHER", "THUNDERSTORM WIND/ TREES"))  
+                          "OTHER", "THUNDERSTORM WIND/ TREES"))  %>% 
+  mutate(EVENT_TYPE = str_to_title(EVENT_TYPE)) %>% 
+  separate(col = EVENT_TYPE, into = c("Event_1", "Event_2"))
+
 
 year_events_edit <- year_events_df %>% 
   filter(!EVENT_TYPE %in% c("TORNADOES, TSTM WIND, HAIL", "THUNDERSTORM WINDS/FLOODING", "HAIL FLOODING",
