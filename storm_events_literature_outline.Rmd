@@ -158,6 +158,16 @@ history. For early history, since this was mainly the tornado database, info abo
 it might be under a different name for the database. I'll try to find some papers we 
 could look into to get some more of these details and references to add.]
 
+# What is NOAA Storm Events 
+
+We used the noaastormevents package in R to dissect these issues and examine evidence of bias in several hazard types.
+
+[TK: do these next two paragraphs go into too much detail for the introduction?] 
+
+> The database assigns each weather phenomenon with a location, date, event type, event ID, episode ID, property damage estimate, crop damage estimate, county name, state, event narrative, and episode narrative. 
+
+> The US National Weather Service (NWS) collects weather data for NOAA from storm trackers, federal agencies, the media, the public, and several other sources. The NWS then uses this data to create the NOAA Storm Events database that is released as a monthly publication.
+
 
 
 # Use of Storm Events Database in research on societal impacts
@@ -445,6 +455,8 @@ events_2019 %>%
   scale_y_discrete(position = "right") +
   scale_fill_viridis(option = "A", direction = -1) +
   coord_flip()
+
+ # scale_x_discrete(limits = rev(levels(unique(top_episodes$EPISODE_ID)))) 
 ```      
 
 
@@ -478,7 +490,11 @@ dend<- as.dendrogram(b, hang = 0.3)%>%
 dend %>% 
   plot(horiz=TRUE, axes=FALSE, main = "Event Type Cluster Analysis", col.main = "dark green") 
 
-rect.dendrogram(dend, k = 3)
+#plot(dend)
+#rect.dendrogram(dend,
+ # k = 3,
+ # border = 8, lty = 5, lwd = 2
+#)
 
 
 ```
