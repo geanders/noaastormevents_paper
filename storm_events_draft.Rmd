@@ -19,18 +19,19 @@ bibliography: scholar.bib
 
 Severe weather events currently cost the US trillions of dollars, damage property and crops, interrupt commerce, and cause extensive human injury and fatality. Since 1980, the US has experienced 273 weather and climate disasters that each left over $1 billion in damages [@impacts]. In total, these events cost the US over $1.790 trillion and caused 14,223 deaths [@impacts].  Scientists expect these weather events to occur more frequently and with more severity over time as a result of climate change. For example, the increasing presence of greenhouse gases in the atmosphere leads to increasing annual and extreme temperatures. Extreme temperatures lead to a wide range of health complications. Extreme heat can lead to heat cramps, heat exhaustion, heatstroke, and hyperthermia, while extreme cold leads to hypothermia and frostbite [@climatechange]. Extreme temperatures also exacerbate health conditions related to cardiovascular disease, respiratory disease, cerebrovascular disease, and diabetes [@climatechange]. These impacts and others will increase over time as climate change intensifies extreme temperatures and other dangerous weather events.  
 
- 
-Several organizations currently collect data in attempts to compile, categorize, and quanitfy weather events and their impacts. Some of these organizations include the National Weather Service, the National Center for Environmental Information (NCEI), and the Federal Emergency Management Agency (FEMA). Data collection improves scientits' ability to predict weather events and understand their impacts. This is commonly accomplished with interdisciplinary research involving various fields of study such as epidemiology, atmospheric science, agriculture, economics, etc. This research is critical to help avoid such large fallout and loss from weather events in the future. 
+Several organizations currently collect data in attempts to compile, categorize, and quantify weather events and their impacts. Some of these organizations include the National Oceanic and Atmospheric Administration (NOAA), the U.S. Geological Survey (USGS), and the Federal Emergency Management Agency (FEMA). Data collection improves scientists'' ability to predict weather events and understand their impacts. This is commonly accomplished with interdisciplinary research involving various fields of study such as epidemiology, atmospheric science, agriculture, economics, etc. This research is critical to help avoid such large fallout and loss from future weather events. Because of this, it is incumbent that scientists understand the biases and limitations in weather datasets to use the large amounts of data appropriately and portray new findings accurately. 
 
-Because of this, it is incumbent that scientists understand the biases and limitations in weather datasets to use the large amounts of data appropriately and portray new findings accurately.  Certain biases and limitations arise in these datasets because storing disaster data is a challenging endeavor. Challenges arise as the process of recording disaster data and the technology we use to do it are constantly evolving. Gall et al. recognized this issue and wrote a paper covering six bias types associated with major disaster databases used in the US [@gall2009losses]. 
+Biases and limitations arise in these datasets because storing disaster data is a challenging endeavor. Challenges arise as the process of recording disaster data and the technology we use to do it are constantly evolving. Gall et al. recognized this issue and wrote a paper covering several bias types associated with major disaster databases used in the US [@gall2009losses]. These biases include hazard bias, temporal bias, threshold bias, accounting bias, geography bias, and systemic bias [@gall2009losses]. 
 
-The Gall et. al. paper briefly covers how these bias types affect the NOAA Storm Events database which we will expand on in this paper. The NOAA Storm Events database is maintained, in part, by the National Weather Service. It currently contains information on 55 different storms, significant weather phenomena, rare/unusual weather, and other significant meteorological events across the United States. NOAA has been recording weather information since 1950 and storing it files for each year. NOAA has changed its recording strategies several times from only recording tornado events starting in 1950 to its current 55 event types. Following these changes, they have reformatted and standardized events types without changing any specific values or details [@stormeventsdetails]. 
+One such weather database in which these biases arise is the National Oceanic and Atmospheric Administration's Storm Events database. This database is maintained by branches of NOAA including the National Weather Service and the National Center for Environmental Information (NCEI). It originally only contained information regarding tornado events starting in 1950, but has expanded to include data on 55 different storms, significant weather phenomena, rare/unusual weather, and other significant meteorological events across the United States. This data is saved in files categorized by year and published annually in the NOAA Storm Events Publication [link]. This expansive dataset is an important resource used by atmospheric scientists to analyze fatalities associated with weather events. The American Meteorological Society has published various papers that use this data to characterize weather events and identify unique vulnerabilities or behaviors that place humans in harm's way [@terti2017situation, @ashley2005derecho, @ashley2008fatalities, @gensini2010examination]. These studies help provide justification for improvements to weather warning systems or future risk assessments. 
 
-Despite these standardizations, bias arises within the NOAA Storm events data due to factors including structural changes over time, reporting errors, inherent bias, and others. In our paper, we will examine the NOAA Storm Events database and investigate the presence of mechanisms that lead to major biases in the data. The major biases are separated into five categories of hazard bias, temporal bias, threshold bias, accounting bias, and geographic bias. 
-
+In this paper, we will examine the NOAA Storm Events database and investigate the presence of mechanisms that lead to biases in the data. We have separated the biases into five major categories of hazard bias, temporal bias, threshold bias, accounting bias, and geographic bias. The goal of this investigation is to improve the ease and accuracy of research using this data to decrease harmful impacts of weather events in the US. 
 
 
 
+
+
+### Section 
  [TK: below is old sentences]
 
 Both of these studies, in part, used data from the National Oceanic & Atmospheric Administration (NOAA) Storm Events database to conduct research.
@@ -48,19 +49,19 @@ Ashley and Mote conducted a similar study examining derecho events in the US fro
 
 A hazard is something that has the potential to cause damage. It is a threat that can severely disrupt society's workings. A hazard's potential to cause harm is compounded by human factors and human activity. Human factors include culture, gender, race, socioeconomic status and political structure, while human activity includes land development, urbanization, emergency preparedness, response plans, etc. [cutter1996responses].  These factors can influence the actual potential for harm, the perceived potential for harm, and the ability to respond if a disaster does occur.  
 
-The terms risk and disaster are two other concepts that tie into the defintion of a hazard. Risk is the probability of a hazard occurring and actually causing harm. A disaster is the occurence of a hazard that creates a large impact on a group of people or peoples. 
+The terms risk and disaster are two other concepts that tie into the definition of a hazard. Risk is the probability of a hazard occurring and actually causing harm. A disaster is the occurrence of a hazard that creates a large impact on a group of people or peoples. 
 
 For example, a shark swimming in the ocean is a hazard that has potential to cause damage. However, the risk of this hazard causing a person harm varies depending on the person's location relative to the shark. This hazard would become a disaster if the shark attacked the swimmer. 
 
-Susan Cutter has done extensive research on hazards and has spent much time defining these different terms. In her work, she states that hazards include the probability of an event occuring (risk), the impact, and the contextual/socioeconomic elements surrounding it. Other scientific authors have similar thoughts on the term hazard and believe it is important to include human culpability [@mcentire2005revisiting]. 
+Susan Cutter has done extensive research on hazards and has spent much time defining these different terms. In her work, she states that hazards include the probability of an event occurring (risk), the impact, and the contextual/socioeconomic elements surrounding it. Other scientific authors have similar thoughts on the term hazard and believe it is important to include human culpability [@mcentire2005revisiting]. 
 
-In the context of this paper, we use the term hazard to refer to all of the possible major storm event types that can be entered in the NOAA Storm Events database. We use the term disaster to refer to a reported occurence of a specific hazard. NOAA Storm Events currently records 55 different event types that are listed in the NWS instruction manual [@nwsinstruction]. Most of these event types correlate to one type of hazard but some of them correlate to different intensitions of the same type of hazard. Some examples of this include the event type "Strong Wind" versus "High Wind" or "Cold/Wind Chill" versus "Extreme Cold/Wind Chill". In these instances, the hazard would be wind or wind chill while the intensities are strong, high, cold, or extreme cold. 
+In the context of this paper, we use the term hazard to refer to all of the possible major storm event types that can be entered in the NOAA Storm Events database. We use the term disaster to refer to a reported occurrence of a specific hazard. NOAA Storm Events currently records 55 different event types that are listed in the NWS instruction manual [@nwsinstruction]. Most of these event types correlate to one type of hazard but some of them correlate to different Intensities  of the same type of hazard. Some examples of this include the event type "Strong Wind" versus "High Wind" or "Cold/Wind Chill" versus "Extreme Cold/Wind Chill". In these instances, the hazard would be wind or wind chill while the intensities are strong, high, cold, or extreme cold. 
 
 For 2019, the database reported 51 total events of 55 different event types. The most frequent type of events reported were Thunderstorm Wind, which had over twice as many reports as the second most frequent, Hail. Hail, in turn, had almost twice as many events reported as the next most common few---Flood, Flash Flood, and Winter Weather. The least common reported events included Volcanic Ashfall, Sleet, Dense Smoke, Sneakerwave, Seiche, and Marine Tropical Depression.
 
 [TK: include plot of event types in 2019]
 
-NOAA further characterizes its data by categorizing large storms as episodes which contain several individual events. NOAA assigns the disaster with one episode ID and its associated events with event IDs. Further details of the episode and events are recorded under the event narrative and episode narrative. The NWS instruction describes an episode as a swath of events occuring along a path from Point A to Point B during Time C to Time D [@nwsinstruction]. Events belonging to the same episode cannot be more than five calendar days apart to ensure they all resulted from one meteorological episode. This categorization helps to ensure that a single storm is not interpreted as a series of unrelated events. An example of this would be a hurricane given one episode ID, and the rain, wind, floods, etc. associated with that hurricane given event IDs that fall under that episode. 
+NOAA further characterizes its data by categorizing large storms as episodes which contain several individual events. NOAA assigns the disaster with one episode ID and its associated events with event IDs. Further details of the episode and events are recorded under the event narrative and episode narrative. The NWS instruction describes an episode as a swath of events occurring along a path from Point A to Point B during Time C to Time D [@nwsinstruction]. Events belonging to the same episode cannot be more than five calendar days apart to ensure they all resulted from one meteorological episode. This categorization helps to ensure that a single storm is not interpreted as a series of unrelated events. An example of this would be a hurricane given one episode ID, and the rain, wind, floods, etc. associated with that hurricane given event IDs that fall under that episode. 
 
 To showcase this idea, for the episodes with the most events in 2019, the following graph shows the number of events reported for the episode. This figure demonstrates how one large weather episode can include several other events types. For example, Episode 133801 in this figure indicates several reports of flood, debris flow, strong winds, high wind, and hail. All of these different event types occurred as a result of one large storm labelled episode 133801. This unique episode ID helps related events from getting double counted as separate entities.
 
@@ -73,7 +74,7 @@ In other cases, a larger synoptic weather system might bring a variety of differ
 [TK: I think I am struggling with these concepts
 TK: potentially add in map of events over different counties vs one county]
 
-The following plot shows a cluster analysis to group events that are more likely to occur together within an episode. We removed event types with less that 50 listings in 2019. The figure shows that there are certain event types which are very commonly reported together such as high wind and strong wind or heat and excessive heat. These types of events are likely to be reported together becuase they are likely to occur at the same time. It is important to keep these trends in mind as there may be overlap or uncertainty in how to categorize what happened during an episode.
+The following plot shows a cluster analysis to group events that are more likely to occur together within an episode. We removed event types with less that 50 listings in 2019. The figure shows that there are certain event types which are very commonly reported together such as high wind and strong wind or heat and excessive heat. These types of events are likely to be reported together because they are likely to occur at the same time. It is important to keep these trends in mind as there may be overlap or uncertainty in how to categorize what happened during an episode.
 
 [TK: include cluster analysis plot]
 
@@ -82,15 +83,15 @@ The following plot shows a cluster analysis to group events that are more likely
 ### hazard bias by probability and quality/quantity 
 
 **probability of an event being recorded in the database if it happens**
-The NOAA Storm Events documentation records the standards that should be used when deciding whether or not to include a disaster report. In general, the documentation states that the Storm Events database seeks to record rare, unsual, recording breaking, or highly impactful weather events. However, this standard varies by event type. For example, the documentation states that all Tornado events should be recorded, regardless of if it had any impact like injury, fatality, damage [@nwsinstruction].   
+The NOAA Storm Events documentation records the standards that should be used when deciding whether or not to include a disaster report. In general, the documentation states that the Storm Events database seeks to record rare, unusual, recording breaking, or highly impactful weather events. However, this standard varies by event type. For example, the documentation states that all Tornado events should be recorded, regardless of if it had any impact like injury, fatality, damage [@nwsinstruction].   
 
-[TK: note to self: so basically we should word this as some sort of disclaimer that if you are going to be using this data for a study you should keep in mind what your focus is; is it to examine all events in a meteorological sense? or just to see human imapacts? because then you should refer to this table or to the NWS documentation to make sure that the database is capturing what you are trying to examine
+[TK: note to self: so basically we should word this as some sort of disclaimer that if you are going to be using this data for a study you should keep in mind what your focus is; is it to examine all events in a meteorological sense? or just to see human impacts? because then you should refer to this table or to the NWS documentation to make sure that the database is capturing what you are trying to examine
 ]
 
-* think of intention when trying to assess exposure, do you mean to catch every physical instance of hazard? for some events that isnt even the goal of the database 
+* think of intention when trying to assess exposure, do you mean to catch every physical instance of hazard? for some events that isn't even the goal of the database 
 
 
-[TK: include table that lists all events and if they recorded based on impact, or on intenstiy]
+[TK: include table that lists all events and if they recorded based on impact, or on intensity]
 
 [add column to table with event type, # of events in 2019, whether they are reported based on human impacts or not, where reports are coming from (source with highest percentage per event type), county/fips/marine]
 
@@ -118,7 +119,7 @@ Recorded based on impacts, noteworthiness, or public interest:
 * marine heavy freezing spray 
 * marine high wind 
 * marine hurricane/typhoon 
-* maring lightning 
+* marine lightning 
 * marine strong wind 
 * marine thunderstorm wind 
 * marine tropical depression 
@@ -136,13 +137,13 @@ Recorded based on impacts, noteworthiness, or public interest:
 
 Recorded based on intensity (or having happened at all)
 
-The probability that an event is recorded might differ by event type. Certain hazard types are underreported which leads to an undercounting in the database. 
+The probability that an event is recorded might differ by event type. Certain hazard types are under-reported which leads to an under-counting in the database. 
 
 
-Drought hazards exemplify this issue; they are notoriously underreported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses (Gall, Borden, and Cutter 2009).
+Drought hazards exemplify this issue; they are notoriously under-reported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses (Gall, Borden, and Cutter 2009).
 
 
-There are several types of avalanches including slab, loose snow, icefall, cornice fall, glide, and slush [encyclopedia]. Many of these types can occur naturally due to a variety of envrionmental conditions or can be triggered by human activity. NOAA documentation states that avalanches should only be recorded if human fatality or injury occurs. This insinuates that the NOAA Storm Events database does not seek to record every instance of an avalanche occuring. This should be kept in mind if using Storm Events to examine avalanche events. 
+There are several types of avalanches including slab, loose snow, icefall, cornice fall, glide, and slush [encyclopedia]. Many of these types can occur naturally due to a variety of environmental conditions or can be triggered by human activity. NOAA documentation states that avalanches should only be recorded if human fatality or injury occurs. This insinuates that the NOAA Storm Events database does not seek to record every instance of an avalanche occurring. This should be kept in mind if using Storm Events to examine avalanche events. 
  [TK: ask CIRA if they have more info about avalanches if we are going to use this example]
 
 
@@ -179,7 +180,7 @@ property, trees, crops, power lines, roads, bridges, etc. Additionally, a brief 
 
 The NOAA Storm Events database also uses forecast zones as another unit of aggregation. Forecast zones are created as subsets of counties for more specific location data. Specific types of events are typically either always reported for a county (`CZTYPE` of "C") or always reported for a forecast zone (`CZTYPE` of "Z") (see table below)**. Events typically reported by county include floods, tornado-like events, and a few other events often related to thunderstorms. Events typically reported by forecast zone include severe winter weather, extreme heat, events related to the water or coast, and a few others ("High Wind", "Dense Fog", "Strong Wind", "Wildfire", "Dust Storm", "Dense Smoke").
 
-This demonstrates the difficulty of narrowing down where exactly certain events occured. It is important to keep in mind that some events might be very localized (for example, a flash flood, or even storm surge that's only near the coast of the county), but the county-level reporting of the event means that the whole county gets classified as experiencing or not experiencing the event.
+This demonstrates the difficulty of narrowing down where exactly certain events occurred. It is important to keep in mind that some events might be very localized (for example, a flash flood, or even storm surge that's only near the coast of the county), but the county-level reporting of the event means that the whole county gets classified as experiencing or not experiencing the event.
 
 [TK: These two paragraphs come from the geographic bias section in the outline]
 
