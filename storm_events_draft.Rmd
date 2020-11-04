@@ -49,13 +49,11 @@ Ashley and Mote conducted a similar study examining derecho events in the US fro
 
 A hazard is something that has the potential to cause damage. It is a threat that can severely disrupt society's workings. A hazard's potential to cause harm is compounded by human factors and human activity. Human factors include culture, gender, race, socioeconomic status and political structure, while human activity includes land development, urbanization, emergency preparedness, response plans, etc. [cutter1996responses].  These factors can influence the actual potential for harm, the perceived potential for harm, and the ability to respond if a disaster does occur.  
 
-The terms risk and disaster are two other concepts that tie into the definition of a hazard. Risk is the probability of a hazard occurring and actually causing harm. A disaster is the occurrence of a hazard that creates a large impact on a group of people or peoples. 
-
-For example, a shark swimming in the ocean is a hazard that has potential to cause damage. However, the risk of this hazard causing a person harm varies depending on the person's location relative to the shark. This hazard would become a disaster if the shark attacked the swimmer. 
+The terms risk and disaster are two other concepts that tie into the definition of a hazard. Risk is the probability of a hazard occurring and actually causing harm. A disaster is the occurrence of a hazard that creates a large impact on a group of people or peoples. For example, a shark swimming in the ocean is a hazard that has potential to cause damage. However, the risk of this hazard causing a person harm varies depending on the person's location relative to the shark. This hazard would become a disaster if the shark attacked the swimmer. 
 
 Susan Cutter has done extensive research on hazards and has spent much time defining these different terms. In her work, she states that hazards include the probability of an event occurring (risk), the impact, and the contextual/socioeconomic elements surrounding it. Other scientific authors have similar thoughts on the term hazard and believe it is important to include human culpability [@mcentire2005revisiting]. 
 
-In the context of this paper, we use the term hazard to refer to all of the possible major storm event types that can be entered in the NOAA Storm Events database. We use the term disaster to refer to a reported occurrence of a specific hazard. NOAA Storm Events currently records 55 different event types that are listed in the NWS instruction manual [@nwsinstruction]. Most of these event types correlate to one type of hazard but some of them correlate to different Intensities  of the same type of hazard. Some examples of this include the event type "Strong Wind" versus "High Wind" or "Cold/Wind Chill" versus "Extreme Cold/Wind Chill". In these instances, the hazard would be wind or wind chill while the intensities are strong, high, cold, or extreme cold. 
+In the context of this paper, we use the term hazard or event to refer to all of the possible event types that can be entered in the NOAA Storm Events database. We use the term disaster to refer to a reported occurrence of a specific hazard. NOAA Storm Events currently records 55 different event types that are listed in the NWS instruction manual [@nwsinstruction]. Most of these event types correlate to one type of hazard but some of them correlate to different intensities  of the same type of hazard. Some examples of this include the event type "Strong Wind" versus "High Wind" or "Cold/Wind Chill" versus "Extreme Cold/Wind Chill". In these instances, the hazard would be wind or wind chill while the intensities are strong, high, cold, or extreme cold. 
 
 For 2019, the database reported 51 total events of 55 different event types. The most frequent type of events reported were Thunderstorm Wind, which had over twice as many reports as the second most frequent, Hail. Hail, in turn, had almost twice as many events reported as the next most common few---Flood, Flash Flood, and Winter Weather. The least common reported events included Volcanic Ashfall, Sleet, Dense Smoke, Sneakerwave, Seiche, and Marine Tropical Depression.
 
@@ -67,14 +65,11 @@ To showcase this idea, for the episodes with the most events in 2019, the follow
 
 [TK: include plot and add in names of episode in paragraph rather than numbers]
 
-In some cases, events falling under one episode are the same type of hazard just at different intensities, as described above. In these circumstances, the collection of events may be recorded in only one county/zone but will showcase the spatial range and and varying intensity of the event. This is likely why we see the events with different intensities of the same hazard clustered together (in one county/zone?) in the database, like heat/excessive heat and cold/extreme cold. 
+In some cases, events falling under one episode are the same type of hazard just at different intensities, as described above. In these circumstances, the collection of events may be recorded in only one county/zone but will showcase the spatial range and and varying intensity of the event. This is likely why we see the events with different intensities of the same hazard clustered together in one county/zone in the database, like heat/excessive heat and cold/extreme cold. In other cases, a larger synoptic weather system might bring a variety of different hazards leading to several different recorded event types (e.g., thunderstorm wind and hail, which cluster together). In these cases, there may be several counties/zones in the affected area that report more than one event for the episode. 
 
-In other cases, a larger synoptic weather system might bring a variety of different hazards leading to several different recorded event types (e.g., thunderstorm wind and hail, which cluster together). In these cases, there may be several counties/zones in the affected area that report more than one event for the episode. 
+[TK: potentially add in map of events over different counties vs one county]
 
-[TK: I think I am struggling with these concepts
-TK: potentially add in map of events over different counties vs one county]
-
-The following plot shows a cluster analysis to group events that are more likely to occur together within an episode. We removed event types with less that 50 listings in 2019. The figure shows that there are certain event types which are very commonly reported together such as high wind and strong wind or heat and excessive heat. These types of events are likely to be reported together because they are likely to occur at the same time. It is important to keep these trends in mind as there may be overlap or uncertainty in how to categorize what happened during an episode.
+The following plot shows a cluster analysis to group events that are more likely to (be recorded as occurring) occur together within an episode. We removed event types with less that 50 listings in 2019. The figure shows that there are certain event types which are very commonly reported together such as high wind and strong wind or heat and excessive heat. These types of events are likely to be reported together because they are likely to occur at the same time. It is important to keep these trends in mind as there may be overlap or uncertainty in how to categorize what happened during an episode.
 
 [TK: include cluster analysis plot]
 
@@ -83,12 +78,24 @@ The following plot shows a cluster analysis to group events that are more likely
 ### hazard bias by probability and quality/quantity 
 
 **probability of an event being recorded in the database if it happens**
-The NOAA Storm Events documentation records the standards that should be used when deciding whether or not to include a disaster report. In general, the documentation states that the Storm Events database seeks to record rare, unusual, recording breaking, or highly impactful weather events. However, this standard varies by event type. For example, the documentation states that all Tornado events should be recorded, regardless of if it had any impact like injury, fatality, damage [@nwsinstruction].   
+The NOAA Storm Events documentation records the standards that should be used when deciding whether or not to include a disaster report. It appears that these standards vary based on event type. In general, the documentation states that the Storm Events database seeks to record rare, unusual, recording breaking, or highly impactful weather events. This implies that the database generally does not seek to record ever event that is occuring, but rather focus on events that are unusual (snow in Florida, record-breaking events) and/or things that impact humans (loss of life, property damage). However, the documentation goes on to state that "significant events" like Tornado events should always be recorded, regardless of if they had any impact like injury, fatality, or damage [@nwsinstruction]. 
 
-[TK: note to self: so basically we should word this as some sort of disclaimer that if you are going to be using this data for a study you should keep in mind what your focus is; is it to examine all events in a meteorological sense? or just to see human impacts? because then you should refer to this table or to the NWS documentation to make sure that the database is capturing what you are trying to examine
+This variation has the potential to create hazard bias in the database. This bias is created because the probbility of an event being recorded given that it actually happened varies based on event type. This probability will be high for tornado events, because the database seeks to record all tornado events regardless of their impact. But for events that fall under a different standard, the probabbility will decrease because the database only seeks to record impactful occurences.
+
+To avoid this bias in a study using data from Storm Events, it is important to match the intent of a research study with the intent of the databbase for the event type at hand. Your results could vary based on if you want to examine all occurences of a certain hazard type in a meteorological sense versus if you just want to examine their human impacts. If you are trying to catch every physical instace of a hazard type, this may not even be the goal of the database itself. We have organized the hazard types into general categories based on the NWS's standard for recording. 
+
+
+
+
+
+[TK: other examples: 
+Drought hazards exemplify this issue; they are notoriously under-reported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses (Gall, Borden, and Cutter 2009).
+
+
+There are several types of avalanches including slab, loose snow, icefall, cornice fall, glide, and slush [encyclopedia]. Many of these types can occur naturally due to a variety of environmental conditions or can be triggered by human activity. NOAA documentation states that avalanches should only be recorded if human fatality or injury occurs. This insinuates that the NOAA Storm Events database does not seek to record every instance of an avalanche occurring. This should be kept in mind if using Storm Events to examine avalanche events. 
+
+On the other hand, hurricanes or tornadoes that pass through large cities will cause high amounts of physical damage and fatalities. This would attract the attention of insurance companies and produce clear records of damages. 
 ]
-
-* think of intention when trying to assess exposure, do you mean to catch every physical instance of hazard? for some events that isn't even the goal of the database 
 
 
 [TK: include table that lists all events and if they recorded based on impact, or on intensity]
@@ -104,7 +111,7 @@ Recorded based on impacts, noteworthiness, or public interest:
 * dense smoke 
 * dust devil 
 * dust storm 
-* flash flood:  "A life-threatening, rapid rise of water into a normally dry area beginning within minutes to multiple hours of the causative event (e.g., intense rainfall, dam failure, ice jam)." Doesn't have to cause a fatality, but needs to happen somewhere where it could, it sounds like. There is also this note: "To maintain the most reliable data set it is important to separate low-impact flooding from flash flooding. Low-impact flooding should not be considered a Flash Flood event; rather it should be considered a Flood event. Low-impact flooding does not pose a significant threat to life or property in the same way a Flash Flood does." 
+* flash flood
 * flood 
 * freezing fog 
 * funnel cloud 
@@ -137,22 +144,15 @@ Recorded based on impacts, noteworthiness, or public interest:
 
 Recorded based on intensity (or having happened at all)
 
-The probability that an event is recorded might differ by event type. Certain hazard types are under-reported which leads to an under-counting in the database. 
-
-
-Drought hazards exemplify this issue; they are notoriously under-reported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses (Gall, Borden, and Cutter 2009).
-
-
-There are several types of avalanches including slab, loose snow, icefall, cornice fall, glide, and slush [encyclopedia]. Many of these types can occur naturally due to a variety of environmental conditions or can be triggered by human activity. NOAA documentation states that avalanches should only be recorded if human fatality or injury occurs. This insinuates that the NOAA Storm Events database does not seek to record every instance of an avalanche occurring. This should be kept in mind if using Storm Events to examine avalanche events. 
- [TK: ask CIRA if they have more info about avalanches if we are going to use this example]
 
 
 
-On the other hand, hurricanes or tornadoes that pass through large cities will cause high amounts of physical damage and fatalities. This would attract the attention of insurance companies and produce clear records of damages. 
+
+**quality and quantity of information provided for a recorded event**  
 
 
 
-**quality and quantity of information provided for a recorded event**
+
 For example, you might get much more reliable estimates of damage for certain types of events than others, or longer and more helpful descriptions.
 
 The US government has certain programs that focus on specific hazards more than others. For example, the NWS is obliged to provide monetary loss estimates for any flood event even if the damage assessment is a 'guesstimate' (Gall, Borden, and Cutter 2009). 
