@@ -17,13 +17,15 @@ bibliography: scholar.bib
 
 # Introduction  
 
-Severe weather events currently cost the US trillions of dollars, damage property and crops, interrupt commerce, and cause extensive human injury and fatality. Since 1980, the US has experienced 273 weather and climate disasters that each cost over $1 billion [@impacts]. Additively, these events cost the US over $1.790 trillion and caused 14,223 deaths [@impacts].  Scientists expect these outcomes to worsen over time as climate change causes weather events to occur more frequently and with more severity.  This is demonstrated by increasing concentrations of greenhouse gases in the atmosphere that have shown to lead to increasing annual and extreme temperatures. *Extreme temperatures can lead to a wide range of health complications. Extreme heat can lead to heat cramps, heat exhaustion, heatstroke, and hyperthermia, while extreme cold leads to hypothermia and frostbite [@climatechange].* Extreme temperatures also exacerbate health conditions related to cardiovascular disease, respiratory disease, cerebrovascular disease, and diabetes [@climatechange]. *These impacts and others will increase over time as climate change intensifies extreme temperatures and other dangerous weather events.*  Other weather events will also continue to impact human health and cause more damages in the US as a result of climate change. 
+Severe weather events currently cost the US trillions of dollars, damage property and crops, interrupt commerce, and cause extensive human injury and fatality. Since 1980, the US has experienced 273 weather and climate disasters that each cost over $1 billion [@impacts]. Additively, these events cost the US over $1.790 trillion and caused 14,223 deaths [@impacts].  Scientists expect these outcomes to worsen over time as climate change causes weather events to occur more frequently and with more severity.  This is demonstrated by increasing concentrations of greenhouse gases in the atmosphere that have shown to lead to increasing annual and extreme temperatures.  These impacts and others will increase over time as climate change intensifies extreme temperatures and other dangerous weather events. Other weather events will also continue to impact human health and cause more damages in the US as a result of climate change. 
+
+<!-- Extreme temperatures can lead to a wide range of health complications. Extreme heat can lead to heat cramps, heat exhaustion, heatstroke, and hyperthermia, while extreme cold leads to hypothermia and frostbite [@climatechange].Extreme temperatures also exacerbate health conditions related to cardiovascular disease, respiratory disease, cerebrovascular disease, and diabetes [@climatechange]. -->
 
 Several organizations currently collect data in attempts to compile, categorize, and quantify weather events and their impacts. Some of these organizations include the National Oceanic and Atmospheric Administration (NOAA), the U.S. Geological Survey (USGS), and the Federal Emergency Management Agency (FEMA). Data collection by these organizations improves scientists'' ability to predict weather events and outline monetary losses, property damage, etc.  These predictions are commonly accomplished with interdisciplinary research involving fields of study such as epidemiology, atmospheric science, agriculture, economics, etc. Continued interdisciplinary research is critical to help avoid such large fallout and loss from future weather events. 
 
 As this research continues, it is incumbent that scientists understand the biases and limitations in weather datasets to use the large amount of data appropriately and portray new findings accurately. Biases and limitations arise in these datasets because storing disaster data is a challenging endeavor. Challenges arise as the process of recording disaster data and the technology we use to do it are constantly evolving.[would a sentence here about what this entails be helpful?] Gall et al. recognized this issue and wrote a paper covering several bias types associated with major disaster databases used in the US [@gall2009losses]. These biases include hazard bias, temporal bias, threshold bias, accounting bias, geography bias, and systemic bias [@gall2009losses]. 
 
-One such weather database in which these biases arise is the National Oceanic and Atmospheric Administration's Storm Events database. This database was created in 1950 and is now maintained by branches of NOAA including the National Weather Service (NWS) and the National Center for Environmental Information (NCEI). It originally only contained information regarding tornado events, but has expanded to include data on 55 different storms, significant weather phenomena, rare/unusual weather, and other significant meteorological events across the United States. This data is saved in files categorized by year and published annually in the NOAA Storm Events Publication [link]. This expansive dataset is an important resource used *by atmospheric scientists to analyze fatalities and other losses associated with weather events* to complete scientific research.  The American Meteorological Society has published several papers that use this research to characterize specific weather events and identify unique vulnerabilities or behaviors that place humans in harm's way [@terti2017situation, @ashley2005derecho, @ashley2008fatalities, @gensini2010examination]. These studies help provide justification for improvements to weather warning systems or future risk assessments. 
+One such weather database in which these biases arise is the National Oceanic and Atmospheric Administration's Storm Events database. This database was created in 1950 and is now maintained by branches of NOAA including the National Weather Service (NWS) and the National Center for Environmental Information (NCEI). It originally only contained information regarding tornado events, but has expanded to include data on 55 different storms, significant weather phenomena, rare/unusual weather, and other significant meteorological events across the United States. This data is saved in files categorized by year and published annually in the NOAA Storm Events Publication [link]. This expansive dataset is an important resource used *by atmospheric scientists to analyze fatalities and other losses associated with weather events* to complete scientific research [cite examples- using for other reasons].  The American Meteorological Society has published several papers that use this research to characterize specific weather events and identify unique vulnerabilities or behaviors that place humans in harm's way [@terti2017situation, @ashley2005derecho, @ashley2008fatalities, @gensini2010examination]. These studies help provide justification for improvements to weather warning systems or future risk assessments. 
 
 In this paper, we will examine the NOAA Storm Events database and investigate the presence of mechanisms that lead to biases in the data. We outline these biases in five major categories of hazard bias, temporal bias, threshold bias, accounting bias, and geographic bias. The goal of this investigation is to improve the ease and accuracy of research using this data to study harmful impacts of weather events in the US.
 
@@ -75,11 +77,17 @@ The following plot shows a cluster analysis to group events that are more likely
 
 [TK: include cluster analysis plot]
 
+**probability of an event being recorded in the database if it happens**
+[TK: explain that this is what hazard bias refers to]
 
 
 ### hazard bias by probability and quality/quantity 
 
-**probability of an event being recorded in the database if it happens**
+
+
+**hazard bias by standards for when different events are recorded** 
+[TK: this is just one mechanism for why this is going on ]
+
 The NOAA Storm Events documentation records the standards that should be used when deciding whether or not to include a disaster report. It appears that these standards vary based on event type. In general, the documentation states that the Storm Events database seeks to record rare, unusual, recording breaking, or highly impactful weather events. This implies that the database generally does not seek to record ever event that is occuring, but rather focus on events that are unusual (snow in Florida, record-breaking events) and/or things that impact humans (loss of life, property damage). However, the documentation goes on to state that "significant events" like Tornado events should always be recorded, regardless of if they had any impact like injury, fatality, or damage [@nwsinstruction]. 
 
 This variation has the potential to create hazard bias in the database. This bias is created because the probbility of an event being recorded given that it actually happened varies based on event type. This probability will be high for tornado events, because the database seeks to record all tornado events regardless of their impact. But for events that fall under a different standard, the probabbility will decrease because the database only seeks to record impactful occurences.
@@ -87,7 +95,7 @@ This variation has the potential to create hazard bias in the database. This bia
 To avoid this bias in a study using data from Storm Events, it is important to match the intent of a research study with the intent of the databbase for the event type at hand. Your results could vary based on if you want to examine all occurences of a certain hazard type in a meteorological sense versus if you just want to examine their human impacts. If you are trying to catch every physical instace of a hazard type, this may not even be the goal of the database itself. We have organized the hazard types into general categories based on the NWS's standard for recording. 
 
 
-
+[TK: include table that lists all events and if they recorded based on impact, or on intensity]
 
 
 [TK: other examples: 
@@ -96,11 +104,7 @@ Drought hazards exemplify this issue; they are notoriously under-reported becaus
 
 There are several types of avalanches including slab, loose snow, icefall, cornice fall, glide, and slush [encyclopedia]. Many of these types can occur naturally due to a variety of environmental conditions or can be triggered by human activity. NOAA documentation states that avalanches should only be recorded if human fatality or injury occurs. This insinuates that the NOAA Storm Events database does not seek to record every instance of an avalanche occurring. This should be kept in mind if using Storm Events to examine avalanche events. 
 
-On the other hand, hurricanes or tornadoes that pass through large cities will cause high amounts of physical damage and fatalities. This would attract the attention of insurance companies and produce clear records of damages. 
-]
 
-
-[TK: include table that lists all events and if they recorded based on impact, or on intensity]
 
 [add column to table with event type, # of events in 2019, whether they are reported based on human impacts or not, where reports are coming from (source with highest percentage per event type), county/fips/marine]
 
@@ -110,17 +114,29 @@ On the other hand, hurricanes or tornadoes that pass through large cities will c
 
 **quality and quantity of information provided for a recorded event**  
 
+Differences in the quality and quality of information provided for a recorded event 
 
+1. estimates of damage 
+    - The US government has certain programs that focus on specific hazards more than others. For example, the NWS is obliged to provide monetary loss estimates for any flood event even if the damage assessment is a 'guesstimate' (Gall, Borden, and Cutter 2009). 
+    -On the other hand, hurricanes or tornadoes that pass through large cities will cause high amounts of physical damage and fatalities. This would attract the attention of insurance companies and produce clear records of damages. 
 
+[TK: ask Andrea about this? ask James Done?]
 
-For example, you might get much more reliable estimates of damage for certain types of events than others, or longer and more helpful descriptions.
+2. descriptions 
+    -For some types of reporting, the *episode* gets the narrative, but not separate narratives for each event, while for some events (like tornadoes), each *event* might get a narrative. 
+Also, for fatalities and injuries, it sounds like the estimates are given at the *episode level* for forecast zone-based events but then at the *event level* for county-based events. 
 
-The US government has certain programs that focus on specific hazards more than others. For example, the NWS is obliged to provide monetary loss estimates for any flood event even if the damage assessment is a 'guesstimate' (Gall, Borden, and Cutter 2009). 
-
-
-[For some types of reporting, the *episode* gets the narrative, but not separate narratives for each event, while for some events (like tornadoes), each *event* might get a narrative. 
-Also, for fatalities and injuries, it sounds like the estimates are given at the *episode level* for forecast zone-based events but then at the *event level* for county-based events.]
-
+3. graularity of information provided 
+  -It is important to keep in mind that some events might be very localized (for example, a flash flood, or even storm surge that's only near the coast of the county), but the county-level reporting of the event means that the whole county gets classified as experiencing or not experiencing the event.
+  - forecast zone vs county level 
+  - some event types include latitude and longitude locations (even starting and ending points), while some do not include more detailed location information beyond the area they're reported for (county or forecast zone). This would be another case of where there's a different amount of information available for different types of hazards listed in the database, and we could use our data to show that (it might also be listed in the NOAA manual which events lat/long should be reported for).
+  
+4. quality based on how it was recorded 
+  -using an established scale or not 
+  -Enhanced Fujita 
+  
+  
+  
 
 > "2.9.1 Episode Narrative. Generate an episode with a narrative; otherwise individual events cannot be entered into the Storm Data software. An episode narrative describes the entire episode in a general fashion, and briefly describes the synoptic meteorology associated with the episode. Information in the episode narrative can be very useful for researchers and other users of Storm Data. This narrative does not need to be long or elaborate, rather make it brief and informative. An example would be “A strong cold front passed through the Washington, D.C. area, triggering several instances of damaging thunderstorm winds and large, baseball-size hail.”
 > “To ensure events being logged in a single episode are part of the same synoptic meteorological system, events within the same episode may begin no more than five (5) calendar days apart. This will enable the Storm Data preparer to properly document events that double back into a specific region or events that are very slow moving. Examples include Hurricane and Winter Storm events.” [@nwsinstruction]
@@ -154,33 +170,34 @@ intensity (for example, using a well-defined scale, as is done for tornadoes wit
 scale), while others don't. The NOAA guidebook might have some details on this in terms of 
 telling people to use specific scales to report some types of events.  
 
+[From Andrea: One note in terms of time-variability of tornado reporting - it's thought that that detection of weaker tornadoes (EF-1) has improved significantly in the last few decades (due to increases in population and better observation networks).  For that reason, researchers sometimes remove EF-1's when analyzing tornado trends to try to reduce this type of bias.  ]
 
 
 ### hazard bias by who reported event 
 
 There's variation in who reports different types of events in this database. 
 
-and we can illustrate that with the table of number of events reported by source of event report as well as the figure with the numbers of reported events by source. 
+1. figure with # of events reported by source of event report
 
-We could add some discussion for these different sources on calibration, agreement across reports (e.g., across monitoring equipment for an automated weather station system, versus across people for volunteer reports), and likelihood of "catching" an event based on source (for example, an automated system would probably "see" any event that happens at the spot the monitor's located, while an event that's usually reported by people would miss anything that happens when a person isn't around or can't see it (e.g., at night, in a sparsely populated area). 
+2. figure with the numbers of reported events by source [TK]
 
+3. agreement across reports 
+  -across monitoring equipment for an automated weather station system, versus across people for volunteer reports
+  
+4. calibration 
+[TK: does this have to do with calibration of automated systems?]
 
-We might want to make a comparison on how the number of reported events for an event type is associated with the proportion of events reported by an automated system (e.g., Mesonet, ASOS, AWOS, River/Stream Gage) versus by media or a person (e.g., media, 911 call center, Storm Chaser, Amateur Radio, Public). It looks like some of our very rare events (Sneakerwave, for example) are only reported by sources like broadcast media, fire department/rescue, and newspaper.
-
-
-
-### hazard bias by standards for when different events are recorded 
-
-I think every tornado is reported, but for some event types, it's only reported if it causes deaths, injuries, or damages. 
-
-We could look through that manual to find some more examples, and perhaps compare the frequencies reported in Storm Events to how common events are based on climatological-type studies. 
-
-For example, we could try to find a source that says how often you'd really expect Sneakerwaves and Sleet to happen, and then see if there's something in the reporting standards for Storm Events that is making it so we only see a few in the database. By contrast, I'm guessing that the standards for reporting might be more open for the events that show up a lot, like Thunderstorm Wind and Hail.
+5. likelihood of "catching" an event based on source
+  -an automated system would probably "see" any event that happens at the spot the monitor's located, while an event that's usually reported by people would miss anything that happens when a person isn't around or can't see it (e.g., at night, in a sparsely populated area).
+6. comparison on how the number of reported events for an event type is associated with the proportion of events reported by an automated system 
+  - very rare events (Sneakerwave, for example) are only reported by sources like broadcast media, fire department/rescue, and newspaper
 
 
-### detection technology differences
+### detection technology differences [TK: combine with above section?]
 
-ne may be that the detection technology level may differ by hazard---we may have a better process for ID-ing cases of one hazard/event type compared to another (this is a similar idea to how changes in technology over time might lead to temporal bias). I wonder if some of our rare events (Sneakerwave, Seiche, Sleet) might be examples of spots where we don't have great technology yet to detect them (or not a large enough network of monitors even if we do have the technology)?
+One may be that the detection technology level may differ by hazard---we may have a better process for ID-ing cases of one hazard/event type compared to another (this is a similar idea to how changes in technology over time might lead to temporal bias). I wonder if some of our rare events (Sneakerwave, Seiche, Sleet) might be examples of spots where we don't have great technology yet to detect them (or not a large enough network of monitors even if we do have the technology)?
+
+
 
 
 ### implications 

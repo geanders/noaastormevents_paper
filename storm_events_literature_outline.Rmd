@@ -436,14 +436,37 @@ a <- events_2019 %>%
 ```
 
 ```{r echo = FALSE, fig.align = "center", fig.width = 5, fig.height = 3}
+dendrogram_descriptions <- tribble(
+  ~EPISODE_ID, ~description,
+  133275, "Moderate to strong atmospheric river in California",
+  133801, "An atmospheric river and cold front near Mount Saint Helena",
+  133994,"An atmospheric river in the North Bay",
+  136054,"Several severe storms along southern plains",
+  135416, "Squall line of thunderstorms in South Carolina",
+  138800,"Heat wave in eastern New York",
+  135253,"971mb bomb cyclone moving out of the Rockies", 
+  138645,"Frontal boundary over the mid-Atlantic creating a
+  low pressure wave",
+  135643,"Line of thunderstorms",
+  141710,"Strong cold front and deep upper level trough in the Ozarks",
+  137355, "Multiple storms over Missouri Ozarks",
+  142499,"A powerful coastal storm along New Jersey to the Northeast"
+)
+
+
+dedrogram_events <-events_2019 %>% 
+  left_join(dendrogram_descriptions)
+
 events_2019 %>%
   filter(EPISODE_ID %in% top_episodes$EPISODE_ID) %>%
   group_by(EPISODE_ID, EVENT_TYPE) %>%
   summarize(n = n()) %>%
   ungroup() %>%
-  mutate(EPISODE_ID = factor(EPISODE_ID, levels = unique(top_episodes$EPISODE_ID)),
+  left_join(dendrogram_descriptions, by = "EPISODE_ID") %>% 
+  mutate(description = factor(str_wrap(description, width = 40, indent = 0)),
+         description = fct_reorder(description, n, .fun = sum),
          EVENT_TYPE = factor(EVENT_TYPE, levels = unique(a$labels[a$order]))) %>%
-  ggplot(aes(x = EPISODE_ID, y = EVENT_TYPE)) + 
+  ggplot(aes(x = description , y = EVENT_TYPE)) + 
   geom_tile(aes(fill = n)) + 
   theme_classic() + 
   labs(x = "", y = "", fill = "Number of events reported") + 
@@ -451,13 +474,23 @@ events_2019 %>%
         legend.position = "top",
         plot.margin = unit(c(0, 1, 0, 0), "cm"),
         axis.text=element_text(size=11)) +
-  scale_x_discrete(position = "top", labels = str_wrap(c("A powerful coastal storm along New Jersey to the Northeast", "An atmospheric river and cold front near Mount Saint Helena", "Line of thunderstorms", "Multiple storms over Missouri Ozarks", "Squall line of thunderstorms in South Carolina", "An atmospheric river in the North Bay", "Frontal boundary over the mid-Atlantic creating a low pressure wave", "971mb bomb cyclone moving out of the Rockies", "Strong cold front and deep upper level trough in the Ozarks", "Moderate to strong atmospheric river in\n California", "Several severe storms along southern plains", "Heat wave in eastern New York"), width = 40, exdent = 5)) +
+  scale_x_discrete(position = "top") +
   scale_y_discrete(position = "right") +
   scale_fill_viridis(option = "A", direction = -1) +
-  coord_flip()
+  coord_flip() 
 
  # scale_x_discrete(limits = rev(levels(unique(top_episodes$EPISODE_ID)))) 
+# scale_x_discrete(trans= "reverse")
 ```      
+```{r echo = FALSE, fig.align = "center", fig.width = 5, fig.height = 3}
+
+ 
+
+
+
+
+
+```
 
 
 #### Cluster Analysis 
