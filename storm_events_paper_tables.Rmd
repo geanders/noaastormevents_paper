@@ -1,0 +1,38 @@
+---
+title: "Table"
+output: pdf_document
+---
+
+
+```{r}
+year_events_df <- read.csv("year_events_data.csv")
+library(knitr)
+library(tidyverse)
+```
+
+
+
+
+
+
+```{r}
+event_type_2019 %>%
+  full_join(event_reporting_areas) %>% 
+  full_join(reporting_categories) %>% 
+  mutate(N = case_when(
+    is.na(N) ~ as.integer(0), 
+    TRUE ~ N 
+  )) %>% 
+  mutate(N = prettyNum(N, big.mark = ",")) %>%
+  knitr::kable(col.names = c("Event type", "Number of events in 2019", "Reporting Area", 
+                             "Reporting Catagories"))
+  
+```
+
+
+```{r}
+episode_narratives %>% 
+  full_join(dendrogram_descriptions) %>% 
+  knitr::kable(col.names = c("EPISODE_ID", "EPISODE_NARRATIVE", "description"))
+```
+
