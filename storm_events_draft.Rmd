@@ -17,18 +17,20 @@ bibliography: scholar.bib
 
 # Introduction  
 
-Severe weather events currently cost the US trillions of dollars, damage property and crops, interrupt commerce, and cause extensive human injury and fatality. Since 1980, the US has experienced 273 weather and climate disasters that each left over $1 billion in damages [@impacts]. In total, these events cost the US over $1.790 trillion and caused 14,223 deaths [@impacts].  Scientists expect these weather events to occur more frequently and with more severity over time as a result of climate change. For example, the increasing presence of greenhouse gases in the atmosphere leads to increasing annual and extreme temperatures. Extreme temperatures lead to a wide range of health complications. Extreme heat can lead to heat cramps, heat exhaustion, heatstroke, and hyperthermia, while extreme cold leads to hypothermia and frostbite [@climatechange]. Extreme temperatures also exacerbate health conditions related to cardiovascular disease, respiratory disease, cerebrovascular disease, and diabetes [@climatechange]. These impacts and others will increase over time as climate change intensifies extreme temperatures and other dangerous weather events.  
+Severe weather events currently cost the US trillions of dollars, damage property and crops, interrupt commerce, and cause extensive human injury and fatality. Since 1980, the US has experienced 273 weather and climate disasters that each cost over $1 billion [@impacts]. Additively, these events cost the US over $1.790 trillion and caused 14,223 deaths [@impacts].  Scientists expect these outcomes to worsen over time as climate change causes weather events to occur more frequently and with more severity.  This is demonstrated by increasing concentrations of greenhouse gases in the atmosphere that have shown to lead to increasing annual and extreme temperatures. *Extreme temperatures can lead to a wide range of health complications. Extreme heat can lead to heat cramps, heat exhaustion, heatstroke, and hyperthermia, while extreme cold leads to hypothermia and frostbite [@climatechange].* Extreme temperatures also exacerbate health conditions related to cardiovascular disease, respiratory disease, cerebrovascular disease, and diabetes [@climatechange]. *These impacts and others will increase over time as climate change intensifies extreme temperatures and other dangerous weather events.*  Other weather events will also continue to impact human health and cause more damages in the US as a result of climate change. 
 
-Several organizations currently collect data in attempts to compile, categorize, and quantify weather events and their impacts. Some of these organizations include the National Oceanic and Atmospheric Administration (NOAA), the U.S. Geological Survey (USGS), and the Federal Emergency Management Agency (FEMA). Data collection improves scientists'' ability to predict weather events and understand their impacts. This is commonly accomplished with interdisciplinary research involving various fields of study such as epidemiology, atmospheric science, agriculture, economics, etc. This research is critical to help avoid such large fallout and loss from future weather events. Because of this, it is incumbent that scientists understand the biases and limitations in weather datasets to use the large amounts of data appropriately and portray new findings accurately. 
+Several organizations currently collect data in attempts to compile, categorize, and quantify weather events and their impacts. Some of these organizations include the National Oceanic and Atmospheric Administration (NOAA), the U.S. Geological Survey (USGS), and the Federal Emergency Management Agency (FEMA). Data collection by these organizations improves scientists'' ability to predict weather events and outline monetary losses, property damage, etc.  These predictions are commonly accomplished with interdisciplinary research involving fields of study such as epidemiology, atmospheric science, agriculture, economics, etc. Continued interdisciplinary research is critical to help avoid such large fallout and loss from future weather events. 
 
-Biases and limitations arise in these datasets because storing disaster data is a challenging endeavor. Challenges arise as the process of recording disaster data and the technology we use to do it are constantly evolving. Gall et al. recognized this issue and wrote a paper covering several bias types associated with major disaster databases used in the US [@gall2009losses]. These biases include hazard bias, temporal bias, threshold bias, accounting bias, geography bias, and systemic bias [@gall2009losses]. 
+As this research continues, it is incumbent that scientists understand the biases and limitations in weather datasets to use the large amount of data appropriately and portray new findings accurately. Biases and limitations arise in these datasets because storing disaster data is a challenging endeavor. Challenges arise as the process of recording disaster data and the technology we use to do it are constantly evolving.[would a sentence here about what this entails be helpful?] Gall et al. recognized this issue and wrote a paper covering several bias types associated with major disaster databases used in the US [@gall2009losses]. These biases include hazard bias, temporal bias, threshold bias, accounting bias, geography bias, and systemic bias [@gall2009losses]. 
 
-One such weather database in which these biases arise is the National Oceanic and Atmospheric Administration's Storm Events database. This database is maintained by branches of NOAA including the National Weather Service and the National Center for Environmental Information (NCEI). It originally only contained information regarding tornado events starting in 1950, but has expanded to include data on 55 different storms, significant weather phenomena, rare/unusual weather, and other significant meteorological events across the United States. This data is saved in files categorized by year and published annually in the NOAA Storm Events Publication [link]. This expansive dataset is an important resource used by atmospheric scientists to analyze fatalities associated with weather events. The American Meteorological Society has published various papers that use this data to characterize weather events and identify unique vulnerabilities or behaviors that place humans in harm's way [@terti2017situation, @ashley2005derecho, @ashley2008fatalities, @gensini2010examination]. These studies help provide justification for improvements to weather warning systems or future risk assessments. 
+One such weather database in which these biases arise is the National Oceanic and Atmospheric Administration's Storm Events database. This database was created in 1950 and is now maintained by branches of NOAA including the National Weather Service (NWS) and the National Center for Environmental Information (NCEI). It originally only contained information regarding tornado events, but has expanded to include data on 55 different storms, significant weather phenomena, rare/unusual weather, and other significant meteorological events across the United States. This data is saved in files categorized by year and published annually in the NOAA Storm Events Publication [link]. This expansive dataset is an important resource used *by atmospheric scientists to analyze fatalities and other losses associated with weather events* to complete scientific research.  The American Meteorological Society has published several papers that use this research to characterize specific weather events and identify unique vulnerabilities or behaviors that place humans in harm's way [@terti2017situation, @ashley2005derecho, @ashley2008fatalities, @gensini2010examination]. These studies help provide justification for improvements to weather warning systems or future risk assessments. 
 
-In this paper, we will examine the NOAA Storm Events database and investigate the presence of mechanisms that lead to biases in the data. We have separated the biases into five major categories of hazard bias, temporal bias, threshold bias, accounting bias, and geographic bias. The goal of this investigation is to improve the ease and accuracy of research using this data to decrease harmful impacts of weather events in the US. 
+In this paper, we will examine the NOAA Storm Events database and investigate the presence of mechanisms that lead to biases in the data. We outline these biases in five major categories of hazard bias, temporal bias, threshold bias, accounting bias, and geographic bias. The goal of this investigation is to improve the ease and accuracy of research using this data to study harmful impacts of weather events in the US.
 
 
 
+
+[description of NOAA SE and where it is used (a line or two)]
 
 
 ### Section 
@@ -101,48 +103,6 @@ On the other hand, hurricanes or tornadoes that pass through large cities will c
 [TK: include table that lists all events and if they recorded based on impact, or on intensity]
 
 [add column to table with event type, # of events in 2019, whether they are reported based on human impacts or not, where reports are coming from (source with highest percentage per event type), county/fips/marine]
-
-Recorded based on impacts, noteworthiness, or public interest:  
- 
-* astronomical low tide 
-* avalanche  
-* coastal flood 
-* dense fog 
-* dense smoke 
-* dust devil 
-* dust storm 
-* flash flood
-* flood 
-* freezing fog 
-* funnel cloud 
-* freezing fog 
-* funnel cloud 
-* heavy rain 
-* high surf 
-* lakeshore flood 
-* lightning 
-* marine dense fog 
-* marine hail 
-* marine heavy freezing spray 
-* marine high wind 
-* marine hurricane/typhoon 
-* marine lightning 
-* marine strong wind 
-* marine thunderstorm wind 
-* marine tropical depression 
-* marine tropical storm 
-* rip currents 
-* seiche 
-* sneaker wave 
-* storm surge/time 
-* strong wind 
-* thunderstorm wind 
-* tsunami 
-* volcanic ash 
-* wildfire 
-* winter weather 
-
-Recorded based on intensity (or having happened at all)
 
 
 
