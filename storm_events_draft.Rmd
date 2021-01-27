@@ -21,43 +21,31 @@ Severe weather events currently cost the US trillions of dollars, damage propert
 
 <!-- Extreme temperatures can lead to a wide range of health complications. Extreme heat can lead to heat cramps, heat exhaustion, heatstroke, and hyperthermia, while extreme cold leads to hypothermia and frostbite [@climatechange].Extreme temperatures also exacerbate health conditions related to cardiovascular disease, respiratory disease, cerebrovascular disease, and diabetes [@climatechange]. -->
 
-Several organizations currently collect data in attempts to compile, categorize, and quantify weather events and their impacts. Some of these organizations include the National Oceanic and Atmospheric Administration (NOAA), the U.S. Geological Survey (USGS), and the Federal Emergency Management Agency (FEMA). Data collection by these organizations improves scientists'' ability to predict weather events and outline monetary losses, property damage, etc.  These predictions are commonly accomplished with interdisciplinary research involving fields of study such as epidemiology, atmospheric science, agriculture, economics, etc. Continued interdisciplinary research is critical to help avoid such large fallout and loss from future weather events. 
+Several organizations currently collect data in attempts to compile, categorize, and quantify weather events and their impacts. Some of these organizations include the National Oceanic and Atmospheric Administration (NOAA), the U.S. Geological Survey (USGS), and the Federal Emergency Management Agency (FEMA). Data collection by these organizations improves scientists' ability to predict weather events and outline monetary losses, property damage, etc.  These predictions are commonly accomplished with interdisciplinary research involving fields of study such as epidemiology, atmospheric science, agriculture, economics, etc. Continued interdisciplinary research is critical to help avoid such large fallout and loss from future weather events. 
 
 As this research continues, it is incumbent that scientists understand the biases and limitations in weather datasets to use the large amount of data appropriately and portray new findings accurately. Biases and limitations arise in these datasets because storing disaster data is a challenging endeavor. Challenges arise as the process of recording disaster data and the technology we use to do it are constantly evolving.[would a sentence here about what this entails be helpful?] Gall et al. recognized this issue and wrote a paper covering several bias types associated with major disaster databases used in the US [@gall2009losses]. These biases include hazard bias, temporal bias, threshold bias, accounting bias, geography bias, and systemic bias [@gall2009losses]. 
 
-One such weather database in which these biases arise is the National Oceanic and Atmospheric Administration's Storm Events database. This database was created in 1950 and is now maintained by branches of NOAA including the National Weather Service (NWS) and the National Center for Environmental Information (NCEI). It originally only contained information regarding tornado events, but has expanded to include data on 55 different storms, significant weather phenomena, rare/unusual weather, and other significant meteorological events across the United States. This data is saved in files categorized by year and published annually in the NOAA Storm Events Publication [link]. This expansive dataset is an important resource used *by atmospheric scientists to analyze fatalities and other losses associated with weather events* to complete scientific research [cite examples- using for other reasons].  The American Meteorological Society has published several papers that use this research to characterize specific weather events and identify unique vulnerabilities or behaviors that place humans in harm's way [@terti2017situation, @ashley2005derecho, @ashley2008fatalities, @gensini2010examination]. These studies help provide justification for improvements to weather warning systems or future risk assessments. 
+One such weather database in which these biases arise is the National Oceanic and Atmospheric Administration's Storm Events database. This database was created in 1950 and is now maintained by branches of NOAA including the National Weather Service (NWS) and the National Center for Environmental Information (NCEI). It originally only contained information regarding tornado events, but has expanded to include data on 55 different storms, significant weather phenomena, rare/unusual weather, and other significant meteorological events across the United States. This data is saved in files categorized by year and published annually in the NOAA Storm Events Publication [link]. This expansive dataset is an important resource used by atmospheric scientists to analyze fatalities and other losses associated with weather events to complete scientific research [cite examples- using for other reasons].  The American Meteorological Society has published several papers that use this research to characterize specific weather events and identify unique vulnerabilities or behaviors that place humans in harm's way [@terti2017situation, @ashley2005derecho, @ashley2008fatalities, @gensini2010examination]. These studies help provide justification for improvements to weather warning systems or future risk assessments. 
 
 In this paper, we will examine the NOAA Storm Events database and investigate the presence of mechanisms that lead to biases in the data. We outline these biases in five major categories of hazard bias, temporal bias, threshold bias, accounting bias, and geographic bias. The goal of this investigation is to improve the ease and accuracy of research using this data to study harmful impacts of weather events in the US.
 
 
+### Examples of Storm Events being used in literature 
 
-
-[description of NOAA SE and where it is used (a line or two)]
-
-
-### Section 
- [TK: below is old sentences]
-
-Both of these studies, in part, used data from the National Oceanic & Atmospheric Administration (NOAA) Storm Events database to conduct research.
-NOAA's Storm Events database allows scientists to examine how weather events impact human life and how we can reduce or avoid these impacts. 
-
-
-The current impacts of disasters combined with the anticipated increases in their severity and occurrence make it critical that we understand the patterns and scale of weather hazards. 
- 
 
 The American Meteorological Society has published various papers analyzing fatalities associated with weather events [@terti2017situation, @ashley2005derecho, @ashley2008fatalities, @gensini2010examination]. Ashley and Black examined the cause, spatial distributions, and fatalities caused by nonconvective high-wind events in the US from 1980 to 2005. This study found that fatalities associated with nonconvective high-wind events often occur in boats or vehicles. These fatalities are most likely to occur on the West Coast or Northeast as a result of extratropical cyclones. These areas of the US have large forests and bodies of water with high population densities that are opportune to being highly affected by high winds [@ashley2008fatalities]. Keeping these vulnerabilities in mind, the study outlines possible improvements to high wind warning systems in the areas. These improvements aim to protect people most likely to be injured or killed by nonconvective high-wind events.   
 
 Ashley and Mote conducted a similar study examining derecho events in the US from 1986 to 2003 [@ashley2005derecho]. Derechoes are often overlooked when examining impactful weather events. However, this study revealed how they actually produce damage comparable to tornadoes and hurricanes. Derechoes caused 153 fatalities and over 2,600 injuries throughout the 18 year span of this study. They were also responsible for as much or more monetary loss than some hurricane and tornado events over the time span. Their study helps to draw attention to this type of weather event in hopes to advance derecho risk assessments.  
 
-# Hazard Bias 
+# Terminology and how the database works
 
-A hazard is something that has the potential to cause damage. It is a threat that can severely disrupt society's workings. A hazard's potential to cause harm is compounded by human factors and human activity. Human factors include culture, gender, race, socioeconomic status and political structure, while human activity includes land development, urbanization, emergency preparedness, response plans, etc. [cutter1996responses].  These factors can influence the actual potential for harm, the perceived potential for harm, and the ability to respond if a disaster does occur.  
+Throughout this paper, we will be using specific terminology when describing the structure and function of the NOAA Storm Events database. We use the term hazard or weather event to refer to all of the possible event types that can be entered in the NOAA Storm Events database. A hazard can be defined as something that has the potential to cause damage or a threat that can severely disrupt society's workings. A hazard's potential to cause harm is compounded by human factors like culture, gender, race, socioeconomic status and political structure and by human activity like land development, urbanization, emergency preparedness, and response plans [cutter1996responses].  These factors can influence the actual potential for harm, the perceived potential for harm, and the ability to respond if a disaster does occur.  
 
 The terms risk and disaster are two other concepts that tie into the definition of a hazard. Risk is the probability of a hazard occurring and actually causing harm. A disaster is the occurrence of a hazard that creates a large impact on a group of people or peoples. For example, a shark swimming in the ocean is a hazard that has potential to cause damage. However, the risk of this hazard causing a person harm varies depending on the person's location relative to the shark. This hazard would become a disaster if the shark attacked the swimmer. 
 
-Susan Cutter has done extensive research on hazards and has spent much time defining these different terms. In her work, she states that hazards include the probability of an event occurring (risk), the impact, and the contextual/socioeconomic elements surrounding it. Other scientific authors have similar thoughts on the term hazard and believe it is important to include human culpability [@mcentire2005revisiting]. 
+<!--Susan Cutter has done extensive research on hazards and has spent much time defining these different terms. In her work, she states that hazards include the probability of an event occurring (risk), the impact, and the contextual/socioeconomic elements surrounding it. Other scientific authors have similar thoughts on the term hazard and believe it is important to include human culpability [@mcentire2005revisiting].--> 
 
-In the context of this paper, we use the term hazard or event to refer to all of the possible event types that can be entered in the NOAA Storm Events database. We use the term disaster to refer to a reported occurrence of a specific hazard. NOAA Storm Events currently records 55 different event types that are listed in the NWS instruction manual [@nwsinstruction]. Most of these event types correlate to one type of hazard but some of them correlate to different intensities  of the same type of hazard. Some examples of this include the event type "Strong Wind" versus "High Wind" or "Cold/Wind Chill" versus "Extreme Cold/Wind Chill". In these instances, the hazard would be wind or wind chill while the intensities are strong, high, cold, or extreme cold. 
+We use the term disaster to refer to a reported occurrence of a specific hazard. NOAA Storm Events currently records 55 different event types that are listed in the NWS instruction manual [@nwsinstruction]. Most of these event types correlate to one type of hazard but some of them correlate to different intensities  of the same type of hazard. Some examples of this include the event type "Strong Wind" versus "High Wind" or "Cold/Wind Chill" versus "Extreme Cold/Wind Chill". In these instances, the hazard would be wind or wind chill while the intensities are strong, high, cold, or extreme cold. 
 
 For 2019, the database reported 51 total events of 55 different event types. The most frequent type of events reported were Thunderstorm Wind, which had over twice as many reports as the second most frequent, Hail. Hail, in turn, had almost twice as many events reported as the next most common few---Flood, Flash Flood, and Winter Weather. The least common reported events included Volcanic Ashfall, Sleet, Dense Smoke, Sneakerwave, Seiche, and Marine Tropical Depression.
 
@@ -77,54 +65,54 @@ The following plot shows a cluster analysis to group events that are more likely
 
 [TK: include cluster analysis plot]
 
-**probability of an event being recorded in the database if it happens**
-[TK: explain that this is what hazard bias refers to]
 
 
-### hazard bias by probability and quality/quantity 
+# Hazard Bias  
 
+In this section, we will outline how hazard bias may be present in the NOAA Storm Events database. Hazard bias can present itself as the probability of an event being recorded varying according to event type or the quality/quantity of information recorded varying according to event type. This can manifest in certain event types being under or over-reported in the dataset or having much more reliable and helpful descriptions of certain event types. This occurs because of variety of factors relating to how the database functions and how weather monitoring occurs. 
 
 
 **hazard bias by standards for when different events are recorded** 
+
 [TK: this is just one mechanism for why this is going on ]
 
-The NOAA Storm Events documentation records the standards that should be used when deciding whether or not to include a disaster report. It appears that these standards vary based on event type. In general, the documentation states that the Storm Events database seeks to record rare, unusual, recording breaking, or highly impactful weather events. This implies that the database generally does not seek to record ever event that is occuring, but rather focus on events that are unusual (snow in Florida, record-breaking events) and/or things that impact humans (loss of life, property damage). However, the documentation goes on to state that "significant events" like Tornado events should always be recorded, regardless of if they had any impact like injury, fatality, or damage [@nwsinstruction]. 
-
-This variation has the potential to create hazard bias in the database. This bias is created because the probbility of an event being recorded given that it actually happened varies based on event type. This probability will be high for tornado events, because the database seeks to record all tornado events regardless of their impact. But for events that fall under a different standard, the probabbility will decrease because the database only seeks to record impactful occurences.
+One mechanism that creates the opportunity for hazard bias arises out of the standards that the NOAA Storm Events database uses in deciding whether or not to include a disaster report in its dataset. The NWS Documetation record all standards used in making this decision here [link].  It appears that these standards vary based on event type. In general, the documentation states that the Storm Events database seeks to record rare, unusual, recording breaking, or highly impactful weather events. This implies that the database generally does not seek to record every event that is occuring, but rather focuses on events that are unusual (snow in Florida, record-breaking events) and/or things that impact humans (loss of life, property damage). However, the documentation goes on to state that "significant events" like Tornado events should always be recorded, regardless of if they had any impact like injury, fatality, or damage [@nwsinstruction]. Another example occurs  in that the NOAA documentation states that avalanches should only be recorded if human fatality or injury occurs. However, there are many types of avalanches (slab, loose snow, icefall, cornice fall, etc.) that can occur naturally due to a variety of environmental conditions which may not cause any human fatality or injury.  These variations have the potential to create hazard bias in the database by impacting the probability of an event being recorded given that it actually happened. This probability will be high for tornado events, because the database seeks to record all tornado events regardless of their impact. This probability will be low for avalanches because the database only seeks to record impactful occurences.
 
 To avoid this bias in a study using data from Storm Events, it is important to match the intent of a research study with the intent of the databbase for the event type at hand. Your results could vary based on if you want to examine all occurences of a certain hazard type in a meteorological sense versus if you just want to examine their human impacts. If you are trying to catch every physical instace of a hazard type, this may not even be the goal of the database itself. We have organized the hazard types into general categories based on the NWS's standard for recording. 
 
 
 [TK: include table that lists all events and if they recorded based on impact, or on intensity]
 
-
 [TK: other examples: 
 Drought hazards exemplify this issue; they are notoriously under-reported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses (Gall, Borden, and Cutter 2009).
 
 
-There are several types of avalanches including slab, loose snow, icefall, cornice fall, glide, and slush [encyclopedia]. Many of these types can occur naturally due to a variety of environmental conditions or can be triggered by human activity. NOAA documentation states that avalanches should only be recorded if human fatality or injury occurs. This insinuates that the NOAA Storm Events database does not seek to record every instance of an avalanche occurring. This should be kept in mind if using Storm Events to examine avalanche events. 
 
+**Estimates of Damage**
 
+Another mechanism that creates the opportunity for hazard bias has to do with how monetary damage estimates are created for the database. The NWS documentation has this description for how damages should be recorded: 
+> 2.7 Damage. Property damage estimates should be entered as actual dollar amounts, if a reasonably accurate estimate from an insurance company or other qualified individual is available. If this estimate is not available, then the preparer has two choices: either check the “no information available” box, or make an estimate. The lone exception is for flood events. The Storm Data preparer enters monetary damage amounts for flood events, even if it is an estimate. The U.S. Army Corps of Engineers requires the NWS to provide monetary damage amounts (property and/or crop) resulting from any flood event."
 
-[add column to table with event type, # of events in 2019, whether they are reported based on human impacts or not, where reports are coming from (source with highest percentage per event type), county/fips/marine]
+[TK: Who is the preparer?]
 
+In a general sense, this could lead to bias if a researcher was trying to examine overall monetary damage across all event types because there is large variation in how this number is obtained. More specifically, estimates from insurance companies are probably more likely to be available for events that are highly impactful in larger cities. For example, hurricanes or tornadoes that pass through large cities would attract the attention of insurance companies that insure high concentrations of buildings and properties there. This may produce clearer records of damages than a smaller weather event that occurs in rural area. Additionally, the documentation points out that estimates for flood damage are required. This places higher importance on the amount of information recorded for one specific event type. Once again, this should be kept in mind if using this database for analysis of weather event related damages. 
 
-
-
-
-**quality and quantity of information provided for a recorded event**  
-
-Differences in the quality and quality of information provided for a recorded event 
-
-1. estimates of damage 
-    - The US government has certain programs that focus on specific hazards more than others. For example, the NWS is obliged to provide monetary loss estimates for any flood event even if the damage assessment is a 'guesstimate' (Gall, Borden, and Cutter 2009). 
-    -On the other hand, hurricanes or tornadoes that pass through large cities will cause high amounts of physical damage and fatalities. This would attract the attention of insurance companies and produce clear records of damages. 
 
 [TK: ask Andrea about this? ask James Done?]
 
-2. descriptions 
+
+
+*Descriptions* 
+
+
+> 2.9 Textual Description of Storm. There are two kinds of textual descriptions: episode narrative and event narrative. Minimally, a brief episode narrative is needed for any weather event entry within the Storm Data software. The event narrative may or may not be needed. If the event does not cause injury, fatality or property/crop damage, the event does not require an event narrative, unless otherwise significant. For example, Hail events, as a single phenomenon, should not necessitate narratives unless they are part of a more complex weather event or cause fatality/injury or property/crop damage. 
+
     -For some types of reporting, the *episode* gets the narrative, but not separate narratives for each event, while for some events (like tornadoes), each *event* might get a narrative. 
+    
+    
 Also, for fatalities and injuries, it sounds like the estimates are given at the *episode level* for forecast zone-based events but then at the *event level* for county-based events. 
+
+
 
 3. graularity of information provided 
   -It is important to keep in mind that some events might be very localized (for example, a flash flood, or even storm surge that's only near the coast of the county), but the county-level reporting of the event means that the whole county gets classified as experiencing or not experiencing the event.
