@@ -69,7 +69,7 @@ The following plot shows a cluster analysis to group events that are more likely
 
 # Hazard Bias  
 
-In this section, we will outline how hazard bias may be present in the NOAA Storm Events database. Hazard bias can present itself as the probability of an event being recorded varying according to event type or the quality/quantity of information recorded varying according to event type. This can manifest in certain event types being under or over-reported in the dataset or having much more reliable and helpful descriptions of certain event types. This occurs because of variety of factors relating to how the database functions and how weather monitoring occurs. 
+In this section, we will outline how hazard bias may be created when using the NOAA Storm Events database for societal impacts research. Hazard bias can present itself as the probability of an event being recorded varying according to event type or the quality/quantity of information recorded varying according to event type. This can manifest in certain event types being under or over-reported in the dataset or having much more reliable and helpful descriptions of certain event types. This occurs because of variety of factors relating to how the database functions and how weather monitoring occurs. 
 
 
 **hazard bias by standards for when different events are recorded** 
@@ -104,14 +104,25 @@ In a general sense, this could lead to bias if a researcher was trying to examin
 
 *Descriptions* 
 
+There are also instances where different amounts of information are available for different types of hazards listed in the database. The Storm data dataset has around 51 columnns of information per entry that include information like the event ID, time, state, county, damage, textual descriptions, etc. Not every one of these columns is filled with each entry in the database. 
 
-> 2.9 Textual Description of Storm. There are two kinds of textual descriptions: episode narrative and event narrative. Minimally, a brief episode narrative is needed for any weather event entry within the Storm Data software. The event narrative may or may not be needed. If the event does not cause injury, fatality or property/crop damage, the event does not require an event narrative, unless otherwise significant. For example, Hail events, as a single phenomenon, should not necessitate narratives unless they are part of a more complex weather event or cause fatality/injury or property/crop damage. 
+This variation in the amount of information shows up in the textual descriptions provided per entry. For some types of reporting, the *episode* gets the narrative, but not separate narratives for each event, while for some events (like tornadoes), each *event* might get a narrative. The NWS Documentation covers this in section 2.9 Textual Description of Storm [link?]. The basic requirement is that each hazard entry within the Storm Data dataset recieves a short episode narrative. In addition to this, an event narrative should be entered if the event caused some sort of injury or damage, or something else significant. The documentation also states that an event narrative is requried for all Tornado events, all Thunderstorm Wind events, and all Lightning events, whether over land or marine zones. For these hazard types, the event may not have caused significant damage, but an event narrative will be still be present.  Other than this, if there is nothing noteworthy about the event itself, no event narrative is required. The example the documentation provides is that Hail events, as a single phenomenon, do not need narratives unless they are part of a more complex weather event or cause fatality/injury or property/crop damage [@nwsinstruction]. This is important to keep in mind because the presence of an event narrative does not necessarily indicate significance if it is for the hazard types where an event narrative is required. 
 
-    -For some types of reporting, the *episode* gets the narrative, but not separate narratives for each event, while for some events (like tornadoes), each *event* might get a narrative. 
-    
+
+Similar variation occurs in the location information provided per hazard type. 
+
+
+
+It is important to keep in mind that some events might be very localized (for example, a flash flood, or even storm surge that's only near the coast of the county), but the county-level reporting of the event means that the whole county gets classified as experiencing or not experiencing the event.
+
+The NOAA Storm Events database also uses forecast zones as another unit of aggregation. Forecast zones are created as subsets of counties for more specific location data. Specific types of events are typically either always reported for a county (`CZTYPE` of "C") or always reported for a forecast zone (`CZTYPE` of "Z") (see table below)**. Events typically reported by county include floods, tornado-like events, and a few other events often related to thunderstorms. Events typically reported by forecast zone include severe winter weather, extreme heat, events related to the water or coast, and a few others ("High Wind", "Dense Fog", "Strong Wind", "Wildfire", "Dust Storm", "Dense Smoke").
+
+This demonstrates the difficulty of narrowing down where exactly certain events occurred. It is important to keep in mind that some events might be very localized (for example, a flash flood, or even storm surge that's only near the coast of the county), but the county-level reporting of the event means that the whole county gets classified as experiencing or not experiencing the event.
+
     
 Also, for fatalities and injuries, it sounds like the estimates are given at the *episode level* for forecast zone-based events but then at the *event level* for county-based events. 
 
+The NWS Documenntation states that a brief summary of fatalities and injuries should be part of the *event* narrative for county-based and marine zone-based events.
 
 
 3. graularity of information provided 
@@ -119,17 +130,15 @@ Also, for fatalities and injuries, it sounds like the estimates are given at the
   - forecast zone vs county level 
   - some event types include latitude and longitude locations (even starting and ending points), while some do not include more detailed location information beyond the area they're reported for (county or forecast zone). This would be another case of where there's a different amount of information available for different types of hazards listed in the database, and we could use our data to show that (it might also be listed in the NOAA manual which events lat/long should be reported for).
   
-4. quality based on how it was recorded 
-  -using an established scale or not 
-  -Enhanced Fujita 
+The NWS Documentation states that the Storm Data preparer is strongly encourage latitude/longitude pairs of numbers for an event's location
   
   
-  
+> 2.9 Textual Description of Storm. There are two kinds of textual descriptions: episode narrative and event narrative. Minimally, a brief episode narrative is needed for any weather event entry within the Storm Data software. The event narrative may or may not be needed. If the event does not cause injury, fatality or property/crop damage, the event does not require an event narrative, unless otherwise significant. For example, Hail events, as a single phenomenon, should not necessitate narratives unless they are part of a more complex weather event or cause fatality/injury or property/crop damage. 
+
 
 > "2.9.1 Episode Narrative. Generate an episode with a narrative; otherwise individual events cannot be entered into the Storm Data software. An episode narrative describes the entire episode in a general fashion, and briefly describes the synoptic meteorology associated with the episode. Information in the episode narrative can be very useful for researchers and other users of Storm Data. This narrative does not need to be long or elaborate, rather make it brief and informative. An example would be “A strong cold front passed through the Washington, D.C. area, triggering several instances of damaging thunderstorm winds and large, baseball-size hail.”
 > “To ensure events being logged in a single episode are part of the same synoptic meteorological system, events within the same episode may begin no more than five (5) calendar days apart. This will enable the Storm Data preparer to properly document events that double back into a specific region or events that are very slow moving. Examples include Hurricane and Winter Storm events.” [@nwsinstruction]
 
-[Here are more quotes from that section that I might want to weave in:  
 
 > The episode narrative will appear in the Storm Data publication after all events contained within the episode. The episode narrative does not appear in the examples shown in Appendix A, which is reserved for only event narratives. Additionally, a brief summary of fatalities and injuries should be part of the episode narrative for zone-based events.
 
@@ -152,13 +161,7 @@ This demonstrates the difficulty of narrowing down where exactly certain events 
 Related to this idea, I think that some event types include latitude and longitude locations (even starting and ending points), while some do not include more detailed location information beyond the area they're reported for (county or forecast zone). This would be another case of where there's a different amount of information available for different types of hazards listed in the database, and we could use our data to show that (it might also be listed in the NOAA manual which events lat/long should be reported for). 
 
 
-Another point on this idea of different amount/quality of information on 
-different hazards might be that some hazards are recorded based on clear ways to measure
-intensity (for example, using a well-defined scale, as is done for tornadoes with the Fujita
-scale), while others don't. The NOAA guidebook might have some details on this in terms of 
-telling people to use specific scales to report some types of events.  
 
-[From Andrea: One note in terms of time-variability of tornado reporting - it's thought that that detection of weaker tornadoes (EF-1) has improved significantly in the last few decades (due to increases in population and better observation networks).  For that reason, researchers sometimes remove EF-1's when analyzing tornado trends to try to reduce this type of bias.  ]
 
 
 ### hazard bias by who reported event 
@@ -180,6 +183,18 @@ There's variation in who reports different types of events in this database.
 6. comparison on how the number of reported events for an event type is associated with the proportion of events reported by an automated system 
   - very rare events (Sneakerwave, for example) are only reported by sources like broadcast media, fire department/rescue, and newspaper
 
+4. quality based on how it was recorded 
+  -using an established scale or not 
+  -Enhanced Fujita 
+  
+  
+  Another point on this idea of different amount/quality of information on 
+different hazards might be that some hazards are recorded based on clear ways to measure
+intensity (for example, using a well-defined scale, as is done for tornadoes with the Fujita
+scale), while others don't. The NOAA guidebook might have some details on this in terms of 
+telling people to use specific scales to report some types of events.  
+
+[From Andrea: One note in terms of time-variability of tornado reporting - it's thought that that detection of weaker tornadoes (EF-1) has improved significantly in the last few decades (due to increases in population and better observation networks).  For that reason, researchers sometimes remove EF-1's when analyzing tornado trends to try to reduce this type of bias.  ]
 
 ### detection technology differences [TK: combine with above section?]
 
