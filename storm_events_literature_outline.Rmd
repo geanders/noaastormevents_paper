@@ -643,6 +643,7 @@ SHAVE project= Severe Hazards Analysis & Verification Experiment
 
 [TK: I did not find much information about these sources in the NWS NOAA documentation. However, from my research it appears that several of these sources seem to be communities of people that are reporting events. This leads to more questions about how objective the reporting is from these groups. There may be differences in how certain people classify certain events. ]
 
+# Number of evennts reported by source type  
 
 ```{r echo = FALSE}
 events_2019 %>%
