@@ -139,6 +139,7 @@ reporting_categories <- tribble(
   "Winter Storm", "intensity"
 )
 
+
 final_table <- event_type_2019 %>%
   full_join(event_reporting_areas) %>% 
   full_join(reporting_categories) %>% 
@@ -149,6 +150,8 @@ final_table <- event_type_2019 %>%
   mutate(N = prettyNum(N, big.mark = ",")) %>%
   knitr::kable(col.names = c("Event type", "Number of events in 2019", "Reporting Area", 
                              "Reporting Standard"))
+
+
 
 
 
