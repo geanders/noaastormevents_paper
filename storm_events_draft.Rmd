@@ -255,7 +255,7 @@ To avoid this bias in a study using data from Storm Events, it is important to m
 [TK: other examples: 
 Drought hazards exemplify this issue; they are notoriously under-reported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses (Gall, Borden, and Cutter 2009).
 
-```{r echo= false, message = FALSE}
+```{r echo= FALSE, message = FALSE}
 event_reporting_areas <- tribble(
   ~ event_type, ~ reporting_area,
   "Astronomical Low Tide", "Forecast Zone", 
