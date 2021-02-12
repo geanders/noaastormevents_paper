@@ -15,6 +15,15 @@ output:
   html_document: default
 bibliography: scholar.bib
 ---
+```{r warning = FALSE, message = FALSE}
+library(noaastormevents)
+library(tidyverse)
+library(viridis)
+library(lubridate)
+library(dendextend)
+library(kableExtra)
+events_2019 <- create_storm_data(date_range = c("2019-01-01", "2019-12-31"))
+```
 
 # Introduction  
 
@@ -52,11 +61,139 @@ For 2019, the database reported 51 total events of 55 different event types. The
 
 [TK: include plot of event types in 2019]
 
+```{r echo = FALSE, message = FALSE}
+events_2019 %>%
+  group_by(EVENT_TYPE) %>%
+  summarize(N = n()) %>%
+  arrange(desc(N)) %>%
+  mutate(N = prettyNum(N, big.mark = ",")) %>%
+  knitr::kable(col.names = c("Event type", "Number of events in 2019"))
+```
+
 NOAA further characterizes its data by categorizing large storms as episodes which contain several individual events. NOAA assigns the disaster with one episode ID and its associated events with event IDs. Further details of the episode and events are recorded under the event narrative and episode narrative. The NWS instruction describes an episode as a swath of events occurring along a path from Point A to Point B during Time C to Time D [@nwsinstruction]. Events belonging to the same episode cannot be more than five calendar days apart to ensure they all resulted from one meteorological episode. This categorization helps to ensure that a single storm is not interpreted as a series of unrelated events. An example of this would be a hurricane given one episode ID, and the rain, wind, floods, etc. associated with that hurricane given event IDs that fall under that episode. 
 
-To showcase this idea, for the episodes with the most events in 2019, the following graph shows the number of events reported for the episode. This figure demonstrates how one large weather episode can include several other events types. For example, Episode 133801 in this figure indicates several reports of flood, debris flow, strong winds, high wind, and hail. All of these different event types occurred as a result of one large storm labelled episode 133801. This unique episode ID helps related events from getting double counted as separate entities.
+To showcase this idea, for the episodes with the most events in 2019, the following graph shows the number of events reported for the episode. This figure demonstrates how one large weather episode can include several other events types. For example, one episode in this figure corresponds to an atmospheric river and cold front near Mount Saint Helena and indicates several reports of flood, debris flow, strong winds, high wind, and hail. All of these different event types occurred as a result of one large storm labelled episode 133801. This unique episode ID helps related events from getting double counted as separate entities.
 
 [TK: include plot and add in names of episode in paragraph rather than numbers]
+```{r eval = FALSE, echo = FALSE}
+z_events_2019 %>% 
+  filter(cz_type == "Z") %>% 
+  select(cz_name, state, fips) %>% 
+  mutate(cz_name = str_to_title(cz_name)) %>% 
+  filter(str_detect(cz_name, "Lake") & !is.na(fips))  %>% 
+  distinct()
+```
+
+```{r echo = FALSE, warning = FALSE}
+z_events_2019 <- events_2019 %>%
+  dplyr::select_(~ BEGIN_YEARMONTH, ~ BEGIN_DAY, ~ END_YEARMONTH, ~ END_DAY,
+                   ~ EPISODE_ID, ~EVENT_ID, ~ STATE, ~ CZ_TYPE, ~ CZ_NAME,
+                    ~ DEATHS_DIRECT, ~ DEATHS_INDIRECT, ~ INJURIES_DIRECT,
+                  ~ INJURIES_INDIRECT, ~ DAMAGE_PROPERTY, ~ DAMAGE_CROPS,
+                   ~ EVENT_TYPE, ~ STATE_FIPS, ~ CZ_FIPS, ~ SOURCE,
+                   ~ EPISODE_NARRATIVE, ~ EVENT_NARRATIVE) %>%
+  setNames(tolower(names(.))) %>%
+  dplyr::filter_(~ cz_type == "Z") %>%
+  match_forecast_county()
+```
+
+```{r echo = FALSE, warning = FALSE}
+c_events_2019 <- events_2019 %>%
+  dplyr::select_(~ BEGIN_YEARMONTH, ~ BEGIN_DAY, ~ END_YEARMONTH, ~ END_DAY,
+                   ~ EPISODE_ID, ~EVENT_ID, ~ STATE, ~ CZ_TYPE, ~ CZ_NAME,
+                  ~ DEATHS_DIRECT, ~ DEATHS_INDIRECT, ~ INJURIES_DIRECT,
+                  ~ INJURIES_INDIRECT, ~ DAMAGE_PROPERTY, ~ DAMAGE_CROPS,
+                   ~ EVENT_TYPE, ~ STATE_FIPS, ~ CZ_FIPS, ~ SOURCE,
+                   ~ EPISODE_NARRATIVE, ~ EVENT_NARRATIVE) %>%
+  setNames(tolower(names(.))) %>%
+  dplyr::filter_(~ cz_type == "C") %>%
+  dplyr::mutate_(fips = ~ as.numeric(paste0(state_fips, str_pad(cz_fips, 3, pad = "0"))))
+
+county_events_2019 <- bind_rows(c_events_2019, filter(z_events_2019, !is.na(fips)))
+```
+
+```{r echo = FALSE, warning = FALSE}
+county_damage_2019 <- county_events_2019 %>%
+  dplyr::select(episode_id , event_id, fips, event_type, contains("damage")) %>% 
+  tidyr::gather(key = impact, value = amount, -event_type, -event_id, -episode_id, -fips) %>%
+  dplyr::mutate(amount = parse_damage(amount)) 
+```
+
+```{r echo = FALSE, warning = FALSE, eval = FALSE}
+county_events_2019 %>%
+  filter(episode_id == "99142" & fips == 2023) %>%
+  select(event_type, contains("damage"), cz_name, state, event_narrative, episode_narrative) %>% 
+  as.data.frame() %>% 
+  pander::pander()
+```
+
+```{r echo = FALSE, warning = FALSE, fig.align = "center", fig.width = 6, fig.height = 4}
+top_episodes <- events_2019 %>%
+  group_by(EPISODE_ID) %>%
+  summarize(n = n()) %>%
+  arrange(desc(n)) %>%
+  slice(1:12)
+
+a <- events_2019 %>%
+  filter(EPISODE_ID %in% top_episodes$EPISODE_ID) %>%
+  group_by(EPISODE_ID, EVENT_TYPE) %>%
+  summarize(n = n()) %>%
+  ungroup() %>%
+  spread(key = EPISODE_ID, value = n, fill = 0) %>%
+  tibble::remove_rownames() %>%
+  as.data.frame() %>%
+  tibble::column_to_rownames(var = "EVENT_TYPE") %>%
+  dist("canberra") %>%
+  hclust() 
+```
+
+```{r echo = FALSE, fig.align = "center", fig.width = 8, fig.height = 6, message = FALSE}
+dendrogram_descriptions <- tribble(
+  ~EPISODE_ID, ~description,
+  133275, "Moderate to strong atmospheric river in California",
+  133801, "An atmospheric river and cold front near Mount Saint Helena",
+  133994,"An atmospheric river in the North Bay",
+  136054,"Several severe storms along southern plains",
+  135416, "Squall line of thunderstorms in South Carolina",
+  138800,"Heat wave in eastern New York",
+  135253,"971mb bomb cyclone moving out of the Rockies", 
+  138645,"Frontal boundary over the mid-Atlantic and
+  low pressure wave",
+  135643,"Line of thunderstorms",
+  141710,"Strong cold front and deep upper level trough in the Ozarks",
+  137355, "Multiple storms over Missouri Ozarks",
+  142499,"A powerful coastal storm along New Jersey to the Northeast"
+)
+
+
+dedrogram_events <-events_2019 %>% 
+  left_join(dendrogram_descriptions)
+
+events_2019 %>%
+  filter(EPISODE_ID %in% top_episodes$EPISODE_ID) %>%
+  group_by(EPISODE_ID, EVENT_TYPE) %>%
+  summarize(n = n()) %>%
+  ungroup() %>%
+  left_join(dendrogram_descriptions, by = "EPISODE_ID") %>% 
+  mutate(description = factor(str_wrap(description, width = 35, indent = 0)),
+         description = fct_reorder(description, n, .fun = sum),
+         EVENT_TYPE = factor(EVENT_TYPE, levels = unique(a$labels[a$order]))) %>%
+  ggplot(aes(x = description , y = EVENT_TYPE)) + 
+  geom_tile(aes(fill = n)) + 
+  theme_classic() + 
+  labs(x = "", y = "", fill = "Number of events reported") + 
+  theme(axis.text.x  = element_text(angle=45, vjust = 1, hjust = 0),
+        legend.position = "top",
+        plot.margin = unit(c(0, 1, 0, 0), "cm"),
+        axis.text=element_text(size=9)) +
+  scale_x_discrete(position = "top") +
+  scale_y_discrete(position = "right") +
+  scale_fill_viridis(option = "A", direction = -1) +
+  coord_flip() 
+
+ # scale_x_discrete(limits = rev(levels(unique(top_episodes$EPISODE_ID)))) 
+# scale_x_discrete(trans= "reverse")
+```      
 
 In some cases, events falling under one episode are the same type of hazard just at different intensities, as described above. In these circumstances, the collection of events may be recorded in only one county/zone but will showcase the spatial range and and varying intensity of the event. This is likely why we see the events with different intensities of the same hazard clustered together in one county/zone in the database, like heat/excessive heat and cold/extreme cold. In other cases, a larger synoptic weather system might bring a variety of different hazards leading to several different recorded event types (e.g., thunderstorm wind and hail, which cluster together). In these cases, there may be several counties/zones in the affected area that report more than one event for the episode. 
 
@@ -64,8 +201,39 @@ In some cases, events falling under one episode are the same type of hazard just
 
 The following plot shows a cluster analysis to group events that are more likely to (be recorded as occurring) occur together within an episode. We removed event types with less that 50 listings in 2019. The figure shows that there are certain event types which are very commonly reported together such as high wind and strong wind or heat and excessive heat. These types of events are likely to be reported together because they are likely to occur at the same time. It is important to keep these trends in mind as there may be overlap or uncertainty in how to categorize what happened during an episode.
 
-[TK: include cluster analysis plot]
+```{r echo = FALSE, fig.align = "center", fig.width = 6, fig.height = 10, warningv= FALSE}
+b <- events_2019 %>%
+  group_by(EVENT_TYPE) %>%
+  mutate(n_events = n()) %>%
+  ungroup() %>%
+  filter(n_events >= 50) %>%
+  group_by(EPISODE_ID, EVENT_TYPE) %>%
+  summarize(n = n()) %>%
+  ungroup() %>%
+  spread(key = EPISODE_ID, value = n, fill = 0) %>%
+  tibble::remove_rownames() %>%
+  as.data.frame() %>%
+  tibble::column_to_rownames(var = "EVENT_TYPE") %>%
+  dist("canberra") %>%
+  hclust() 
 
+dend<- as.dendrogram(b, hang = 0.3)%>% 
+  set("leaves_pch", 19) %>% 
+  set("leaves_col", "green") %>% 
+  set("nodes_cex", 0.7) %>%
+  set("branches_k_color", value = c("black", "skyblue", "orange", "black", "black", "blue","red", "hot pink", "purple", "black", "black", "brown", "black", "skyblue"), k = 14) 
+
+dend %>% 
+  plot(horiz=TRUE, axes=FALSE, main = "Event Type Cluster Analysis", col.main = "dark green") 
+
+#plot(dend)
+#rect.dendrogram(dend,
+ # k = 3,
+ # border = 8, lty = 5, lwd = 2
+#)
+
+
+```
 
 
 # Hazard Bias  
@@ -87,6 +255,158 @@ To avoid this bias in a study using data from Storm Events, it is important to m
 [TK: other examples: 
 Drought hazards exemplify this issue; they are notoriously under-reported because there is a lack of physical damage and it is hard to quantify spatial and monetary losses (Gall, Borden, and Cutter 2009).
 
+```{r echo= false, message = FALSE}
+event_reporting_areas <- tribble(
+  ~ event_type, ~ reporting_area,
+  "Astronomical Low Tide", "Forecast Zone", 
+  "Avalanche", "Forecast Zone", 
+  "Blizzard", "Forecast Zone",
+  "Coastal Flood", "Forecast Zone",
+  "Cold/Wind Chill", "Forecast Zone", 
+  "Debris Flow", "County",
+  "Dense Fog", "Forecast Zone", 
+  "Dense Smoke", "Forecast Zone",
+  "Drought", "Forecast Zone",
+  "Dust Devil", "County",
+  "Dust Storm", "Forecast Zone",
+  "Excessive Heat", "Forecast Zone",
+  "Extreme Cold/Wind Chill", "Forecast Zone",
+  "Flash Flood", "County",
+  "Flood", "County",
+  "Freezing Fog", "Forecast Zone",
+  "Frost/Freeze", "Forecast Zone",
+  "Funnel Cloud", "County",
+  "Hail", "County",
+  "Heat", "Forecast Zone",
+  "Heavy Rain", "County",
+  "Heavy Snow", "Forecast Zone",
+  "High Surf", "Forecast Zone",
+  "High Wind", "Forecast Zone",
+  "Hurricane/Typhoon", "Forecast Zone",
+  "Ice Storm", "Forecast Zone",
+  "Lakeshore Flood", "Forecast Zone",
+  "Lake-Effect Snow", "Forecast Zone",
+  "Lightning", "County",
+  "Marine Dense Fog", "Marine Zone",
+  "Marine Hail", "Marine Zone",
+  "Marine Heavy Freezing Spray", "Marine Zone",
+  "Marine High Wind", "Marine Zone", 
+  "Marine Hurricane/Typhoon", "Marine Zone", 
+  "Marine Lightning", "Marine Zone", 
+  "Marine Strong Wind", "Marine Zone", 
+  "Marine Thunderstorm Wind", "Marine Zone", 
+  "Marine Tropical Depression", "Marine Zone", 
+  "Marine Tropical Storm", "Marine Zone", 
+  "Rip Current", "Forecast Zone", 
+  "Seiche", "Forecast Zone", 
+  "Sleet", "Forecast Zone",
+  "Sneaker Wave", "Forecast Zone", 
+  "Storm Surge/Tide", "Forecast Zone", 
+  "Strong Wind", "Forecast Zone", 
+  "Thunderstorm Wind", "County", 
+  "Tornado", "County", 
+  "Tropical Depression", "Forecast Zone", 
+  "Tropical Storm", "Forecast Zone", 
+  "Tsunami", "Forecast Zone", 
+  "Volcanic Ash", "Forecast Zone", 
+  "Waterspout", "Marine Zone", 
+  "Wildfire", "Forecast Zone", 
+  "Winter Storm", "Forecast Zone", 
+  "Winter Weather", "Forecast Zone"
+)
+
+
+
+event_type_2019 <-events_2019 %>%
+  mutate(EVENT_TYPE = case_when(
+    EVENT_TYPE == "Sneakerwave" ~ "Sneaker Wave", 
+    EVENT_TYPE == "Hurricane" ~ "Hurricane/Typhoon",
+    EVENT_TYPE == "Volcanic Ashfall" ~ "Volcanic Ash",
+    TRUE ~ EVENT_TYPE
+  )) %>% 
+  rename(event_type = EVENT_TYPE) %>% 
+  group_by(event_type) %>%
+  summarize(N = n()) %>%
+  arrange(desc(N))
+
+
+
+reporting_categories <- tribble(
+  ~ event_type, ~ reporting_standard, 
+  "Astronomical low tide", "impact, noteworthiness, public interest", 
+  "Avalanche" , "impact, noteworthiness, public interest",  
+  "Coastal Flood ", "impact, noteworthiness, public interest" ,
+  "  Dense Fog ", "impact, noteworthiness, public interest" ,
+  "Dense Smoke ", "impact, noteworthiness, public interest" ,
+  "Dust Devil ", "impact, noteworthiness, public interest" ,
+  "Dust Storm ","impact, noteworthiness, public interest",
+  "Flash Flood", "impact, noteworthiness, public interest",
+  "Flood", "impact, noteworthiness, public interest" ,
+  "Freezing Fog", "impact, noteworthiness, public interest" , 
+  "Funnel Cloud" , "impact, noteworthiness, public interest" ,
+  "Freezing Fog" , "impact, noteworthiness, public interest" ,
+  "Funnel Cloud" , "impact, noteworthiness, public interest" ,
+  "Heavy Rain" , "impact, noteworthiness, public interest" ,
+  "High Surf" , "impact, noteworthiness, public interest" , 
+  "Lakeshore Flood" , "impact, noteworthiness, public interest" ,
+  "Lightning" , "impact, noteworthiness, public interest" ,
+  "Marine Dense Fog" , "impact, noteworthiness, public interest" ,
+  "Marine Hail" , "impact, noteworthiness, public interest" ,
+  "Marine Heavy Freezing Spray" , "impact, noteworthiness, public interest" ,
+  "Marine High Wind" , "impact, noteworthiness, public interest" ,
+  "Marine Hurricane/Typhoon","impact, noteworthiness, public interest" , 
+  "Marine Lightning" , "impact, noteworthiness, public interest" ,
+  "Marine Strong Wind" , "impact, noteworthiness, public interest" ,
+  "Marine Thunderstorm Wind" , "impact, noteworthiness, public interest" ,
+  "Marine Tropical Depression" , "impact, noteworthiness, public interest" ,
+  "Marine Tropical Storm" , "impact, noteworthiness, public interest" ,
+  "Rip Currents" , "impact, noteworthiness, public interest" ,
+  "Seiche" , "impact, noteworthiness, public interest" ,
+  "Sneaker Wave" , "impact, noteworthiness, public interest" ,
+  "Storm Surge/Time" , "impact, noteworthiness, public interest", 
+  "Strong Wind ", "impact, noteworthiness, public interest" , 
+  "Thunderstorm Wind" , "impact, noteworthiness, public interest" ,
+  "Tsunami" , "impact, noteworthiness, public interest" ,
+  "Volcanic Ash" , "impact, noteworthiness, public interest" ,
+  "Wildfire" , "impact, noteworthiness, public interest" ,
+  "Winter Weather" , "impact, noteworthiness, public interest",
+  "Blizzard", "intensity",
+  "Cold/Wind Chill ", "intensity",
+  "Debris Flow", "intensity",
+  "Excessive Heat", "intensity",
+  "Extreme Cold/Wind Chill", "intensity",
+  "Frost", "intensity",
+  "Hail", "intensity",
+  "Heat", "intensity",
+  "Heavy Snow", "intensity",
+  "High Wind ", "intensity",
+  "Hurricnae/Typhoon", "intensity",
+  "Ice Storm", "intensity",
+  "Lake Effect Snow", "intensity",
+  "Sleet", "intensity",
+  "Tornado", "intensity",
+  "Tropical Depression", "intensity",
+  "Tropical Storm", "intensity",
+  "Waterspout", "intensity",
+  "Winter Storm", "intensity"
+)
+
+
+
+event_type_2019 %>%
+  full_join(event_reporting_areas) %>% 
+  full_join(reporting_categories) %>% 
+  arrange(desc(N)) %>%
+  mutate(N = case_when(
+    is.na(N) ~ as.integer(0), 
+    TRUE ~ N 
+  )) %>% 
+  mutate(N = prettyNum(N, big.mark = ",")) %>%
+  knitr::kable(col.names = c("Event type", "Number of events in 2019", "Reporting Area", 
+                             "Reporting Standard"))
+
+
+```
 
 
 **By Varying Amounts of Information Provided** 
@@ -136,6 +456,14 @@ The likelihood of catching an event varies based on source because of different 
 
 Even within one type of source, that there may be controversy in the agreement across reports for a hazard entry.  There could be variation amongst the monitoring equipment for automated observation systems due to random error or inconsistent calibration. There could also be variation amongst people's opinions across volunteer reports especially if event criterias are unclear. Along these same lines, the quality of information provided in these accounts can vary based on if there is an established scale or not. For example, the Enhanced Fujita scale is the accepted way to rank and characterize tornado events. This scale provides a standard for explaing the intensity and impact of tornado events, whereas less common events do not have a widely accepted scale for description. These factors will impact how cohesive the information is for individual hazard entries and for collective hazard types. 
 
+```{r echo = FALSE}
+events_2019 %>%
+  group_by(SOURCE) %>%
+  summarize(N = n()) %>%
+  arrange(desc(N)) %>%
+  mutate(N = prettyNum(N, big.mark = ",")) %>%
+  knitr::kable(col.names = c("Source of event report", "Number of events reported in 2019"))
+```
 
 [TK: include figure with # of events reported by event source in 2019, figure showing which sources typically report which event types, maybe table that lists sources into these four categories]
 [BA: One may be that the (this is a similar idea to how changes in technology over time might lead to temporal bias). I wonder if some of our rare events (Sneakerwave, Seiche, Sleet) might be examples of spots where we don't have great technology yet to detect them (or not a large enough network of monitors even if we do have the technology)?
