@@ -487,6 +487,74 @@ In specific, scientists expect the number of naturally occurring wildfires to in
 
 Climate change is also projected to increase the number and severity of extreme natural disasters. Natural disasters threaten physical and mental health resulting from "damage to property, destruction of assets, loss of infrastructure and public services, social and economic impacts, environmental degradation, and other factors" [@climatechange].  
 
+
+
+# Temporal Bias  
+
+### Introduction to Temporal Bias: 
+Within the NOAA Storm Events database, there are comparable differences in event and loss recording over time. Temporal bias is helpful in describing and understanding these changes within the database. There are long term patterns of temporal bias that may be caused by changes in measuring and recording events and losses. There are also seasonal patterns within the database that relate to unique attributes and temporality of certain weather events.  
+
+
+Main Points: 
+1. database has changed what it records over time 
+2. Population growth over time has changed where and how people there are to 
+3. Technology changes over time 
+
+### Long Term Trends: 
+Long term temporal bias arises because technology is getting better at detecting storm events, population size is growing in high hazard areas, and the NWS has changed their recording strategies and monetary loss acounting. 
+
+Scientists have improved radar and expanded networks of monitors and so they detect more extreme weather events. The advancement of doppler radar and dual-polarization radar technology has increased our ability to detect tornado events [@tornadodetection]. Forcasters and storm spotters have also discovered patterns that help them recognize tornado formation. These advancements increase the tornadoes detected. Verbout et. al states that "the number of tornadoes reported in the United States has doubled from about 600 per year in the 1950s to around 1200 in the 2000s"[@verbout2006evolution]. Technology increases this reported number rather than meteorological changes. 
+
+
+Increasing population size and land development also contribute to increased event reporting over time. Population growth increases the probability that an event in an area gets reported. This is because events are reported to the NWS by trained spotters, the public, law enforcement, broadcast media, social media, local and county officials, etc. When the number of these individuals increases in an area, so does the likelihood that they will see and report an event. 
+
+
+#### Breakdown of percentage of events reported by a given source: 
+
+
+The following graph shows, for each type of event in 2019, the percent reported by each source. Both axes of the plot are ordered by overall frequency (i.e., overall number of each type of event and overall number of reports from each source).
+ 
+For some types of events, reporting is dominated by a specific source. For example, most high surf reports come from trained spotters, while most drought reports come from drought monitors and most tornado reports come from the NWS Storm Survey. Another example is that rip currents are mostly reported by broadcast media and newspapers. This may be because rip currents can pose a serious danger to humans and cause death in certain instances. These instances are more likely to make the news than other types of general events. 
+
+For other types of events, reporting sources are more diversified.
+
+Additionally, certain sources are more influential in reporting certain events. For example, the public often reports hail and marine hail events. This may be because the public is usually highly affected by this type of weather event. 
+
+### Seasonal Trends:
+
+Although certain weather events truly exhibit seasonal differences in their meteorology, other factors related to temporal bias may artificially inflate or deflate the number of certain events recorded throughout the year. One of these factors is how the timing of a weather event's hazardous outcomes could attract more attention. The media and the public are more likely to report a weather event when it directly physically affects them. One example of this occurs with rip currents. NOAA exhibits higher rates of rip currents in the summer versus the winter. Gensini and Ashley also found that "summer season weekends are shown to have the most [rip current] fatalities than any other time of the year" [@gensini2010examination]. However, the probablity of a rip current occuring during summer or on the weekend may not be inherently higher. It may be that more people attend the beach and swim in the ocean during the summer and on the weekends and are thus more likely to experience and/or report a rip current. Humans experience the hazardous outcome more in the summer and thus will be more likely to report it during that time. 
+
+* Seasonal Differences in number of events reported 
+
+    - Example of rip currents in summer vs winter  
+    
+* Direct quote: The strength of rip currents can be seasonal. During hurricane season (from June to November) there is a greater chance for rip currents to develop.[@natgeo]
+* Rip currents are related to several envrionmental factors including waves (surf heights, period, direction), beach (slope, orientation, material), water levels (tidal cycle, tide ranges), winds (affect wave breaking) and wind-driven currents alongshore, others like local coastal configuration and beach and promontories by natural or human made. [@nwsripcurrent]
+* "The most likely scenario for rip hazards is not high surf but high exposure of beachgoers in the warm water of the summer-fall period. When low-energy, longer-period waves (significant wave heights of 0.5 -1.5 meters in 10-15 second sequences) lead to the highest number of rip incidents. During spring/neap tides or very low daily tidal cycles, a mass rescue event can occur, with hundreds of rescues in several locations on a beach, or at several beaches under the same conditions." [@nwsripcurrent]
+* "societal factors (e.g., weekends and holidays) that could change the risk of a rip current fatality. For example, low and high pressure systems off the east coast of the United States can produce onshore flow to many surf zones. Both systems may invoke a high rip current formation risk on the LURCS, but swimmers will be more inclined to enter the water on days when a high pressure system is offshore. The clear skies generally associated with large-scale subsidence of a high pressure system would provide beachgoers with favorable weather for beach activities as opposed to a day amid a low pressure system with stratus clouds and precipitation occurring" [@gensini2010examination] 
+       
+        
+* create table of number reported by lifeguards or media vs month of the year  
+        
+    - other events that are more or less reported? [BA: We might want to talk about the idea of some events that truly are seasonal in their occurrence, like avalanches and hurricanes, versus some that happen year-round but have varying chance of being reported. Also, you can look through the package vignette and see if you see any other examples of things that might not be reported evenly throughout the year.]   
+    
+    - coastal flood? high surf? waterspout?
+    
+[BA: I'm not sure if you saw it yet, but I added in another paper on rip currents that to the "literature" folder that might be another helpful reference for this section.]
+
+#### How start dates for events are distributed over the year 
+
+[I don't know if we've explained yet that events are listed with a start and end date. We
+might want to explain that here.]
+Here are how the start dates for listings for each event type are distributed over the year
+(event types are ordered by decreasing total count during the year; note that the y-axes vary depending on the range of events by date for each event type): 
+
+Many event types are clearly seasonal (e.g., winter weather, winter storms, heavy snow, cold, extreme cold, blizzards, ice storms, lake-effect snow, and avalanches are all much more common during winter months, while heat and extreme heat are typically limimted to summer months). However, for some events, reporting seasonal patterns might be based not just on the true pattern of events but also on the timing of important exposures and impacts of the events. For example, rip currents have many more listings during the spring and summer, which may be related to events being more likely to be listed when more people are swimming. Frost event listings are particularly high at the start and end of the frost season, rather than in the middle of winter, which may be related to the impacts of frost on crops being higher in spring and fall than during the winter. If working with this data, it important to keep in mind that the data are based on reporting, and there may be related influences on the probability of an event being reported and included in the data that differ from using data from something like a weather station.  
+
+[BA: Could you check on Google Scholar and see if we could find out anything from the literature
+to support our idea here that you're going to get frost through the winter, but that the 
+most economically damaging frost comes near the edges of the frost season.]
+
  
 # References  
 
