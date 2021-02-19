@@ -473,7 +473,7 @@ intensity (for example, using a well-defined scale, as is done for tornadoes wit
 scale), while others don't. The NOAA guidebook might have some details on this in terms of 
 telling people to use specific scales to report some types of events. ]
 
-[From Andrea: One note in terms of time-variability of tornado reporting - it's thought that that detection of weaker tornadoes (EF-1) has improved significantly in the last few decades (due to increases in population and better observation networks).  For that reason, researchers sometimes remove EF-1's when analyzing tornado trends to try to reduce this type of bias.  ]
+
 
 
 ### implications and discussion
@@ -503,14 +503,15 @@ Main Points:
 ### Long Term Trends: 
 Long term temporal bias arises because technology is getting better at detecting storm events, population size is growing in high hazard areas, and the NWS has changed their recording strategies and monetary loss acounting. 
 
-Scientists have improved radar and expanded networks of monitors and so they detect more extreme weather events. The advancement of doppler radar and dual-polarization radar technology has increased our ability to detect tornado events [@tornadodetection]. Forcasters and storm spotters have also discovered patterns that help them recognize tornado formation. These advancements increase the tornadoes detected. Verbout et. al states that "the number of tornadoes reported in the United States has doubled from about 600 per year in the 1950s to around 1200 in the 2000s"[@verbout2006evolution]. Technology increases this reported number rather than meteorological changes. 
+Scientists have improved radar and expanded networks of monitors and so they detect more extreme weather events. The advancement of doppler radar and dual-polarization radar technology has increased our ability to detect tornado events [@tornadodetection]. Forecasters and storm spotters have also discovered patterns that help them recognize tornado formation. These advancements increase the number of tornadoes detected. Verbout et. al states that "the number of tornadoes reported in the United States has doubled from about 600 per year in the 1950s to around 1200 in the 2000s"[@verbout2006evolution]. Technology may be ifluencing this increase on top of meteorological changes. 
+
+[From Andrea: One note in terms of time-variability of tornado reporting - it's thought that that detection of weaker tornadoes (EF-1) has improved significantly in the last few decades (due to increases in population and better observation networks).  For that reason, researchers sometimes remove EF-1's when analyzing tornado trends to try to reduce this type of bias.  ]  
 
 
 Increasing population size and land development also contribute to increased event reporting over time. Population growth increases the probability that an event in an area gets reported. This is because events are reported to the NWS by trained spotters, the public, law enforcement, broadcast media, social media, local and county officials, etc. When the number of these individuals increases in an area, so does the likelihood that they will see and report an event. 
 
 
 #### Breakdown of percentage of events reported by a given source: 
-
 
 The following graph shows, for each type of event in 2019, the percent reported by each source. Both axes of the plot are ordered by overall frequency (i.e., overall number of each type of event and overall number of reports from each source).
  

@@ -63,7 +63,7 @@ year_events_edit <- year_events_df %>%
 
 library(ggplot2)
 
-year_events_df %>% 
+year_events_edit %>% 
   filter(EVENT_TYPE == c("Tornado", "Thunderstorm Wind", "Heavy Rain", "Hail")) %>% 
   filter(year!= 2020) %>% 
   ggplot(aes(x = year, y = n)) + 
