@@ -1,7 +1,7 @@
 library(noaastormevents)
 library(dplyr)
 
-all_years <- 1950:2020
+all_years <- 1950:2019
 year_events <- vector("list", length(all_years))
 
 for( i in 1:length(all_years)) {
